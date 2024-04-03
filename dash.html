@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <div class="flex w-screen h-screen [background:linear-gradient(180deg,#faff00,#0e0e0a_37.25%)]">
+
+        <div id="leftnav" class="w-[240px] h-screen  bg-[#0e0e0a]">
+            <div class="flex-col p-5 space-y-5 poppins-regular text-white">
+                <button class="hamburger inline-block" onclick="lnav()">
+                    <div class="line h-0.5 w-6 mb-1 bg-gray-500"></div>
+                    <div class="line h-0.5 w-6 my-1 bg-gray-500"></div>
+                    <div class="line h-0.5 w-6 mt-1 bg-gray-500"></div>
+                </button>
+                <div class="flex space-x-5">
+                    <div title="Home"><img src="assets/home.png" alt=""></div>
+                    <div id="home" class="text-center pt-0.5 ">Home</div>
+                </div>
+                <div class="flex space-x-5">
+                    <div title="Explore"><img src="assets/explore.png" alt=""></div>
+                    <div id="explore" class="text-center pt-0.5">Explore</div>
+                </div>
+                <div class="flex space-x-5">
+                    <div title="Library"><img src="assets/library.png" alt=""></div>
+                    <div id="library" class="text-center pt-0.5">Library</div>
+                </div>
+                <hr id="hrnav">
+                <div id="newplaylist" class=" h-[50px] flex bg-[#303530] rounded-[10px]">
+                    <div class="p-3"><img src="assets/plus.png" alt=""></div>
+                    <div class="text-[#FAFF1A] p-3">New Playlist</div>
+                </div>
+                <div id="addartists" class=" h-[50px] flex bg-[#303530] rounded-[10px]">
+                    <div class="p-3"><img src="assets/plus.png" alt=""></div>
+                    <div  class="text-[#FAFF1A] p-3">Add Artists</div>
+                </div>
+            </div>
+        </div>
+        <div id="rightside">
+            <div class="flex m-4 w-[450px] h-[40px] bg-black rounded-lg">
+                <div class="pt-[8px]">
+                    <img src="assets/Search.svg" alt="">
+                </div>
+                <div>
+                    <input type="text" id="" placeholder="Search songs, albums, artists" class="h-[40px] bg-black text-white">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
