@@ -24,8 +24,9 @@ function crossappear() {
     } else {
         document.getElementById("clearcross").classList.add("hidden");
     }
-    
 }
-
-
+function clearinput() {
+    document.getElementById("searchcontent").value = "";
+    crossappear();
+}
 document.getElementById("searchcontent").addEventListener("input",crossappear);
