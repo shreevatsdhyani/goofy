@@ -17,6 +17,15 @@ function lnav() {
         }
         expanded = true;
     }
-    
-
 }
+function crossappear() {
+    if (document.getElementById("searchcontent").value != "") {
+        document.getElementById("clearcross").classList.remove("hidden");
+    } else {
+        document.getElementById("clearcross").classList.add("hidden");
+    }
+    
+}
+
+
+document.getElementById("searchcontent").addEventListener("input",crossappear);
