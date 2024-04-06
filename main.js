@@ -21,8 +21,14 @@ function lnav() {
 function crossappear() {
     if (document.getElementById("searchcontent").value != "") {
         document.getElementById("clearcross").classList.remove("hidden");
+        document.getElementById("searchbox").classList.replace("h-10","h-52");
+        document.getElementById("searchhr").classList.remove("hidden");
+
     } else {
         document.getElementById("clearcross").classList.add("hidden");
+        document.getElementById("searchbox").classList.replace("h-52","h-10");
+        document.getElementById("searchhr").classList.add("hidden");
+
     }
 }
 function clearinput() {
@@ -30,3 +36,11 @@ function clearinput() {
     crossappear();
 }
 document.getElementById("searchcontent").addEventListener("input",crossappear);
+document.getElementById("explorebox").addEventListener("mouseenter", () =>
+{
+    document.getElementById("exploreimg").classList.add("animate-spin");
+});
+document.getElementById("explorebox").addEventListener("mouseleave", () =>
+{
+    document.getElementById("exploreimg").classList.remove("animate-spin");
+});
