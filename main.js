@@ -21,13 +21,13 @@ function lnav() {
 function crossappear() {
     if (document.getElementById("searchcontent").value != "") {
         document.getElementById("clearcross").classList.remove("hidden");
-        document.getElementById("searchbox").classList.replace("h-10","h-[245px]");
+        document.getElementById("searchbox").classList.replace("h-10","h-[255px]");
         document.getElementById("searchhr").classList.remove("hidden");
         document.getElementById("searchsuggestions").classList.remove("hidden");
         
     } else {
         document.getElementById("clearcross").classList.add("hidden");
-        document.getElementById("searchbox").classList.replace("h-[245px]","h-10");
+        document.getElementById("searchbox").classList.replace("h-[255px]","h-10");
         document.getElementById("searchhr").classList.add("hidden");
         document.getElementById("searchsuggestions").classList.add("hidden");
 
@@ -36,6 +36,14 @@ function crossappear() {
 function clearinput() {
     document.getElementById("searchcontent").value = "";
     crossappear();
+}
+function expandprofile() {
+    if (document.getElementById("profilebox").classList.contains("hidden")) {
+        document.getElementById("profilebox").classList.remove("hidden");
+    }
+    else{
+        document.getElementById("profilebox").classList.add("hidden");
+    }
 }
 document.getElementById("searchcontent").addEventListener("input",crossappear);
 document.getElementById("explorebox").addEventListener("mouseenter", () =>

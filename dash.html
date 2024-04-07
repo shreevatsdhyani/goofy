@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Home</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -47,63 +47,78 @@
             </div>
         </div>
         <div id="rightside">
-            <div id="searchbox" class="flex-col m-4 w-[450px] h-10  absolute poppins-regular bg-black rounded-lg">
-                <div class="flex">
-                    <div class="pt-2 px-2 ">
-                        <img src="assets/Search.svg" alt="">
-                    </div>
-                    <div>
-                        <input id="searchcontent" type="text" id="" placeholder="Search songs, albums, artists"
+            <div class="flex absolute m-4">
+
+                <div id="searchbox" class="flex-col w-[450px] h-10  poppins-regular bg-black rounded-lg">
+                    <div class="flex">
+                        <div class="pt-2 px-2 ">
+                            <img src="assets/Search.svg" alt="">
+                        </div>
+                        <div>
+                            <input id="searchcontent" type="text" id="" placeholder="Search songs, albums, artists"
                             class=" bg-black text-white w-[350px] h-[40px] p-1 outline-none">
+                        </div>
+                        <div id="clearcross" class="pl-5 pt-3 hidden">
+                            <button onclick="clearinput()"><img src="assets/cross.svg" alt=""></button>
+                        </div>
                     </div>
-                    <div id="clearcross" class="pl-5 pt-3 hidden">
-                        <button onclick="clearinput()"><img src="assets/cross.svg" alt=""></button>
+                    <hr id="searchhr" class="hidden">
+                    <div id="searchsuggestions" class="hidden">
+                        <div class="flex">
+                            <div class="p-1">
+                                <img src="assets/songimg1.svg" alt="">
+                            </div>
+                            <div class="text-white py-2">
+                                songname
+                            </div>
+                        </div>
+                        <hr id="" class="">
+                        <div class="flex">
+                            <div class="p-1">
+                                <img src="assets/songimg1.svg" alt="">
+                            </div>
+                            <div class="text-white py-2">
+                                songname
+                            </div>
+                        </div>
+                        <hr id="" class="">
+                        <div class="flex">
+                            <div class="p-1">
+                                <img src="assets/songimg1.svg" alt="">
+                            </div>
+                            <div class="text-white py-2">
+                                songname
+                            </div>
+                        </div>
+                        <hr id="" class="">
+                        <div class="flex">
+                            <div class="p-1">
+                                <img src="assets/songimg1.svg" alt="">
+                            </div>
+                            <div class="text-white py-2">
+                                songname
+                            </div>
+                        </div>
+                        <hr id="" class="">
+                        <div class="flex">
+                            <div class="p-1">
+                                <img src="assets/songimg1.svg" alt="">
+                            </div>
+                            <div class="text-white py-2">
+                                songname
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <hr id="searchhr" class="hidden">
-                <div id="searchsuggestions" class="hidden">
-                    <div class="flex">
-                        <div class="p-1">
-                            <img src="assets/songimg1.svg" alt="">
-                        </div>
-                        <div class="text-white py-2">
-                            songname
-                        </div>
-                    </div>
-                    <hr id="" class="">
-                    <div class="flex">
-                        <div class="p-1">
-                            <img src="assets/songimg1.svg" alt="">
-                        </div>
-                        <div class="text-white py-2">
-                            songname
-                        </div>
-                    </div>
-                    <hr id="" class="">
-                    <div class="flex">
-                        <div class="p-1">
-                            <img src="assets/songimg1.svg" alt="">
-                        </div>
-                        <div class="text-white py-2">
-                            songname
-                        </div>
-                    </div>
-                    <hr id="" class="">
-                    <div class="flex">
-                        <div class="p-1">
-                            <img src="assets/songimg1.svg" alt="">
-                        </div>
-                        <div class="text-white py-2">
-                            songname
-                        </div>
-                    </div>
-                    <hr id="" class="">
-                    <div class="flex">
-                        <div class="p-1">
-                            <img src="assets/songimg1.svg" alt="">
-                        </div>
-                        <div class="text-white py-2">
-                            songname
+                <div class="pl-[720px] flex-col">
+                    <button id="profilebtn" onclick="expandprofile()">
+                        <img src="assets/profile.svg" alt="">
+                    </button>
+                    <div id="profilebox" class="w-[120px] h-[114px] bg-black rounded-lg -ml-[85px] -mt-1 hidden">
+                        <div class="flex-col text-white p-2 space-y-1">
+                            <div>Profile</div>
+                            <div>Settings</div>
+                            <div class="text-red-700"><a href="login.html">Log out</a></div>
                         </div>
                     </div>
                 </div>
