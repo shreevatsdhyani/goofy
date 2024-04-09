@@ -13,8 +13,8 @@
         rel="stylesheet">
 </head>
 
-<body>
-    <div class="flex w-screen h-screen [background:linear-gradient(180deg,#faff00,#0e0e0a_37.25%)]">
+<bod id="dashboard-body">
+    <div class="flex w-full h-full [background:linear-gradient(180deg,#faff00,#0e0e0a_37.25%)]">
 
         <div id="leftnav" class="w-[240px] h-screen  bg-[#0e0e0a]">
             <div class="flex-col p-5 space-y-5 poppins-regular text-white">
@@ -110,7 +110,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="pl-[720px] flex-col">
+                <div id="upperflex" class="flex-col pl-[720px]">
                     <button id="profilebtn" onclick="expandprofile()">
                         <img src="assets/profile.svg" alt="">
                     </button>

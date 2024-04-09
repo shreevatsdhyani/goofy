@@ -3,6 +3,7 @@ function lnav() {
     const navelements = ["home", "explore", "library", "addartists", "newplaylist", "hrnav"];
     if (expanded) {
         document.getElementById("leftnav").classList.replace("w-[240px]","w-[72px]");
+        document.getElementById("upperflex").classList.replace("pl-[720px]","pl-[888px]");
         for (const i of navelements) {
             document.getElementById(i).classList.add("hidden");
         }
@@ -10,6 +11,8 @@ function lnav() {
     } 
     else {
         document.getElementById("leftnav").classList.replace("w-[72px]","w-[240px]");
+        document.getElementById("upperflex").classList.replace("pl-[888px]","pl-[720px]");
+
         for (const i of navelements) {
 
             document.getElementById(i).classList.remove("hidden");
