@@ -14,9 +14,9 @@
 </head>
 
 <bod id="dashboard-body">
-    <div class="flex w-full h-full [background:linear-gradient(180deg,#faff00,#0e0e0a_37.25%)]">
-
-        <div id="leftnav" class="w-[240px] h-screen  bg-[#0e0e0a]">
+    <!-- <div class="flex w-full h-full [background:linear-gradient(180deg,#faff00,#0e0e0a_37.25%)]"> -->
+    <div class="flex w-full h-full bg-gradient-to-br from-gray-900 from-10% via-gray-800 via-15% to-yellow-300 to-80%">
+        <div id="leftnav" class="w-[240px] h-screen bg-gray-900 bg-opacity-10">
             <div class="flex-col p-5 space-y-5 poppins-regular text-white">
                 <button class="hamburger inline-block" onclick="lnav()">
                     <div class="line h-0.5 w-6 mb-1 bg-gray-500"></div>
@@ -46,8 +46,8 @@
                 </div>
             </div>
         </div>
-        <div id="rightside">
-            <div class="flex absolute m-4">
+        <div id="rightside" class="ml-24">
+            <div class="flex absolute mt-4">
 
                 <div id="searchbox" class="flex-col w-[450px] h-10  poppins-regular bg-black rounded-lg">
                     <div class="flex">
@@ -110,7 +110,7 @@
                         </div>
                     </div>
                 </div>
-                <div id="upperflex" class="flex-col pl-[720px]">
+                <div id="upperflex" class="flex-col pl-[624px]">
                     <button id="profilebtn" onclick="expandprofile()">
                         <img src="assets/profile.svg" alt="">
                     </button>
@@ -123,143 +123,16 @@
                     </div>
                 </div>
             </div>
-            <div class="grid grid-flow-col auto-cols-max poppins-regular mt-16">
-                <div>
-                    <button class="ribbonbuttons">
-                        <RB class="p-3">Relax</RB>
-                    </button>
-                </div>
-                <div>
-                    <button class="ribbonbuttons">
-                        <RB class="p-3">Romance</RB>
-                    </button>
-                </div>
-                <div>
-                    <button class="ribbonbuttons">
-                        <RB class="p-3">Energize</RB>
-                    </button>
-                </div>
-                <div>
-                    <button class="ribbonbuttons">
-                        <RB class="p-3">Party</RB>
-                    </button>
-                </div>
-                <div>
-                    <button class="ribbonbuttons">
-                        <RB class="p-3">Workout</RB>
-                    </button>
-                </div>
-                <div>
-                    <button class="ribbonbuttons">
-                        <RB class="p-3">Sad</RB>
-                    </button>
-                </div>
-                <div>
-                    <button class="ribbonbuttons">
-                        <RB class="p-3">Focus</RB>
-                    </button>
-                </div>
-                <div>
-                    <button class="ribbonbuttons">
-                        <RB class="p-3">Sleep</RB>
-                    </button>
-                </div>
+            <div id="ribbonbox" class="grid grid-flow-col auto-cols-max poppins-regular mt-20">
+                
             </div>
             <div class="flex-col poppins-regular mt-10 pl-4 ">
                 <div class="text-white text-[30px]">
                     Heading 1
                 </div>
-                <div id="parentscrolldiv" class="overflow-x-scroll h-64  w-[1216px] pt-4 grid grid-flow-col auto-colls-max gap-4">
-                    <div>
-                        <div class="h-40 w-40">
-                            <img src="assets/songthumbnail.svg" alt="">
-                        </div>
-                        <div class="text-white w-40 pt-1">
-                            Song Name
-                        </div>
-                        <div class="text-white w-40">
-                            Artist Name
-                        </div>
-                    </div>
-                    <div>
-                        <div class="h-40 w-40">
-                            <img src="assets/songthumbnail.svg" alt="">
-                        </div>
-                        <div class="text-white w-40 pt-1">
-                            Song Name
-                        </div>
-                        <div class="text-white w-40">
-                            Artist Name
-                        </div>
-                    </div>
-                    <div>
-                        <div class="h-40 w-40">
-                            <img src="assets/songthumbnail.svg" alt="">
-                        </div>
-                        <div class="text-white w-40 pt-1">
-                            Song Name
-                        </div>
-                        <div class="text-white w-40">
-                            Artist Name
-                        </div>
-                    </div>
-                    <div>
-                        <div class="h-40 w-40">
-                            <img src="assets/songthumbnail.svg" alt="">
-                        </div>
-                        <div class="text-white w-40 pt-1">
-                            Song Name
-                        </div>
-                        <div class="text-white w-40">
-                            Artist Name
-                        </div>
-                    </div>
-                    <div>
-                        <div class="h-40 w-40">
-                            <img src="assets/songthumbnail.svg" alt="">
-                        </div>
-                        <div class="text-white w-40 pt-1">
-                            Song Name
-                        </div>
-                        <div class="text-white w-40">
-                            Artist Name
-                        </div>
-                    </div>
-                    <div>
-                        <div class="h-40 w-40">
-                            <img src="assets/songthumbnail.svg" alt="">
-                        </div>
-                        <div class="text-white w-40 pt-1">
-                            Song Name
-                        </div>
-                        <div class="text-white w-40">
-                            Artist Name
-                        </div>
-                    </div>
-                    <div>
-                        <div class="h-40 w-40">
-                            <img src="assets/songthumbnail.svg" alt="">
-                        </div>
-                        <div class="text-white w-40 pt-1">
-                            Song Name
-                        </div>
-                        <div class="text-white w-40">
-                            Artist Name
-                        </div>
-                    </div>
-                    <div>
-                        <div class="h-40 w-40">
-                            <img src="assets/songthumbnail.svg" alt="">
-                        </div>
-                        <div class="text-white w-40 pt-1">
-                            Song Name
-                        </div>
-                        <div class="text-white w-40">
-                            Artist Name
-                        </div>
-                    </div>
+                <div id="parentscrolldiv" class="overflow-x-scroll h-64  w-[1040px] pt-4 grid grid-flow-col auto-colls-max gap-4">
+                    
                 </div>
-            </div>
         </div>
     </div>
     <script src="main.js"></script>
