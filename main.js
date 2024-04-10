@@ -6,7 +6,9 @@ function lnav() {
         document.getElementById("leftnav").classList.remove("bg-[#0e0e0a]");
         document.getElementById("upperflex").classList.replace("pl-[624px]","pl-[792px]");
         document.getElementById("parentscrolldiv").classList.replace("w-[1040px]","w-[1292px]");
-
+        document.getElementById("homebox").classList.replace("p-2","p-1");
+        document.getElementById("explorebox").classList.replace("p-2","p-1");
+        document.getElementById("librarybox").classList.replace("p-2","p-1");
         for (const i of navelements) {
             document.getElementById(i).classList.add("hidden");
         }
@@ -17,7 +19,9 @@ function lnav() {
         document.getElementById("leftnav").classList.add("bg-[#0e0e0a]");
         document.getElementById("upperflex").classList.replace("pl-[792px]","pl-[624px]");
         document.getElementById("parentscrolldiv").classList.replace("w-[1292px]","w-[1040px]");
-
+        document.getElementById("homebox").classList.replace("p-1","p-2");
+        document.getElementById("explorebox").classList.replace("p-1","p-2");
+        document.getElementById("librarybox").classList.replace("p-1","p-2");
 
         for (const i of navelements) {
 
@@ -57,7 +61,7 @@ function heading1material() {
     let songscroll =  document.getElementById("parentscrolldiv");
     const elementstr = `<div>
     <div class="h-40 w-40">
-        <img src="assets/songthumbnail.svg" alt="">
+        <img src="assets/TU CHAHIYEW-IN [vl8YTnx3gso].webp" alt="">
     </div>
     <div class="text-white w-40 pt-1">
         Song Name
@@ -68,7 +72,7 @@ function heading1material() {
 </div>`
     const parser = new DOMParser();
     const newelements = parser.parseFromString(elementstr,"text/html").body.firstChild;
-    for (let i = 0; i < 7; i++) {
+    for (let i = 0; i < 8; i++) {
         songscroll.appendChild(newelements.cloneNode(true));   
     }
 }

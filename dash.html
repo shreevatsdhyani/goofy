@@ -15,32 +15,32 @@
 
 <bod id="dashboard-body">
     <!-- <div class="flex w-full h-full [background:linear-gradient(180deg,#faff00,#0e0e0a_37.25%)]"> -->
-    <div class="flex w-full h-full bg-gradient-to-br from-gray-900 from-10% via-gray-800 via-15% to-yellow-300 to-80%">
+    <div class="flex w-full h-full bg-gradient-to-br from-gray-900 from-10% via-gray-800 via-15% to-lime-300 to-80%">
         <div id="leftnav" class="w-[240px] h-screen bg-gray-900 bg-opacity-10">
             <div class="flex-col p-5 space-y-5 poppins-regular text-white">
-                <button class="hamburger inline-block" onclick="lnav()">
+                <button class="hamburger inline-block " onclick="lnav()">
                     <div class="line h-0.5 w-6 mb-1 bg-gray-500"></div>
                     <div class="line h-0.5 w-6 my-1 bg-gray-500"></div>
                     <div class="line h-0.5 w-6 mt-1 bg-gray-500"></div>
                 </button>
-                <div class="flex space-x-5">
+                <div id="homebox" class="flex space-x-5 hover:bg-[#686866] rounded-md p-2">
                     <div title="Home"><img src="assets/home.svg" alt=""></div>
                     <div id="home" class="text-center pt-0.5 ">Home</div>
                 </div>
-                <div id="explorebox" class="flex space-x-5">
+                <div id="explorebox" class="flex space-x-5 hover:bg-[#686866] rounded-md p-2">
                     <div title="Explore"><img id="exploreimg" src="assets/explore.svg" alt=""></div>
                     <div id="explore" class="text-center pt-0.5">Explore</div>
                 </div>
-                <div class="flex space-x-5">
+                <div id="librarybox" class="flex space-x-5 hover:bg-[#686866] rounded-md p-2">
                     <div title="Library"><img src="assets/library.svg" alt=""></div>
                     <div id="library" class="text-center pt-0.5">Library</div>
                 </div>
                 <hr id="hrnav">
-                <div id="newplaylist" class=" h-[50px] flex bg-[#303530] rounded-[10px]">
+                <div id="newplaylist" class=" h-[50px] flex rounded-[10px]">
                     <div class="p-3"><img src="assets/plus.svg" alt=""></div>
                     <div class="text-[#FAFF1A] p-3">New Playlist</div>
                 </div>
-                <div id="addartists" class=" h-[50px] flex bg-[#303530] rounded-[10px]">
+                <div id="addartists" class=" h-[50px] flex rounded-[10px]">
                     <div class="p-3"><img src="assets/plus.svg" alt=""></div>
                     <div class="text-[#FAFF1A] p-3">Add Artists</div>
                 </div>
@@ -134,6 +134,7 @@
                     
                 </div>
         </div>
+        <audio controls src="assets/TU CHAHIYEW-IN [vl8YTnx3gso].webm"></audio>
     </div>
     <script src="main.js"></script>
 </body>
