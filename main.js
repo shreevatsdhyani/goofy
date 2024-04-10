@@ -4,6 +4,8 @@ function lnav() {
     if (expanded) {
         document.getElementById("leftnav").classList.replace("w-[240px]","w-[72px]");
         document.getElementById("upperflex").classList.replace("pl-[720px]","pl-[888px]");
+        document.getElementById("parentscrolldiv").classList.replace("w-[1216px]","w-[1392px]");
+
         for (const i of navelements) {
             document.getElementById(i).classList.add("hidden");
         }
@@ -12,6 +14,8 @@ function lnav() {
     else {
         document.getElementById("leftnav").classList.replace("w-[72px]","w-[240px]");
         document.getElementById("upperflex").classList.replace("pl-[888px]","pl-[720px]");
+        document.getElementById("parentscrolldiv").classList.replace("w-[1392px]","w-[1216px]");
+
 
         for (const i of navelements) {
 
@@ -33,7 +37,6 @@ function crossappear() {
         document.getElementById("searchbox").classList.replace("h-[255px]","h-10");
         document.getElementById("searchhr").classList.add("hidden");
         document.getElementById("searchsuggestions").classList.add("hidden");
-
     }
 }
 function clearinput() {
