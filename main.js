@@ -6,9 +6,10 @@ function lnav() {
         document.getElementById("leftnav").classList.remove("bg-[#0e0e0a]");
         document.getElementById("upperflex").classList.replace("pl-[624px]","pl-[792px]");
         document.getElementById("parentscrolldiv").classList.replace("w-[1040px]","w-[1216px]");
-        document.getElementById("homebox").classList.replace("p-2","p-1");
-        document.getElementById("explorebox").classList.replace("p-2","p-1");
-        document.getElementById("librarybox").classList.replace("p-2","p-1");
+        document.getElementById("hel").classList.replace("*:w-48","*:w-[52px]");
+        document.getElementById("hel").classList.replace("*:pl-1","*:pl-[14px]");
+        document.getElementById("hel").classList.replace("*:ml-5","*:ml-2");
+
         for (const i of navelements) {
             document.getElementById(i).classList.add("hidden");
         }
@@ -19,10 +20,9 @@ function lnav() {
         document.getElementById("leftnav").classList.add("bg-[#0e0e0a]");
         document.getElementById("upperflex").classList.replace("pl-[792px]","pl-[624px]");
         document.getElementById("parentscrolldiv").classList.replace("w-[1216px]","w-[1040px]");
-        document.getElementById("homebox").classList.replace("p-1","p-2");
-        document.getElementById("explorebox").classList.replace("p-1","p-2");
-        document.getElementById("librarybox").classList.replace("p-1","p-2");
-
+        document.getElementById("hel").classList.replace("*:w-[52px]","*:w-48");
+        document.getElementById("hel").classList.replace("*:pl-[14px]","*:pl-1");
+        document.getElementById("hel").classList.replace("*:ml-2","*:ml-5");
         for (const i of navelements) {
 
             document.getElementById(i).classList.remove("hidden");
