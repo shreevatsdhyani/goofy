@@ -5,7 +5,7 @@ function lnav() {
         document.getElementById("leftnav").classList.replace("w-[240px]","w-[72px]");
         document.getElementById("leftnav").classList.remove("bg-[#0e0e0a]");
         document.getElementById("upperflex").classList.replace("pl-[624px]","pl-[792px]");
-        document.getElementById("parentscrolldiv").classList.replace("w-[1040px]","w-[1292px]");
+        document.getElementById("parentscrolldiv").classList.replace("w-[1040px]","w-[1216px]");
         document.getElementById("homebox").classList.replace("p-2","p-1");
         document.getElementById("explorebox").classList.replace("p-2","p-1");
         document.getElementById("librarybox").classList.replace("p-2","p-1");
@@ -18,7 +18,7 @@ function lnav() {
         document.getElementById("leftnav").classList.replace("w-[72px]","w-[240px]");
         document.getElementById("leftnav").classList.add("bg-[#0e0e0a]");
         document.getElementById("upperflex").classList.replace("pl-[792px]","pl-[624px]");
-        document.getElementById("parentscrolldiv").classList.replace("w-[1292px]","w-[1040px]");
+        document.getElementById("parentscrolldiv").classList.replace("w-[1216px]","w-[1040px]");
         document.getElementById("homebox").classList.replace("p-1","p-2");
         document.getElementById("explorebox").classList.replace("p-1","p-2");
         document.getElementById("librarybox").classList.replace("p-1","p-2");
