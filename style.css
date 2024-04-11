@@ -49,4 +49,24 @@
     .ribbonbuttons {
         @apply m-4 h-10 bg-gray-700 rounded-lg text-center text-lime-300 border-lime-200 border-2 shadow-md shadow-lime-300 hover:scale-105;
     }
+
+    .scrollbar::-webkit-scrollbar {
+        width: 20px;
+        height: 20px;
+      }
+    
+      .scrollbar::-webkit-scrollbar-track {
+        border-radius: 100vh;
+        background: #94a3b8;
+      }
+    
+      .scrollbar::-webkit-scrollbar-thumb {
+        background: #475569;
+        border-radius: 100vh;
+        border: 3px solid #94a3b8;
+      }
+    
+      .scrollbar::-webkit-scrollbar-thumb:hover {
+        background: #334155;
+      }
 }

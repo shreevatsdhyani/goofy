@@ -1,4 +1,5 @@
 let expanded = true;
+let isplaying = false;
 function lnav() {
     const navelements = ["home", "explore", "library", "addartists", "newplaylist", "hrnav"];
     if (expanded) {
@@ -103,6 +104,16 @@ function horizontalscroll(left) {
         document.getElementById("parentscrolldiv").scrollLeft += 70;
     }
     
+}
+function playpause() {
+    if (isplaying) {
+        document.getElementById("playpause").src="assets/playbtn.svg";
+        isplaying=false;
+    }
+    else {
+        document.getElementById("playpause").src="assets/pause.svg";
+        isplaying=true;
+    }
 }
 document.getElementById("searchcontent").addEventListener("input",crossappear);
 document.getElementById("explorebox").addEventListener("mouseenter", () =>
