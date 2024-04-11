@@ -9,6 +9,7 @@ function lnav() {
         document.getElementById("hel").classList.replace("*:w-48","*:w-[52px]");
         document.getElementById("hel").classList.replace("*:pl-1","*:pl-[14px]");
         document.getElementById("hel").classList.replace("*:ml-5","*:ml-2");
+        document.getElementById("scrollnavbtn").classList.replace("pl-[800px]","pl-[968px]");
 
         for (const i of navelements) {
             document.getElementById(i).classList.add("hidden");
@@ -23,6 +24,8 @@ function lnav() {
         document.getElementById("hel").classList.replace("*:w-[52px]","*:w-48");
         document.getElementById("hel").classList.replace("*:pl-[14px]","*:pl-1");
         document.getElementById("hel").classList.replace("*:ml-2","*:ml-5");
+        document.getElementById("scrollnavbtn").classList.replace("pl-[968px]","pl-[800px]");
+
         for (const i of navelements) {
 
             document.getElementById(i).classList.remove("hidden");
@@ -92,6 +95,14 @@ function createribbon() {
         </button>
     </div>`,"text/html").body.firstChild);
     });
+}
+function horizontalscroll(left) {
+    if (left) {
+        document.getElementById("parentscrolldiv").scrollLeft -= 70;
+    } else {
+        document.getElementById("parentscrolldiv").scrollLeft += 70;
+    }
+    
 }
 document.getElementById("searchcontent").addEventListener("input",crossappear);
 document.getElementById("explorebox").addEventListener("mouseenter", () =>
