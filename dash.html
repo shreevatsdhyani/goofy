@@ -146,12 +146,18 @@
                 </div>
         </div>
     </div>
-    <div class="fixed h-[72px] w-screen bg-gradient-to-r from-gray-600 via-lime-500 to-gray-600 bottom-0">
-        <div class="flex justify-center space-x-7 m-3">
-            <button><img src="assets/playprev.svg" alt=""></button>
-            <button onclick="playpause()"><img id="playpause" src="assets/playbtn.svg" alt=""></button>
-            <button><img src="assets/playnxt.svg" alt=""></button>
-        </div>    
+    <div id="player" class="bottom-0 fixed h-[86px] w-screen bg-transparent">
+        <div class="z-50 absolute justify-center">
+            <input class="slider w-screen" type="range" name="" id="" min="1" max="100" value="10">
+        </div>
+        <div class="absolute h-[72px] w-screen bg-gradient-to-r from-gray-600 via-lime-500 to-gray-600 bottom-0">
+            <div class="flex justify-center space-x-7 m-3">
+                <button><img src="assets/shuffle.svg" alt=""></button>
+                <button><img src="assets/playprev.svg" alt=""></button>
+                <button onclick="playpause()"><img id="playpause" src="assets/playbtn.svg" alt=""></button>
+                <button><img src="assets/playnxt.svg" alt=""></button>
+            </div>
+        </div>      
     </div>
     <script src="main.js"></script>
 </body>
