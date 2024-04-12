@@ -124,16 +124,16 @@ function changerepeat() {
     const repbtn = document.getElementById("repeatingbtn");
     if (repbtn.getAttribute("src").includes(repeatelements[0])) {
         repbtn.setAttribute("src",repeatelements[1]);
-        repbtn.setAttribute("title","Repeat One");
+        repbtn.setAttribute("title","Repeat one");
         
     }
     else if(repbtn.getAttribute("src").includes(repeatelements[1])){
         repbtn.setAttribute("src",repeatelements[2]);
-        repbtn.setAttribute("title","Repeat");
+        repbtn.setAttribute("title","Repeat all");
     }
     else{
         repbtn.setAttribute("src",repeatelements[0]);
-        repbtn.setAttribute("title","Repeat Off");
+        repbtn.setAttribute("title","Repeat off");
     }
     
 }
