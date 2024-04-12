@@ -1,5 +1,6 @@
 let expanded = true;
 let isplaying = false;
+let repeatvalues = 0;
 function lnav() {
     const navelements = ["home", "explore", "library", "addartists", "newplaylist", "hrnav"];
     if (expanded) {
@@ -113,6 +114,28 @@ function playpause() {
     else {
         document.getElementById("playpause").src="assets/pause.svg";
         isplaying=true;
+    }
+}
+function changerepeat() {
+    const repeatelements=["assets/repeat.svg","assets/repeatone.svg","assets/repeatoff.svg"];
+    switch (repeatvalues) {
+        case 0:
+            document.getElementById("repeatingbtn").src=repeatelements[1];
+            repeatvalues=1;
+            break;
+    
+        case 1:
+            document.getElementById("repeatingbtn").src=repeatelements[2];
+            repeatvalues=2;
+            break;
+
+        case 2:
+            document.getElementById("repeatingbtn").src=repeatelements[0];
+            repeatvalues=0;
+            break;
+
+        default:
+            break;
     }
 }
 document.getElementById("searchcontent").addEventListener("input",crossappear);
