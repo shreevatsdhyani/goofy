@@ -99,9 +99,9 @@ function createribbon() {
 }
 function horizontalscroll(left) {
     if (left) {
-        document.getElementById("parentscrolldiv").scrollLeft -= 70;
+        document.getElementById("parentscrolldiv").scrollLeft -= 200;
     } else {
-        document.getElementById("parentscrolldiv").scrollLeft += 70;
+        document.getElementById("parentscrolldiv").scrollLeft += 200;
     }
     
 }

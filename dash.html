@@ -18,11 +18,11 @@
     <div class="flex w-full h-full bg-gradient-to-br from-gray-900 from-10% via-gray-800 via-15% to-lime-300 to-80%">
         <div id="leftnav" class="w-[240px] h-screen bg-gray-900 bg-opacity-10">
             <div class="flex-col space-y-5 poppins-regular text-white">
-                <button class="hamburger m-5" onclick="lnav()">
-                    <div class="m-1">
+                <div class="flex ml-3 mt-5 hover:bg-[#68686638] h-10 w-10 justify-center rounded-2xl">
+                    <button onclick="lnav()">
                         <img src="assets/hamburger.svg" alt="">
-                    </div>
-                </button>
+                    </button>
+                </div>
                 <div id="hel" class="*:flex *:space-x-5 *:rounded-md *:items-center *:h-12 *:w-48 *:ml-5 *:pl-1">
                     <div id="homebox" class="hover:bg-gray-700">
                         <div title="Home"><img src="assets/home.svg" alt=""></div>
@@ -141,7 +141,7 @@
                         </button>
                     </div>
                 </div>
-                <div id="parentscrolldiv" class="scrollbar overflow-x-scroll h-64  w-[1040px] pt-4 grid grid-flow-col auto-colls-max gap-4 scroll-smooth">
+                <div id="parentscrolldiv" class="scrollbar overflow-hidden hover:overflow-x-scroll h-64  w-[1040px] pt-4 grid grid-flow-col auto-colls-max gap-4 scroll-smooth">
                     
                 </div>
         </div>
