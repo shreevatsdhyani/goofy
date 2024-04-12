@@ -1,6 +1,6 @@
 let expanded = true;
 let isplaying = false;
-let repeatvalues = 0;
+
 function lnav() {
     const navelements = ["home", "explore", "library", "addartists", "newplaylist", "hrnav"];
     if (expanded) {
@@ -107,36 +107,35 @@ function horizontalscroll(left) {
     
 }
 function playpause() {
+    const playbtn = document.getElementById("playpause");
     if (isplaying) {
-        document.getElementById("playpause").src="assets/playbtn.svg";
+        playbtn.src="assets/playbtn.svg";
+        playbtn.setAttribute("title","Play");
         isplaying=false;
     }
     else {
-        document.getElementById("playpause").src="assets/pause.svg";
+        playbtn.src="assets/pause.svg";
+        playbtn.setAttribute("title","Pause");
         isplaying=true;
     }
 }
 function changerepeat() {
-    const repeatelements=["assets/repeat.svg","assets/repeatone.svg","assets/repeatoff.svg"];
-    switch (repeatvalues) {
-        case 0:
-            document.getElementById("repeatingbtn").src=repeatelements[1];
-            repeatvalues=1;
-            break;
-    
-        case 1:
-            document.getElementById("repeatingbtn").src=repeatelements[2];
-            repeatvalues=2;
-            break;
-
-        case 2:
-            document.getElementById("repeatingbtn").src=repeatelements[0];
-            repeatvalues=0;
-            break;
-
-        default:
-            break;
+    const repeatelements=["assets/repeatoff.svg","assets/repeatone.svg","assets/repeat.svg"];
+    const repbtn = document.getElementById("repeatingbtn");
+    if (repbtn.getAttribute("src").includes(repeatelements[0])) {
+        repbtn.setAttribute("src",repeatelements[1]);
+        repbtn.setAttribute("title","Repeat One");
+        
     }
+    else if(repbtn.getAttribute("src").includes(repeatelements[1])){
+        repbtn.setAttribute("src",repeatelements[2]);
+        repbtn.setAttribute("title","Repeat");
+    }
+    else{
+        repbtn.setAttribute("src",repeatelements[0]);
+        repbtn.setAttribute("title","Repeat Off");
+    }
+    
 }
 document.getElementById("searchcontent").addEventListener("input",crossappear);
 document.getElementById("explorebox").addEventListener("mouseenter", () =>
