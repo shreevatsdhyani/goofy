@@ -83,7 +83,7 @@
     }
 
     .slider::-webkit-slider-runnable-track {
-        background-color: #688170;
+        background-color: #6b7280;
         /* Change track color in WebKit browsers */
     }
 
@@ -100,12 +100,12 @@
     .slider::-webkit-slider-thumb {
         -webkit-appearance: none;
         appearance: none;
-        width: 15px;
-        height: 15px;
-        background-color: #118c4a;
+        width: 10px;
+        height: 10px;
+        background-color: #bef264;
         /* Change thumb color in WebKit browsers */
         border-radius: 50%;
-        box-shadow: -10007px 0 0 10000px rgb(55, 65, 81);
+        box-shadow: -10007px 0 0 10000px #65a30d;
         
     }
 
