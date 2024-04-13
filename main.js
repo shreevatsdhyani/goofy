@@ -12,6 +12,7 @@ function lnav() {
         document.getElementById("hel").classList.replace("*:pl-1", "*:pl-[14px]");
         document.getElementById("hel").classList.replace("*:ml-5", "*:ml-2");
         document.getElementById("scrollnavbtn").classList.replace("pl-[800px]", "pl-[968px]");
+        document.getElementById("rightside").classList.replace("ml-64", "ml-[98px]");
 
         for (const i of navelements) {
             document.getElementById(i).classList.add("hidden");
@@ -27,6 +28,7 @@ function lnav() {
         document.getElementById("hel").classList.replace("*:pl-[14px]", "*:pl-1");
         document.getElementById("hel").classList.replace("*:ml-2", "*:ml-5");
         document.getElementById("scrollnavbtn").classList.replace("pl-[968px]", "pl-[800px]");
+        document.getElementById("rightside").classList.replace("ml-[98px]", "ml-64");
 
         for (const i of navelements) {
 
@@ -160,6 +162,11 @@ function search(query, num_tracks = 5) {
             document.getElementById("songname3").innerHTML = data[2]["title"];
             document.getElementById("songname4").innerHTML = data[3]["title"];
             document.getElementById("songname5").innerHTML = data[4]["title"];
+            document.getElementById("pic1").src = data[0]["artwork"];
+            document.getElementById("pic2").src = data[1]["artwork"];
+            document.getElementById("pic3").src = data[2]["artwork"];
+            document.getElementById("pic4").src = data[3]["artwork"];
+            document.getElementById("pic5").src = data[4]["artwork"];
         })
         .catch(error => {
             // Handle any errors
