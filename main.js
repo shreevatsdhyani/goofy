@@ -2,15 +2,17 @@ let expanded = true;
 let isplaying = false;
 
 function lnav() {
-    const navelements = ["home", "explore", "library", "addartists", "newplaylist", "hrnav"];
+    const navelements = ["home", "explore", "library", "likedsongs", "addartists", "newplaylist", "hrnav", "profile"];
     if (expanded) {
         document.getElementById("leftnav").classList.replace("w-[240px]", "w-[72px]");
         document.getElementById("leftnav").classList.remove("bg-[#0e0e0a]");
-        document.getElementById("upperflex").classList.replace("pl-[624px]", "pl-[792px]");
         document.getElementById("parentscrolldiv").classList.replace("w-[1040px]", "w-[1216px]");
         document.getElementById("hel").classList.replace("*:w-48", "*:w-[52px]");
-        document.getElementById("hel").classList.replace("*:pl-1", "*:pl-[14px]");
-        document.getElementById("hel").classList.replace("*:ml-5", "*:ml-2");
+        document.getElementById("hel").classList.replace("*:pl-2", "*:pl-[14px]");
+        document.getElementById("hel").classList.replace("*:ml-3", "*:ml-2");
+        document.getElementById("profilebox").classList.replace("w-48", "w-[52px]");
+        document.getElementById("profilebox").classList.replace("pl-2", "pl-[14px]");
+        document.getElementById("profilebox").classList.replace("ml-1", "ml-2");
         document.getElementById("scrollnavbtn").classList.replace("pl-[800px]", "pl-[968px]");
         document.getElementById("rightside").classList.replace("ml-64", "ml-[98px]");
 
@@ -22,11 +24,13 @@ function lnav() {
     else {
         document.getElementById("leftnav").classList.replace("w-[72px]", "w-[240px]");
         document.getElementById("leftnav").classList.add("bg-[#0e0e0a]");
-        document.getElementById("upperflex").classList.replace("pl-[792px]", "pl-[624px]");
         document.getElementById("parentscrolldiv").classList.replace("w-[1216px]", "w-[1040px]");
         document.getElementById("hel").classList.replace("*:w-[52px]", "*:w-48");
-        document.getElementById("hel").classList.replace("*:pl-[14px]", "*:pl-1");
-        document.getElementById("hel").classList.replace("*:ml-2", "*:ml-5");
+        document.getElementById("hel").classList.replace("*:pl-[14px]", "*:pl-2");
+        document.getElementById("hel").classList.replace("*:ml-2", "*:ml-3");
+        document.getElementById("profilebox").classList.replace("w-[52px]", "w-48");
+        document.getElementById("profilebox").classList.replace("pl-[14px]", "pl-2");
+        document.getElementById("profilebox").classList.replace("ml-2", "ml-1");
         document.getElementById("scrollnavbtn").classList.replace("pl-[968px]", "pl-[800px]");
         document.getElementById("rightside").classList.replace("ml-[98px]", "ml-64");
 
@@ -61,14 +65,6 @@ function crossappear() {
 function clearinput() {
     document.getElementById("searchcontent").value = "";
     crossappear();
-}
-function expandprofile() {
-    if (document.getElementById("profilebox").classList.contains("hidden")) {
-        document.getElementById("profilebox").classList.remove("hidden");
-    }
-    else {
-        document.getElementById("profilebox").classList.add("hidden");
-    }
 }
 
 function heading1material() {
@@ -183,6 +179,12 @@ document.getElementById("explorebox").addEventListener("mouseenter", () => {
 });
 document.getElementById("explorebox").addEventListener("mouseleave", () => {
     document.getElementById("exploreimg").classList.remove("animate-spin");
+});
+document.getElementById("likedsongsbox").addEventListener("mouseenter", () => {
+    document.getElementById("likedsongsimg").classList.add("animate-pulse");
+});
+document.getElementById("likedsongsbox").addEventListener("mouseleave", () => {
+    document.getElementById("likedsongsimg").classList.remove("animate-pulse");
 });
 heading1material();
 createribbon();

@@ -15,7 +15,7 @@
 
 <body id="dashboard-body">
     <!-- <div class="flex w-full h-full [background:linear-gradient(180deg,#faff00,#0e0e0a_37.25%)]"> -->
-    <div class="flex w-full h-full ">
+    <div class="flex w-full bg-gradient-to-br from-gray-900 from-5% via-gray-800 via-10% to-lime-300 to-80% h-[3000px]">
         <div id="leftnav" class="w-[240px] h-screen bg-gray-900 bg-opacity-5 fixed border-r-[1px] border-gray-500">
             <div class="flex-col space-y-5 poppins-regular text-white">
                 <div class="flex ml-3 mt-5 hover:bg-[#68686638] h-10 w-10 justify-center rounded-2xl">
@@ -23,7 +23,7 @@
                         <img src="assets/hamburger.svg" alt="">
                     </button>
                 </div>
-                <div id="hel" class="*:flex *:space-x-5 *:rounded-md *:items-center *:h-12 *:w-48 *:ml-5 *:pl-1">
+                <div id="hel" class="*:flex *:space-x-7 *:rounded-md *:items-center *:h-12 *:w-48 *:ml-3 *:pl-2">
                     <div id="homebox" class="hover:bg-gray-700">
                         <div title="Home"><img src="assets/home.svg" alt=""></div>
                         <div id="home" class="text-center pt-0.5 ">Home</div>
@@ -36,6 +36,10 @@
                         <div title="Library"><img src="assets/library.svg" alt=""></div>
                         <div id="library" class="text-center pt-0.5">Library</div>
                     </div>
+                    <div id="likedsongsbox" class=" hover:bg-gray-700">
+                        <div title="Liked songs"><img id="likedsongsimg" src="assets/likedsong1.svg" alt=""></div>
+                        <div id="likedsongs" class="text-center pt-0.5">Liked Songs</div>
+                    </div>
                 </div>
                 
                 <hr id="hrnav" class="mx-5">
@@ -46,6 +50,14 @@
                 <div id="addartists" class=" h-[50px] flex rounded-[10px] hover:bg-gray-700 w-48 ml-3">
                     <div class="p-3"><img src="assets/plus.svg" alt=""></div>
                     <div class="text-white p-3">Add Artists</div>
+                </div>
+                <div id="profilebox" class="flex mb-auto rounded-[10px] hover:bg-gray-700 h-12 w-48 ml-3.5 ">
+                    <div class="flex pl-2 items-center space-x-5">
+                        <button>
+                            <img src="assets/profile.svg" alt="">
+                        </button>
+                        <div id="profile" class="text-center pt-0.5">Profile</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -110,18 +122,6 @@
                             <div id="songname5" class="py-2">
                                 songname
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="upperflex" class="flex-col pl-[624px]">
-                    <button id="profilebtn" onclick="expandprofile()">
-                        <img src="assets/profile.svg" alt="">
-                    </button>
-                    <div id="profilebox" class="w-[120px] h-[114px] bg-black rounded-lg -ml-[85px] -mt-1 hidden">
-                        <div class="flex-col text-white p-2 space-y-1">
-                            <div>Profile</div>
-                            <div>Settings</div>
-                            <div class="text-red-700"><a href="login.html">Log out</a></div>
                         </div>
                     </div>
                 </div>

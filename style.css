@@ -9,7 +9,7 @@
     html,
     body {
         /* @apply bg-gradient-to-br from-gray-900 from-10% via-gray-800 via-15% to-lime-300 to-80% h-[3000px]; */
-        @apply bg-gradient-to-br from-gray-900 from-5% via-gray-800 via-10% to-lime-300 to-80% h-[3000px];
+        background-color: black;
     }
 
     .faster-one {
