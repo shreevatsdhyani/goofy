@@ -77,7 +77,7 @@
         /* creating a custom design */
         width: 100%;
         cursor: pointer;
-        outline: 2px solid white;
+        outline: 2px solid #111827;
         /*  slider progress trick  */
         overflow: hidden;
         border-radius: 16px;
@@ -101,12 +101,12 @@
     .slider::-webkit-slider-thumb {
         -webkit-appearance: none;
         appearance: none;
-        width: 3px;
-        height: 3px;
-        background-color: rgb(0, 35, 15);
+        width: 10px;
+        height: 10px;
+        background-color: #bef264;
         /* Change thumb color in WebKit browsers */
         border-radius: 50%;
-        box-shadow: -10007px 0 0 10000px rgb(0, 35, 15);
+        box-shadow: -10007px 0 0 10000px #bef264;
         
     }
 

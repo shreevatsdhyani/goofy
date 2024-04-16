@@ -45,7 +45,7 @@ function lnav() {
 function crossappear() {
     if (document.getElementById("searchcontent").value != "") {
         document.getElementById("clearcross").classList.remove("hidden");
-        document.getElementById("searchbox").classList.replace("h-10", "h-[255px]");
+        document.getElementById("searchbox").classList.replace("h-10", "h-[230px]");
         document.getElementById("searchbox").classList.replace("bg-[#68686638]", "bg-gray-800");
         document.getElementById("searchhr").classList.remove("hidden");
         document.getElementById("searchsuggestions").classList.remove("hidden");
@@ -54,7 +54,7 @@ function crossappear() {
 
     } else {
         document.getElementById("clearcross").classList.add("hidden");
-        document.getElementById("searchbox").classList.replace("h-[255px]", "h-10");
+        document.getElementById("searchbox").classList.replace("h-[230px]", "h-10");
         document.getElementById("searchbox").classList.replace("bg-gray-800", "bg-[#68686638]");
         document.getElementById("searchhr").classList.add("hidden");
         document.getElementById("searchsuggestions").classList.add("hidden");
@@ -152,7 +152,7 @@ function search(query, num_tracks = 5) {
             return response.json();
         })
         .then(data => {
-            // console.log(data[0]["title"]);
+            console.log(data[0]["title"]);
             document.getElementById("songname1").innerHTML = data[0]["title"];
             document.getElementById("songname2").innerHTML = data[1]["title"];
             document.getElementById("songname3").innerHTML = data[2]["title"];

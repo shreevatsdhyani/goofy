@@ -1,8 +1,8 @@
 import warnings
 import httpx
 import re
-from bs4 import BeautifulSoup
-import requests
+# from bs4 import BeautifulSoup
+# import requests
 
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 

@@ -80,46 +80,46 @@
                     <hr id="searchhr" class="hidden">
                     <div id="searchsuggestions" class="hidden *:bg-[#40714494] text-white">
                         <div class="flex">
-                            <div class="p-1 w-[50px] h-[50px]">
+                            <div class="p-1 w-[50px] h-[40px]">
                                 <img  id="pic1" src="assets/songimg1.svg" alt="">
                             </div>
-                            <div id="songname1" class="py-2">
+                            <div id="songname1" class="py-2 w-[370px] h-[40px] text-nowrap overflow-x-hidden overflow-clip" onmouseenter="this.scrollLeft+=this.textContent.length">
                                 songname
                             </div>
                         </div>
                         <hr>
                         <div class="flex">
-                            <div class="p-1 w-[50px] h-[50px]">
+                            <div class="p-1 w-[50px] h-[40px]">
                                 <img id="pic2" src="assets/songimg1.svg" alt="">
                             </div>
-                            <div id="songname2" class="py-2">
+                            <div id="songname2" class="py-2 w-[370px] h-[40px] text-nowrap overflow-x-hidden overflow-clip" onmouseenter="this.scrollLeft+=this.textContent.length">
                                 songname
                             </div>
                         </div>
                         <hr>
                         <div class="flex">
-                            <div class="p-1 w-[50px] h-[50px]">
+                            <div class="p-1 w-[50px] h-[40px]">
                                 <img id="pic3" src="assets/songimg1.svg" alt="">
                             </div>
-                            <div id="songname3" class="py-2">
+                            <div id="songname3" class="py-2 w-[370px] h-[40px] text-nowrap overflow-x-hidden overflow-clip" onmouseenter="this.scrollLeft+=this.textContent.length">
                                 songname
                             </div>
                         </div>
                         <hr>
                         <div class="flex">
-                            <div class="p-1 w-[50px] h-[50px]">
+                            <div class="p-1 w-[50px] h-[40px]">
                                 <img id="pic4" src="assets/songimg1.svg" alt="">
                             </div>
-                            <div id="songname4" class="py-2">
+                            <div id="songname4" class="py-2 w-[370px] h-[40px] text-nowrap overflow-x-hidden overflow-clip" onmouseenter="this.scrollLeft+=this.textContent.length">
                                 songname
                             </div>
                         </div>
                         <hr>
                         <div class="flex">
-                            <div class="p-1 w-[50px] h-[50px]">
+                            <div class="p-1 w-[50px] h-[40px]">
                                 <img id="pic5" src="assets/songimg1.svg" alt="">
                             </div>
-                            <div id="songname5" class="py-2">
+                            <div id="songname5" class="py-2 w-[370px] h-[40px] text-nowrap overflow-x-hidden overflow-clip" onmouseenter="this.scrollLeft+=this.textContent.length">
                                 songname
                             </div>
                         </div>
@@ -152,6 +152,10 @@
         </div>
         <div class="absolute h-[72px] w-screen bg-gradient-to-r from-gray-900 via-lime-500 to-gray-900 bottom-0">
             <div class="flex justify-center space-x-7 m-3">
+                <div class="flex justify-start">
+                    <div><img class="h-[50px] w-[50px]" src="assets/songthumbnail.svg" alt=""></div>
+                    <div class="py-3"> song name</div>
+                </div>
                 <button title="Shuffle"><img src="assets/shuffle.svg" alt=""></button>
                 <button><img title="Play previous" src="assets/playprev.svg" alt=""></button>
                 <button title="Play" onclick="playpause()"><img id="playpause" src="assets/playbtn.svg" alt=""></button>
