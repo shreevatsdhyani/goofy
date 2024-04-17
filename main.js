@@ -109,7 +109,7 @@ function horizontalscroll(left) {
 function playpause() {
     const playbtn = document.getElementById("playpause");
     if (isplaying) {
-        playbtn.src = "assets/playbtn.svg";
+        playbtn.src = "assets/play.svg";
         playbtn.setAttribute("title", "Play");
         isplaying = false;
     }
