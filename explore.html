@@ -63,7 +63,6 @@
         </div>
         <div id="rightside" class="ml-64">
             <div class="flex absolute mt-4">
-
                 <div id="searchbox" class="flex-col w-[450px] h-10 poppins-regular bg-[#68686638] rounded-lg ml-4">
                     <div class="flex">
                         <div class="pt-2 px-2 ">
@@ -78,8 +77,8 @@
                         </div>
                     </div>
                     <hr id="searchhr" class="hidden">
-                    <div id="searchsuggestions" class="hidden *:bg-[#40714494] text-white rounded-b-lg">
-                        <div class="flex my-1">
+                    <div id="searchsuggestions" class="hidden *:bg-[#40714494] text-white">
+                        <div class="flex">
                             <div class="p-1 w-[50px] h-[40px]">
                                 <img  id="pic1" src="assets/songimg1.svg" alt="">
                             </div>
@@ -88,7 +87,7 @@
                             </div>
                         </div>
                         <hr>
-                        <div class="flex my-1">
+                        <div class="flex">
                             <div class="p-1 w-[50px] h-[40px]">
                                 <img id="pic2" src="assets/songimg1.svg" alt="">
                             </div>
@@ -97,7 +96,7 @@
                             </div>
                         </div>
                         <hr>
-                        <div class="flex my-1">
+                        <div class="flex">
                             <div class="p-1 w-[50px] h-[40px]">
                                 <img id="pic3" src="assets/songimg1.svg" alt="">
                             </div>
@@ -106,7 +105,7 @@
                             </div>
                         </div>
                         <hr>
-                        <div class="flex my-1">
+                        <div class="flex">
                             <div class="p-1 w-[50px] h-[40px]">
                                 <img id="pic4" src="assets/songimg1.svg" alt="">
                             </div>
@@ -115,25 +114,7 @@
                             </div>
                         </div>
                         <hr>
-                        <div class="flex my-1">
-                            <div class="p-1 w-[50px] h-[40px]">
-                                <img id="pic5" src="assets/songimg1.svg" alt="">
-                            </div>
-                            <div id="songname5" class="py-2 w-[370px] h-[40px] text-nowrap overflow-x-hidden overflow-clip" onmouseenter="this.scrollLeft+=this.textContent.length">
-                                songname
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="flex my-1">
-                            <div class="p-1 w-[50px] h-[40px]">
-                                <img id="pic5" src="assets/songimg1.svg" alt="">
-                            </div>
-                            <div id="songname5" class="py-2 w-[370px] h-[40px] text-nowrap overflow-x-hidden overflow-clip" onmouseenter="this.scrollLeft+=this.textContent.length">
-                                songname
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="flex my-1">
+                        <div class="flex">
                             <div class="p-1 w-[50px] h-[40px]">
                                 <img id="pic5" src="assets/songimg1.svg" alt="">
                             </div>
@@ -144,91 +125,48 @@
                     </div>
                 </div>
             </div>
-            <div id="ribbonbox" class="grid grid-flow-col auto-cols-max poppins-regular mt-20">
+            <div class="flex-col">
+                <div class="pl-4 mt-20 grid grid-flow-col auto-cols-max gap-4 poppins-regular">
+                    <div class="bg-[#1f2937] text-start p-3 border hover:bg-[#111827] text-white rounded-lg w-52">
+                        New Releases
+                    </div>
+                    <div class="bg-[#1f2937] text-start p-3 border hover:bg-[#111827] text-white rounded-lg w-52">
+                        Trending
+                    </div>
+                    <div class="bg-[#1f2937] text-start p-3 border hover:bg-[#111827] text-white rounded-lg w-52">
+                        Mood & genres
+                    </div>
+                    <div class="bg-[#1f2937] text-start p-3 border hover:bg-[#111827] text-white rounded-lg w-52">
+                        Top Artists
+                    </div>
+                </div>
+                <div class="flex-col poppins-regular mt-10 pl-4 ">
+                    <div class="text-white flex w-full text-[30px]">
+                        <div class="hover:underline hover:cursor-pointer">New Releases</div>
+                        <div id="scrollnavbtn" class="flex pl-[800px]">
+                            <button onclick="horizontalscroll(true)">
+                                <div class="m-1"><img src="assets/larrow.svg" alt=""></div>
+                            </button>
+                            <button onclick="horizontalscroll(false)">
+                                <div class="m-1"><img src="assets/rarrow.svg" alt=""></div>
+                            </button>
+                        </div>
+                    </div>
+                    <div id="parentscrolldiv"
+                        class="scrollbar overflow-hidden hover:overflow-x-scroll h-64  w-[1040px] pt-4 grid grid-flow-col auto-colls-max gap-4 scroll-smooth">
                 
-            </div>
-            <div class="flex-col poppins-regular mt-10 pl-4 ">
-                <div class="text-white flex w-full text-[30px]">
-                    <div>Heading 1</div>
-                    <div id="scrollnavbtn" class="flex pl-[800px]">
-                        <button onclick="horizontalscroll(true)">
-                            <div class="m-1"><img src="assets/larrow.svg" alt=""></div>
-                        </button>
-                        <button onclick="horizontalscroll(false)">
-                            <div class="m-1"><img src="assets/rarrow.svg" alt=""></div>
-                        </button>
                     </div>
                 </div>
-                <div id="parentscrolldiv"
-                    class="scrollbar overflow-hidden hover:overflow-x-scroll h-64  w-[1040px] pt-4 grid grid-flow-col auto-colls-max gap-4 scroll-smooth">
-            
-                </div>
-            </div>
-        </div>
-        <div id="player" class="bottom-0 fixed h-[75px] w-full bg-red-700">
-            <div class="flex space-x-10 m-3">
-                <div class="flex space-x-5 border">
-                    <div class="border">
-                        <img src="assets/songthumbnail2.svg" alt="">
+                <div class="flex-col poppins-regular mt-5 pl-4">
+                    <div class="text-white flex w-full text-[30px]">
+                        Mood & genres
                     </div>
-                    <div class="border">
-                        <div class="h-[30px] w-[375px] font-bold border">
-                            Song Name
-                        </div>
-                        <div class="h-[25px] w-[375px] font-semibold border">
-                            Artist Name
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="h-[30px] flex space-x-10 border pl-[100px]">
-                        <div class="pt-[5px]">
-                            <img src="assets/shuffle.svg" alt="">
-                        </div>    
-                        <div class="pt-[5px]">
-                            <img src="assets/playprev.svg" alt="">
-                        </div>
-                        <div>
-                            <img src="assets/play.svg" alt="">
-                        </div>
-                        <div class="pt-[5px]">
-                            <img src="assets/playnext.svg" alt="">
-                        </div>
-                        <div class="pt-[5px]">
-                            <img src="assets/repeatoff.svg" alt="">
-                        </div>
-                    </div>
-                    <div class="h-[25px] flex space-x-5 border">
-                        <div class="border font-bold">
-                            0:00
-                        </div>
-                        <div>
-                            <input type="range" min="1" max="100" class="slider w-[400px]" value="-1">
-                        </div>
-                        <div class="border font-bold">
-                            f:ff
-                        </div>
-                    </div>
-                </div>
-                <div class="pl-[200px]">
-                    <div class="border flex space-x-5 h-[55px] items-center">
-                        <div>
-                            <img src="assets/lyrics.svg" alt="">
-                        </div>
-                        <div>
-                            <img src="assets/playerlikesong.svg" alt="">
-                        </div>
-                        <div class="flex space-x-3">
-                            <div>
-                                <img src="assets/volmax.svg" alt="">
-                            </div>
-                            <div>
-                                <input type="range" min="1" max="100" class="slider w-[100px]" value="-1">
-                            </div>
-                        </div>
+                    <div class="grid grid-cols-6">
+
                     </div>
                 </div>
             </div>
+
         </div>
     <script src="main.js"></script>
 </body>
