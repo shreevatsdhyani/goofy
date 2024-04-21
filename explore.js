@@ -1,3 +1,20 @@
+function moodandgenres() {
+    const moods = ["Chill","Commute"];
+    const mandg = document.getElementById("mandg");
+    const parser = new DOMParser();
+    console.log(mandg);
+    moods.forEach(ele =>{
+        mandg.appendChild(parser.parseFromString(`<div>
+        <button class="mandg">
+            <MG class="p-3">${ele}</MG>
+        </button>
+    </div>`,"text/html").body.firstChild);
+    });
+}
+
+
+moodandgenres();
+
 let expanded = true;
 let isplaying = false;
 
