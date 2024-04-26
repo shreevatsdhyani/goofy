@@ -118,11 +118,11 @@ async def get_info(videoId,is_card=False,song_artist = False):
     info_dict["author_name"] = info_dict["author_name"].replace(" - Topic","")
     if is_card:
         suggestiondict["card"] = info_dict
-        suggestiondict["artists"].append({info_dict["author_name"]:eval(re.findall(r'"avatar":\{"thumbnails":\[([\s\S]*?)\]\}',httpx.get(info_dict["author_url"],headers=headers).content.decode("unicode_escape"))[-1])["url"]})
+        suggestiondict["artists"].append({"author_name":info_dict["author_name"],"thumbnail_url":eval(re.findall(r'"avatar":\{"thumbnails":\[([\s\S]*?)\]\}',httpx.get(info_dict["author_url"],headers=headers).content.decode("unicode_escape"))[-1])["url"]})
     else:
         suggestiondict["songs"].append(info_dict)
         if song_artist:
-            suggestiondict["artists"].append({info_dict["author_name"]:eval(re.findall(r'"avatar":\{"thumbnails":\[([\s\S]*?)\]\}',httpx.get(info_dict["author_url"],headers=headers).content.decode("unicode_escape"))[-1])["url"]})
+            suggestiondict["artists"].append({"author_name":info_dict["author_name"],"thumbnail_url":eval(re.findall(r'"avatar":\{"thumbnails":\[([\s\S]*?)\]\}',httpx.get(info_dict["author_url"],headers=headers).content.decode("unicode_escape"))[-1])["url"]})
 
 
 async def songsearch(songname):
@@ -156,13 +156,18 @@ async def songsearch(songname):
 
     
 
-   
+def search(query):
+    print(query)
+    x = asyncio.run(songsearch(query))
+    print(x)
+    return x
+    
 
-x = time.time()
+# x = time.time()
 # print(songsearch(input("enter song name: ")))
-asyncio.run(songsearch("hello"))
+# asyncio.run(songsearch("hello"))
 # print(suggestiondict)
-print(time.time()-x)
+# print(time.time()-x)
 # print(suggestiondict)
 # author =  httpx.get("https://www.youtube.com/channel/UClmXPfaYhXOYsNn_QUyheWQ",headers=headers).content.decode("unicode_escape")
 # with open("authorscrapped.html","r",encoding="utf-8") as nf:
