@@ -153,14 +153,32 @@ async def songsearch(songname):
                     await asyncio.gather(get_info(song1,song_artist=True),get_info(song2,song_artist=True),get_info(song3))
                     # await asyncio.gather(get_author(suggestiondict["songs"][0]["author_url"]),get_author(suggestiondict["songs"][1]["author_url"],song_num=1))
                 return suggestiondict
-
+current_task=None
+async def main(query):
+    # task = asyncio.create_task(songsearch(query))
+    # await songsearch(query)
+    # if task.done():
+    #     return task.result()
+    global current_task
     
-
+    # Cancel the ongoing task if it exists
+    if current_task and not current_task.done():
+        current_task.cancel()
+    
+    # Create a new task for the current query
+    current_task = asyncio.create_task(songsearch(query))
+    try:
+        await current_task
+    except (asyncio.CancelledError,IndexError):
+        pass
 def search(query):
-    print(query)
-    x = asyncio.run(songsearch(query))
-    print(x)
-    return x
+    suggestiondict["songs"].clear()
+    suggestiondict["artists"].clear()
+    # print(query)
+    x = asyncio.run(main(query))
+    # print(suggestiondict)
+    
+    return suggestiondict
     
 
 # x = time.time()

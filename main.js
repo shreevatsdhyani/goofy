@@ -153,12 +153,18 @@ function search(query) {
         })
         .then(data => {
             console.log(data);
-            document.getElementById("songname1").innerHTML = data["card"]["title"];
+            try {
+                document.getElementById("songname1").innerHTML = data["card"]["title"];
+                document.getElementById("pic1").src = data["card"]["thumbnail_url"];
+            } catch (TypeError) {
+                
+            }
+            
             document.getElementById("songname2").innerHTML = data["songs"][0]["title"];
             document.getElementById("songname3").innerHTML = data["songs"][1]["title"];
             document.getElementById("songname4").innerHTML = data["songs"][2]["title"];
             document.getElementById("songname5").innerHTML = data["artists"][0]["author_name"];
-            document.getElementById("pic1").src = data["card"]["thumbnail_url"];
+            
             document.getElementById("pic2").src = data["songs"][0]["thumbnail_url"];
             document.getElementById("pic3").src = data["songs"][1]["thumbnail_url"];
             document.getElementById("pic4").src = data["songs"][2]["thumbnail_url"];
