@@ -165,6 +165,23 @@
                         
                     </div>
                 </div>
+                <div class="flex-col poppins-regular mt-10 pl-4 ">
+                    <div class="text-white flex w-full text-[30px]">
+                        <div class="hover:underline hover:cursor-pointer">Top Artists</div>
+                        <div id="scrollnavbtn" class="flex pl-[800px]">
+                            <button onclick="horizontalscroll(true)">
+                                <div class="m-1"><img src="assets/larrow.svg" alt=""></div>
+                            </button>
+                            <button onclick="horizontalscroll(false)">
+                                <div class="m-1"><img src="assets/rarrow.svg" alt=""></div>
+                            </button>
+                        </div>
+                    </div>
+                    <div id="artistscrolldiv"
+                        class="scrollbar overflow-hidden hover:overflow-x-scroll h-64  w-[1040px] pt-4 grid grid-flow-col auto-colls-max gap-4 scroll-smooth">
+                
+                    </div>
+                </div>
             </div>
 
         </div>
