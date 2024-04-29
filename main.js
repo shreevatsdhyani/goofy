@@ -1,5 +1,7 @@
 let expanded = true;
 let isplaying = false;
+let isvolmax = false;
+let islyrics = false;
 
 function lnav() {
     const navelements = ["home", "explore", "library", "likedsongs", "addartists", "newplaylist", "hrnav", "profile"];
@@ -117,6 +119,32 @@ function playpause() {
         playbtn.src = "assets/pause.svg";
         playbtn.setAttribute("title", "Pause");
         isplaying = true;
+    }
+}
+function volbtn() {
+    const volbtn = document.getElementById("volbtn");
+    if (isvolmax) {
+        volbtn.src = "assets/volmax.svg";
+        volbtn.setAttribute("title", "Unmute");
+        isvolmax = false;
+    }
+    else {
+        volbtn.src = "assets/volmute.svg";
+        volbtn.setAttribute("title", "Mute");
+        isvolmax = true;
+    }
+}
+function lyricsbtn() {
+    const lyricsbtn = document.getElementById("lyricsbtn");
+    if (islyrics) {
+        lyricsbtn.src = "assets/lyrics.svg";
+        lyricsbtn.setAttribute("title", "Lyrics");
+        islyrics = false;
+    }
+    else {
+        lyricsbtn.src = "assets/lyricsoff.svg";
+        lyricsbtn.setAttribute("title", "Lyrics off");
+        islyrics = true;
     }
 }
 function changerepeat() {

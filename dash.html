@@ -37,7 +37,7 @@
                         <div id="library" class="text-center pt-0.5">Library</div>
                     </div>
                     <div id="likedsongsbox" class=" hover:bg-gray-700">
-                        <div title="Liked songs"><img id="likedsongsimg" src="assets/likedsong1.svg" alt=""></div>
+                        <div title="Liked songs"><img id="likedsongsimg" src="assets/likedsong2.svg" alt=""></div>
                         <div id="likedsongs" class="text-center pt-0.5">Liked Songs</div>
                     </div>
                 </div>
@@ -165,7 +165,7 @@
                 </div>
             </div>
         </div>
-        <div id="player" class="bottom-0 fixed h-[75px] w-full bg-red-700">
+        <div id="player" class="bottom-0 fixed h-[75px] w-full bg-[#F5F5DC]">
             <div class="flex space-x-10 m-3">
                 <div class="flex space-x-5 border">
                     <div class="border">
@@ -182,21 +182,31 @@
                 </div>
                 <div>
                     <div class="h-[30px] flex space-x-10 border pl-[100px]">
-                        <div class="pt-[5px]">
-                            <img src="assets/shuffle.svg" alt="">
-                        </div>    
-                        <div class="pt-[5px]">
-                            <img src="assets/playprev.svg" alt="">
-                        </div>
-                        <div>
-                            <img src="assets/play.svg" alt="">
-                        </div>
-                        <div class="pt-[5px]">
-                            <img src="assets/playnext.svg" alt="">
-                        </div>
-                        <div class="pt-[5px]">
-                            <img src="assets/repeatoff.svg" alt="">
-                        </div>
+                        <button>
+                            <div class="pt-[5px]">
+                                <img src="assets/shuffle.svg" alt="">
+                            </div>    
+                        </button>
+                        <button>
+                            <div class="pt-[5px]">
+                                <img src="assets/playprev.svg" alt="">
+                            </div>   
+                        </button>
+                        <button onclick="playpause()">
+                            <div>
+                                <img id="playpause" src="assets/play.svg" alt="">
+                            </div>    
+                        </button>
+                        <button>
+                            <div class="pt-[5px]">
+                                <img src="assets/playnext.svg" alt="">
+                            </div>    
+                        </button>
+                        <button onclick="changerepeat()">
+                            <div class="pt-[5px]">
+                                <img id="repeatingbtn" src="assets/repeatoff.svg" alt="">
+                            </div>    
+                        </button>    
                     </div>
                     <div class="h-[25px] flex space-x-5 border">
                         <div class="border font-bold">
@@ -212,16 +222,22 @@
                 </div>
                 <div class="pl-[200px]">
                     <div class="border flex space-x-5 h-[55px] items-center">
-                        <div>
-                            <img src="assets/lyrics.svg" alt="">
-                        </div>
-                        <div>
-                            <img src="assets/playerlikesong.svg" alt="">
-                        </div>
-                        <div class="flex space-x-3">
+                        <button onclick="lyricsbtn()">
                             <div>
-                                <img src="assets/volmax.svg" alt="">
+                                <img id="lyricsbtn" src="assets/lyrics.svg" alt="">
                             </div>
+                        </button>
+                        <button>
+                            <div>
+                                <img src="assets/playerlikesong.svg" alt="">
+                            </div>
+                        </button>
+                        <div class="flex space-x-3">
+                            <button onclick="volbtn()">
+                                <div class="w-[30px]">
+                                    <img id="volbtn" src="assets/volmax.svg" alt="">
+                                </div>
+                            </button>
                             <div>
                                 <input type="range" min="1" max="100" class="slider w-[100px]" value="-1">
                             </div>
