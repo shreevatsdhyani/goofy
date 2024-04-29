@@ -7,12 +7,14 @@ let playerprogress = document.getElementById("playerprogress");
 let song = document.getElementById("song");
 let controllingicon = document.getElementById("playpause");
 
-song.onloadeddata = function(){
-    playerprogress.max = song.duration;
-    playerprogress.value = song.currentTime;
-    console.log(playerprogress.max);
-    console.log(playerprogress.value);
-}
+playerprogress.max = song.duration;
+// playerprogress.value = song.currentTime;
+// song.onloadeddata = function(){
+//     playerprogress.max = song.duration;
+//     playerprogress.value = song.currentTime;
+//     console.log(playerprogress.max);
+//     console.log(playerprogress.value);
+// }
 
 
 function lnav() {
