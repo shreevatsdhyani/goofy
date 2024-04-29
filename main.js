@@ -1,6 +1,5 @@
 let expanded = true;
 let isplaying = false;
-let isvolmax = false;
 let islyrics = false;
 
 function lnav() {
@@ -122,18 +121,22 @@ function playpause() {
     }
 }
 function volbtn() {
+    const volume_slider = document.getElementById("volumeslider");
     const volbtn = document.getElementById("volbtn");
-    if (isvolmax) {
+    if (volume_slider.value=="0") {
         volbtn.src = "assets/volmax.svg";
         volbtn.setAttribute("title", "Unmute");
+        volume_slider.value = "100";
         isvolmax = false;
     }
     else {
         volbtn.src = "assets/volmute.svg";
         volbtn.setAttribute("title", "Mute");
+       volume_slider.value = "0";
         isvolmax = true;
     }
 }
+
 function lyricsbtn() {
     const lyricsbtn = document.getElementById("lyricsbtn");
     if (islyrics) {
@@ -223,3 +226,23 @@ document.getElementById("likedsongsbox").addEventListener("mouseleave", () => {
 });
 heading1material();
 createribbon();
+document.getElementById("volumeslider").addEventListener("input",()=>
+{
+    const volslider = document.getElementById("volumeslider");
+    const volbtn = document.getElementById("volbtn");
+    const slidervalue = parseInt(volslider.value);
+    if (slidervalue<=0) {
+        volbtn.src= "assets/volmute.svg";
+    }
+    else if(slidervalue<33 && slidervalue>0){
+        volbtn.src= "assets/volmin.svg";
+    }
+    else if(slidervalue>33 && slidervalue<66)
+    {
+        volbtn.src= "assets/volmid.svg";
+    }
+    else
+    {
+        volbtn.src= "assets/volmax.svg";
+    }
+})
