@@ -3,6 +3,19 @@ let isplaying = false;
 let isvolmax = false;
 let islyrics = false;
 
+// working player
+let playerprogress = document.getElementById("playerprogress");
+let song = document.getElementById("song");
+let controllingicon = document.getElementById("playpause");
+
+song.onloadeddata = function(){
+    playerprogress.max = song.duration;
+    playerprogress.value = song.currentTime;
+    console.log(playerprogress.max);
+    console.log(playerprogress.value);
+}
+
+
 function lnav() {
     const navelements = ["home", "explore", "library", "likedsongs", "addartists", "newplaylist", "hrnav", "profile"];
     if (expanded) {
@@ -108,19 +121,37 @@ function horizontalscroll(left) {
     }
 
 }
+
+// regulates the working of the song
 function playpause() {
     const playbtn = document.getElementById("playpause");
     if (isplaying) {
         playbtn.src = "assets/play.svg";
         playbtn.setAttribute("title", "Play");
         isplaying = false;
+        song.pause();
     }
     else {
         playbtn.src = "assets/pause.svg";
         playbtn.setAttribute("title", "Pause");
         isplaying = true;
+        song.play();
     }
 }
+
+if(song.play()){
+    setInterval(() => {
+        playerprogress.value = song.currentTime;
+    }, 1000);
+}
+
+playerprogress.onchange = function(){
+    song.play();
+    song.currentTime = playerprogress.value;
+    isplaying = true;
+    document.getElementById("playpause").src="assets/pause.svg";
+}
+
 function volbtn() {
     const volbtn = document.getElementById("volbtn");
     if (isvolmax) {
@@ -203,6 +234,7 @@ function search(query) {
             console.error('Error fetching search results:', error);
         });
 }
+
 
 
 // Example usage: call the search function with a query
