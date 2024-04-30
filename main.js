@@ -1,13 +1,14 @@
 let expanded = true;
 let isplaying = false;
 let islyrics = false;
-
+let repeat = 0;
 // working player
-let playerprogress = document.getElementById("playerprogress");
-let song = document.getElementById("song");
-let controllingicon = document.getElementById("playpause");
+const playerprogress = document.getElementById("playerprogress");
+const song = document.getElementById("song");
+const controllingicon = document.getElementById("playpause");
 
 playerprogress.max = song.duration;
+document.getElementById("song_duration").innerText = `${Math.floor(song.duration/60)}:${Math.floor(song.duration%60)}`
 // playerprogress.value = song.currentTime;
 // song.onloadeddata = function(){
 //     playerprogress.max = song.duration;
@@ -131,6 +132,7 @@ function playpause() {
         playbtn.setAttribute("title", "Play");
         isplaying = false;
         song.pause();
+        
     }
     else {
         playbtn.src = "assets/pause.svg";
@@ -140,34 +142,28 @@ function playpause() {
     }
 }
 
-if(song.play()){
-    setInterval(() => {
-        playerprogress.value = song.currentTime;
-    }, 1000);
-}
 
-playerprogress.onchange = function(){
-    song.play();
-    song.currentTime = playerprogress.value;
-    isplaying = true;
-    document.getElementById("playpause").src="assets/pause.svg";
-}
+
 
 function volbtn() {
     const volume_slider = document.getElementById("volumeslider");
     const volbtn = document.getElementById("volbtn");
+    
     if (volume_slider.value=="0") {
         volbtn.src = "assets/volmax.svg";
         volbtn.setAttribute("title", "Unmute");
         volume_slider.value = "100";
-        isvolmax = false;
+        // song.muted = false;
+        // isvolmax = false;
     }
     else {
         volbtn.src = "assets/volmute.svg";
         volbtn.setAttribute("title", "Mute");
-       volume_slider.value = "0";
-        isvolmax = true;
+        volume_slider.value = "0";
+        // isvolmax = true;
+        // song.muted = true;
     }
+    song.volume = parseInt(volume_slider.value/100);
 }
 
 function lyricsbtn() {
@@ -186,18 +182,22 @@ function lyricsbtn() {
 function changerepeat() {
     const repeatelements = ["assets/repeatoff.svg", "assets/repeatone.svg", "assets/repeat.svg"];
     const repbtn = document.getElementById("repeatingbtn");
-    if (repbtn.getAttribute("src").includes(repeatelements[0])) {
+    if (repeat==0) {
         repbtn.setAttribute("src", repeatelements[1]);
         repbtn.setAttribute("title", "Repeat one");
-
+        repeat = 1;
+        // song.loop = true;
     }
-    else if (repbtn.getAttribute("src").includes(repeatelements[1])) {
+    else if (repeat==1) {
         repbtn.setAttribute("src", repeatelements[2]);
         repbtn.setAttribute("title", "Repeat all");
+        repeat = 2;
     }
     else {
         repbtn.setAttribute("src", repeatelements[0]);
         repbtn.setAttribute("title", "Repeat off");
+        repeat =0;
+        // song.loop = false;
     }
 
 }
@@ -260,6 +260,8 @@ document.getElementById("likedsongsbox").addEventListener("mouseleave", () => {
 });
 heading1material();
 createribbon();
+
+
 document.getElementById("volumeslider").addEventListener("input",()=>
 {
     const volslider = document.getElementById("volumeslider");
@@ -268,7 +270,7 @@ document.getElementById("volumeslider").addEventListener("input",()=>
     if (slidervalue<=0) {
         volbtn.src= "assets/volmute.svg";
     }
-    else if(slidervalue<33 && slidervalue>0){
+    else if(slidervalue<=33 && slidervalue>0){
         volbtn.src= "assets/volmin.svg";
     }
     else if(slidervalue>33 && slidervalue<66)
@@ -279,4 +281,59 @@ document.getElementById("volumeslider").addEventListener("input",()=>
     {
         volbtn.src= "assets/volmax.svg";
     }
+    song.volume = slidervalue/100;
 })
+
+setInterval(() => {
+    const min = Math.floor(song.currentTime/60);
+    const sec = Math.floor(song.currentTime%60) < 10 ? "0" + Math.floor(song.currentTime%60):Math.floor(song.currentTime%60);
+    playerprogress.value = song.currentTime;
+    
+    document.getElementById("song_progress").innerText = `${min}:${sec}`;
+    if (song.ended) {
+        const playbtn = document.getElementById("playpause");
+        playbtn.src = "assets/play.svg";
+        playbtn.setAttribute("title", "Play");
+        isplaying = false;
+        if (repeat==1 || repeat==2) {
+            // playpause();
+            song.currentTime=0;
+            playpause();
+
+        }
+    }
+    // if (repeat==1) {
+    //     // song.currentTime=0;
+    //     song.loop();
+    // }
+    // if (song.ended) {
+    //     // isplaying=false;
+    //     console.log("hello");
+    //     playpause();
+    //     if (repeat==1) {
+    //         console.log("ddvfsd");
+    //         song.currentTime=0;
+    //         // song.loop();
+    //     }
+    // }
+}, 1000);
+
+
+
+// playerprogress.onchange = function(){
+//     song.currentTime = playerprogress.value;
+//     document.getElementById("song_progress").innerText = song.currentTime;
+//     const min = Math.floor(song.currentTime/60);
+//     const sec = Math.floor(song.currentTime%60) < 10 ? "0" + Math.floor(song.currentTime%60):Math.floor(song.currentTime%60);
+//     document.getElementById("song_progress").innerText = `${min}:${sec}`;
+// }
+
+playerprogress.addEventListener("input",()=>
+{
+    song.currentTime = playerprogress.value;
+    document.getElementById("song_progress").innerText = song.currentTime;
+    const min = Math.floor(song.currentTime/60);
+    const sec = Math.floor(song.currentTime%60) < 10 ? "0" + Math.floor(song.currentTime%60):Math.floor(song.currentTime%60);
+    document.getElementById("song_progress").innerText = `${min}:${sec}`;
+    
+});
