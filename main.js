@@ -284,7 +284,7 @@ document.getElementById("volumeslider").addEventListener("input",()=>
     song.volume = slidervalue/100;
 })
 
-setInterval(() => {
+function sliderTools() {
     const min = Math.floor(song.currentTime/60);
     const sec = Math.floor(song.currentTime%60) < 10 ? "0" + Math.floor(song.currentTime%60):Math.floor(song.currentTime%60);
     playerprogress.value = song.currentTime;
@@ -302,31 +302,15 @@ setInterval(() => {
 
         }
     }
-    // if (repeat==1) {
-    //     // song.currentTime=0;
-    //     song.loop();
-    // }
-    // if (song.ended) {
-    //     // isplaying=false;
-    //     console.log("hello");
-    //     playpause();
-    //     if (repeat==1) {
-    //         console.log("ddvfsd");
-    //         song.currentTime=0;
-    //         // song.loop();
-    //     }
-    // }
+}
+
+setInterval(() => {
+    
+    sliderTools();
 }, 1000);
 
 
 
-// playerprogress.onchange = function(){
-//     song.currentTime = playerprogress.value;
-//     document.getElementById("song_progress").innerText = song.currentTime;
-//     const min = Math.floor(song.currentTime/60);
-//     const sec = Math.floor(song.currentTime%60) < 10 ? "0" + Math.floor(song.currentTime%60):Math.floor(song.currentTime%60);
-//     document.getElementById("song_progress").innerText = `${min}:${sec}`;
-// }
 
 playerprogress.addEventListener("input",()=>
 {
@@ -335,5 +319,32 @@ playerprogress.addEventListener("input",()=>
     const min = Math.floor(song.currentTime/60);
     const sec = Math.floor(song.currentTime%60) < 10 ? "0" + Math.floor(song.currentTime%60):Math.floor(song.currentTime%60);
     document.getElementById("song_progress").innerText = `${min}:${sec}`;
+    
+});
+
+document.addEventListener("keydown",function(event)
+{
+    if (event.key == " " && document.activeElement!=document.getElementById("searchcontent")) {
+        event.preventDefault();
+        playpause();
+    }
+    else if (event.key == "m" && document.activeElement!=document.getElementById("searchcontent")) {
+        event.preventDefault();
+        volbtn();
+    }
+    else if (event.key == "ArrowRight" && document.activeElement!=document.getElementById("searchcontent")) {
+
+        event.preventDefault();
+        // if (document.activeElement==document.getElementById("volumeslider")) {
+        //     document.getElementById("volumeslider").value 
+        // }
+        song.currentTime+=5;
+        sliderTools();
+    }
+    else if (event.key == "ArrowLeft" && document.activeElement!=document.getElementById("searchcontent")) {
+        event.preventDefault();
+        song.currentTime-=5;
+        sliderTools();
+    }
     
 });
