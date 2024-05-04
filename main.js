@@ -7,15 +7,13 @@ const playerprogress = document.getElementById("playerprogress");
 const song = document.getElementById("song");
 const controllingicon = document.getElementById("playpause");
 
-playerprogress.max = song.duration;
+song.addEventListener("loadeddata",()=>
+{
+    playerprogress.max = Math.floor(song.duration);
+});
+playerprogress.max = Math.floor(song.duration);
 document.getElementById("song_duration").innerText = `${Math.floor(song.duration/60)}:${Math.floor(song.duration%60)}`
-// playerprogress.value = song.currentTime;
-// song.onloadeddata = function(){
-//     playerprogress.max = song.duration;
-//     playerprogress.value = song.currentTime;
-//     console.log(playerprogress.max);
-//     console.log(playerprogress.value);
-// }
+
 
 
 function lnav() {
@@ -279,8 +277,10 @@ function sliderTools() {
     
 //     sliderTools();
 // }, 1000);
+if (song.readyState) {
+    setInterval(sliderTools,1000);
+}
 
-setInterval(sliderTools,1000);
 
 
 playerprogress.addEventListener("input",()=>
