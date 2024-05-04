@@ -2,7 +2,6 @@ function moodandgenres() {
     const moods = ["Romantic","Melancholic","Happy","Energetic","Peaceful","Spiritual","Patriotic","Festive","Rainy Day","Wedding","Workout","Meditation","Travel","Chill","Motivational","Party","Soulful","Retro","Urban","Rural","Nostalgic","Contemporary","Experimental","Unwind","Love","Dance","Lounge","Study"];
     const mandg = document.getElementById("mandg");
     const parser = new DOMParser();
-    console.log(mandg);
     moods.forEach(ele =>{
         mandg.appendChild(parser.parseFromString(`<div class="hover:bg-[#111827]">
         <button class="mandg">
