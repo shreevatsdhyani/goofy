@@ -48,6 +48,13 @@ function heading2material() {
     }
 }
 
+document.getElementById("explorebox").addEventListener("mouseenter", () => {
+    document.getElementById("exploreimg").classList.add("animate-spin");
+});
+document.getElementById("explorebox").addEventListener("mouseleave", () => {
+    document.getElementById("exploreimg").classList.remove("animate-spin");
+});
+
 heading1material();
 moodandgenres();
 heading2material();
