@@ -2,6 +2,7 @@ let expanded = true;
 let isplaying = false;
 let islyrics = false;
 let repeat = 0;
+let volume = "100";
 // working player
 const playerprogress = document.getElementById("playerprogress");
 const song = document.getElementById("song");
@@ -10,9 +11,10 @@ const controllingicon = document.getElementById("playpause");
 song.addEventListener("loadeddata",()=>
 {
     playerprogress.max = Math.floor(song.duration);
+    document.getElementById("song_duration").innerText = `${Math.floor(song.duration/60)}:${Math.floor(song.duration%60)}`;
 });
-playerprogress.max = Math.floor(song.duration);
-document.getElementById("song_duration").innerText = `${Math.floor(song.duration/60)}:${Math.floor(song.duration%60)}`
+
+
 
 
 
@@ -119,18 +121,15 @@ function volbtn() {
     const volbtn = document.getElementById("volbtn");
     
     if (volume_slider.value=="0") {
-        volbtn.src = "assets/volmax.svg";
-        volbtn.setAttribute("title", "Unmute");
-        volume_slider.value = "100";
-        // song.muted = false;
-        // isvolmax = false;
+        volume_slider.value = volume;
+        volumeManage();
     }
     else {
+        volume = volume_slider.value;
         volbtn.src = "assets/volmute.svg";
         volbtn.setAttribute("title", "Mute");
         volume_slider.value = "0";
-        // isvolmax = true;
-        // song.muted = true;
+        volumeManage();
     }
     song.volume = parseInt(volume_slider.value/100);
 }
@@ -236,6 +235,7 @@ function volumeManage() {
     const slidervalue = parseInt(volslider.value);
     if (slidervalue<=0) {
         volbtn.src= "assets/volmute.svg";
+        volbtn.setAttribute("title", "Unmute");
     }
     else if(slidervalue<=33 && slidervalue>0){
         volbtn.src= "assets/volmin.svg";
@@ -299,7 +299,7 @@ document.addEventListener("keydown",function(event)
         event.preventDefault();
         playpause();
     }
-    else if (event.key == "m" && document.activeElement!=document.getElementById("searchcontent")) {
+    else if ((event.key == "m" || event.key=="M") && document.activeElement!=document.getElementById("searchcontent")) {
         event.preventDefault();
         volbtn();
     }
