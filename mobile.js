@@ -1,8 +1,9 @@
-let expanded = true;
+let expanded = false;
 function lnav() {
-    const navelements = ["home", "explore", "library", "likedsongs", "addartists", "newplaylist",  "profile"];
+    const navelements = ["leftnav","home", "explore", "library", "likedsongs", "addartists", "newplaylist",  "profile"];
     if (expanded) {
-        document.getElementById("rightside").classList.remove("blur-sm");
+        document.getElementById("allelements").classList.remove("blur-sm");
+        document.getElementById("searchbox").classList.remove("blur-sm");
         document.getElementById("leftnav").classList.replace("w-[50%]", "w-[17%]");
         document.getElementById("leftnav").classList.remove("bg-[#0e0e0a]");
         // document.getElementById("parentscrolldiv").classList.replace("w-[1040px]", "w-[1216px]");
@@ -23,7 +24,8 @@ function lnav() {
         expanded = false;
     }
     else {
-        document.getElementById("rightside").classList.add("blur-sm");
+        document.getElementById("allelements").classList.add("blur-sm");
+        document.getElementById("searchbox").classList.add("blur-sm");
         document.getElementById("leftnav").classList.replace("w-[17%]", "w-[50%]");
         document.getElementById("leftnav").classList.add("bg-[#0e0e0a]");
         // document.getElementById("parentscrolldiv").classList.replace("w-[1216px]", "w-[1040px]");
@@ -45,3 +47,45 @@ function lnav() {
         expanded = true;
     }
 }
+
+
+function crossappear() {
+    if (document.getElementById("searchcontent").value != "") {
+        document.getElementById("clearcross").classList.remove("hidden");
+        document.getElementById("searchbox").classList.replace("h-10", "h-[230px]");
+        document.getElementById("searchbox").classList.replace("bg-[#68686638]", "bg-gray-800");
+        document.getElementById("searchhr").classList.remove("hidden");
+        document.getElementById("searchsuggestions").classList.remove("hidden");
+        document.getElementById("searchsuggestions").classList.replace("*:bg-[#40714494]", "bg-gray-800");
+
+
+    } else {
+        document.getElementById("clearcross").classList.add("hidden");
+        document.getElementById("searchbox").classList.replace("h-[230px]", "h-10");
+        document.getElementById("searchbox").classList.replace("bg-gray-800", "bg-[#68686638]");
+        document.getElementById("searchhr").classList.add("hidden");
+        document.getElementById("searchsuggestions").classList.add("hidden");
+        document.getElementById("searchsuggestions").classList.replace("bg-gray-800", "*:bg-[#40714494]");
+    }
+    setTimeout(search(document.getElementById("searchcontent").value, 5),500);
+}
+
+function clearinput() {
+    document.getElementById("searchcontent").value = "";
+    crossappear();
+}
+
+function createribbon() {
+    const genres = ["Relax", "Romance", "Energize", "Party", "Workout", "Sad", "Focus", "Sleep"];
+    const ribbox = document.getElementById("ribbonbox");
+    const parser = new DOMParser();
+    genres.forEach(ele => {
+        ribbox.appendChild(parser.parseFromString(`<div>
+        <button class="ribbonbuttons">
+            <RB class="p-3">${ele}</RB>
+        </button>
+    </div>`, "text/html").body.firstChild);
+    });
+}
+
+createribbon();
