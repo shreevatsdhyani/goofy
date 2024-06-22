@@ -49,6 +49,32 @@ function lnav() {
 }
 
 
+function crossappear() {
+    if (document.getElementById("searchcontent").value != "") {
+        document.getElementById("clearcross").classList.remove("hidden");
+        document.getElementById("searchbox").classList.replace("h-10", "h-[230px]");
+        document.getElementById("searchbox").classList.replace("bg-[#68686638]", "bg-gray-800");
+        document.getElementById("searchhr").classList.remove("hidden");
+        document.getElementById("searchsuggestions").classList.remove("hidden");
+        document.getElementById("searchsuggestions").classList.replace("*:bg-[#40714494]", "bg-gray-800");
+
+
+    } else {
+        document.getElementById("clearcross").classList.add("hidden");
+        document.getElementById("searchbox").classList.replace("h-[230px]", "h-10");
+        document.getElementById("searchbox").classList.replace("bg-gray-800", "bg-[#68686638]");
+        document.getElementById("searchhr").classList.add("hidden");
+        document.getElementById("searchsuggestions").classList.add("hidden");
+        document.getElementById("searchsuggestions").classList.replace("bg-gray-800", "*:bg-[#40714494]");
+    }
+    setTimeout(search(document.getElementById("searchcontent").value, 5),500);
+}
+
+function clearinput() {
+    document.getElementById("searchcontent").value = "";
+    crossappear();
+}
+
 function createribbon() {
     const genres = ["Relax", "Romance", "Energize", "Party", "Workout", "Sad", "Focus", "Sleep"];
     const ribbox = document.getElementById("ribbonbox");

@@ -13,7 +13,7 @@
     <div
         class="flex flex-col w-full bg-gradient-to-br from-gray-900 from-5% via-gray-800 via-10% to-lime-300 to-80% h-[3000px]">
         <div id="leftnav"
-            class="hidden pt-24 w-[50%] h-full fixed z-10 bg-gray-900 bg-opacity-5 border-r-[1px] border-gray-500">
+            class="hidden pt-24 w-[50%] max-w-[240px] h-full fixed z-10 bg-gray-900  border-r-[1px] border-gray-500">
             <div class="flex-col space-y-5 poppins-regular text-white">
 
                 <div id="hel" class=" *:flex *:space-x-7 *:rounded-md *:items-center *:h-12 *:w-[90%] *:ml-3 *:pl-2">
@@ -55,18 +55,18 @@
             </div>
 
         </div>
-        <div id="topbar" class="flex ml-3 mt-5 fixed z-20 space-x-[20%]">
+        <div id="topbar" class="flex ml-3 mt-5 fixed z-20 ">
             <div class="flex hover:bg-[#68686638] h-10 w-10 justify-center rounded-2xl mt-1">
                 <button onclick="lnav()">
                     <img src="assets/hamburger.svg" alt="">
                 </button>
             </div>
-            <div id="searchbox" class="flex-col fixed w-[70%] h-12 poppins-regular bg-[#68686638] rounded-lg ml-4">
-                <div class="flex">
+            <div id="searchbox" class="flex-col fixed w-[70%] max-w-[450px] h-12 poppins-regular bg-[#68686638] rounded-lg ml-20">
+                <div class="flex w-full">
                     <div class="pt-3 px-2 ">
                         <img src="assets/Search.svg" alt="">
                     </div>
-                    <div class="p-1">
+                    <div class="p-1 w-full">
                         <input id="searchcontent" type="text" id="" placeholder="Search songs, albums, artists"
                             class=" bg-transparent text-white h-[40px] w-full p-1 outline-none" autocomplete="off">
                     </div>
@@ -153,7 +153,7 @@
 
         <div id="allelements" class="pt-8">
             <div id="ribbonbox"
-                class="grid grid-flow-col auto-cols-auto poppins-regular mt-20 scrollbar overflow-hidden overflow-x-scroll scroll-smooth w-[90%] ml-[3%]">
+                class="grid grid-flow-col auto-cols-auto poppins-regular mt-20 scrollbar overflow-hidden overflow-x-scroll scroll-smooth w-[90%] max-w-[800px] ml-[3%]">
 
             </div>
         </div>
