@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title>
+    <title>My Likes</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -33,7 +33,7 @@
                         <div id="likedsongs" class="text-center pt-0.5">My Likes</div>
                     </button>
                 </div>
-                
+    
                 <hr id="hrnav" class="mx-5">
                 <div id="newplaylist" class=" h-[50px] flex rounded-[10px] hover:bg-gray-700 w-48 ml-3">
                     <div class="p-3"><img src="assets/plus.svg" alt=""></div>
@@ -43,7 +43,8 @@
                     <div class="p-3"><img src="assets/plus.svg" alt=""></div>
                     <div class="text-white p-3">Add Artists</div>
                 </div>
-                <button id="profilebox" class="flex mb-auto rounded-[10px] hover:bg-gray-700 h-12 w-48 ml-3.5" onclick="location.href = 'profile.html'">
+                <button id="profilebox" class="flex mb-auto rounded-[10px] hover:bg-gray-700 h-12 w-48 ml-3.5"
+                    onclick="location.href = 'profile.html'">
                     <div class="flex pl-2 items-center space-x-5">
                         <div>
                             <img src="assets/profile1.svg" alt="">
@@ -53,11 +54,119 @@
                 </button>
             </div>
         </div>
-        <div id="rightside" class="ml-64">
-            
+        <div id="rightside" class="ml-[240px]"> 
+            <div class="flex absolute mt-4">
+                <div id="searchbox" class="flex-col w-[450px] h-10 poppins-regular bg-[#68686638] rounded-lg ml-10">
+                    <div class="flex">
+                        <div class="pt-2 px-2 ">
+                            <img src="assets/Search.svg" alt="">
+                        </div>
+                        <div>
+                            <input id="searchcontent" type="text" id="" placeholder="Search songs, albums, artists"
+                                class=" bg-transparent text-white w-[350px] h-[40px] p-1 outline-none" autocomplete="off">
+                        </div>
+                        <div id="clearcross" class="pl-5 pt-3 hidden">
+                            <button onclick="clearinput()"><img src="assets/cross.svg" alt=""></button>
+                        </div>
+                    </div>
+                    <hr id="searchhr" class="hidden">
+                    <div id="searchsuggestions" class="hidden *:bg-[#40714494] text-white rounded-b-lg">
+                        <div class="flex my-1">
+                            <div class="p-1 w-[50px] h-[40px]">
+                                <img id="pic1" src="assets/songimg1.svg" alt="">
+                            </div>
+                            <div id="songname1" class="py-2 w-[370px] h-[40px] text-nowrap overflow-x-hidden overflow-clip"
+                                onmouseenter="this.scrollLeft+=this.textContent.length">
+                                songname
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="flex my-1">
+                            <div class="p-1 w-[50px] h-[40px]">
+                                <img id="pic2" src="assets/songimg1.svg" alt="">
+                            </div>
+                            <div id="songname2" class="py-2 w-[370px] h-[40px] text-nowrap overflow-x-hidden overflow-clip"
+                                onmouseenter="this.scrollLeft+=this.textContent.length">
+                                songname
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="flex my-1">
+                            <div class="p-1 w-[50px] h-[40px]">
+                                <img id="pic3" src="assets/songimg1.svg" alt="">
+                            </div>
+                            <div id="songname3" class="py-2 w-[370px] h-[40px] text-nowrap overflow-x-hidden overflow-clip"
+                                onmouseenter="this.scrollLeft+=this.textContent.length">
+                                songname
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="flex my-1">
+                            <div class="p-1 w-[50px] h-[40px]">
+                                <img id="pic4" src="assets/songimg1.svg" alt="">
+                            </div>
+                            <div id="songname4" class="py-2 w-[370px] h-[40px] text-nowrap overflow-x-hidden overflow-clip"
+                                onmouseenter="this.scrollLeft+=this.textContent.length">
+                                songname
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="flex my-1">
+                            <div class="p-1 w-[50px] h-[40px]">
+                                <img id="pic5" src="assets/songimg1.svg" alt="">
+                            </div>
+                            <div id="songname5" class="py-2 w-[370px] h-[40px] text-nowrap overflow-x-hidden overflow-clip"
+                                onmouseenter="this.scrollLeft+=this.textContent.length">
+                                songname
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="flex my-1">
+                            <div class="p-1 w-[50px] h-[40px]">
+                                <img id="pic5" src="assets/songimg1.svg" alt="">
+                            </div>
+                            <div id="songname5" class="py-2 w-[370px] h-[40px] text-nowrap overflow-x-hidden overflow-clip"
+                                onmouseenter="this.scrollLeft+=this.textContent.length">
+                                songname
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="flex my-1">
+                            <div class="p-1 w-[50px] h-[40px]">
+                                <img id="pic5" src="assets/songimg1.svg" alt="">
+                            </div>
+                            <div id="songname5" class="py-2 w-[370px] h-[40px] text-nowrap overflow-x-hidden overflow-clip"
+                                onmouseenter="this.scrollLeft+=this.textContent.length">
+                                songname
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-flow-col gap-10 ml-10 mt-20 ">
+                <div class="bg-[#1f2937] text-start p-3 border hover:bg-[#111827] text-white rounded-lg w-52">
+                    Songs
+                </div>
+                <div class="bg-[#1f2937] text-start p-3 border hover:bg-[#111827] text-white rounded-lg w-52">
+                    Albums
+                </div>
+                <div class="bg-[#1f2937] text-start p-3 border hover:bg-[#111827] text-white rounded-lg w-52">
+                    Artists
+                </div>
+                <div class="bg-[#1f2937] text-start p-3 border hover:bg-[#111827] text-white rounded-lg w-52">
+                    Playlists
+                </div>
+            </div>
+            <div>
+                <!-- yha pe 2 chize mix krni padengi -->
+            </div>
+
         </div>
     </div>
     <script src="main.js"></script>
+<<<<<<< Updated upstream
     <!-- <script src=""></script> -->
+=======
+>>>>>>> Stashed changes
 </body>
 </html>
