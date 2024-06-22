@@ -1,8 +1,9 @@
-let expanded = true;
+let expanded = false;
 function lnav() {
-    const navelements = ["home", "explore", "library", "likedsongs", "addartists", "newplaylist",  "profile"];
+    const navelements = ["leftnav","home", "explore", "library", "likedsongs", "addartists", "newplaylist",  "profile"];
     if (expanded) {
-        document.getElementById("rightside").classList.remove("blur-sm");
+        document.getElementById("allelements").classList.remove("blur-sm");
+        document.getElementById("searchbox").classList.remove("blur-sm");
         document.getElementById("leftnav").classList.replace("w-[50%]", "w-[17%]");
         document.getElementById("leftnav").classList.remove("bg-[#0e0e0a]");
         // document.getElementById("parentscrolldiv").classList.replace("w-[1040px]", "w-[1216px]");
@@ -23,7 +24,8 @@ function lnav() {
         expanded = false;
     }
     else {
-        document.getElementById("rightside").classList.add("blur-sm");
+        document.getElementById("allelements").classList.add("blur-sm");
+        document.getElementById("searchbox").classList.add("blur-sm");
         document.getElementById("leftnav").classList.replace("w-[17%]", "w-[50%]");
         document.getElementById("leftnav").classList.add("bg-[#0e0e0a]");
         // document.getElementById("parentscrolldiv").classList.replace("w-[1216px]", "w-[1040px]");
@@ -45,3 +47,19 @@ function lnav() {
         expanded = true;
     }
 }
+
+
+function createribbon() {
+    const genres = ["Relax", "Romance", "Energize", "Party", "Workout", "Sad", "Focus", "Sleep"];
+    const ribbox = document.getElementById("ribbonbox");
+    const parser = new DOMParser();
+    genres.forEach(ele => {
+        ribbox.appendChild(parser.parseFromString(`<div>
+        <button class="ribbonbuttons">
+            <RB class="p-3">${ele}</RB>
+        </button>
+    </div>`, "text/html").body.firstChild);
+    });
+}
+
+createribbon();

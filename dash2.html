@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body id="dashboard-body">
+    <!-- <div class="flex w-full h-full [background:linear-gradient(180deg,#faff00,#0e0e0a_37.25%)]"> -->
+    <div class="flex w-full bg-gradient-to-br from-gray-900 from-5% via-gray-800 via-10% to-lime-300 to-80% h-[3000px]">
+        <div id="leftnav" class="w-[240px] h-screen bg-gray-900 bg-opacity-5 fixed border-r-[1px] border-gray-500">
+            <div class="flex-col space-y-5 poppins-regular text-white">
+                <div class="flex ml-3 mt-5 hover:bg-[#68686638] h-10 w-10 justify-center rounded-2xl">
+                    <button onclick="lnav()">
+                        <img src="assets/hamburger.svg" alt="">
+                    </button>
+                </div>
+                <div id="hel" class="*:flex *:space-x-7 *:rounded-md *:items-center *:h-12 *:w-48 *:ml-3 *:pl-2">
+                    <button id="homebox" class="hover:bg-gray-700" onclick="location.href = 'dash.html'">
+                        <div title="Home"><img src="assets/home2.svg" alt=""></div>
+                        <div id="home" class="text-center pt-0.5 ">Home</div>
+                    </button>
+                    <button id="explorebox" class="hover:bg-gray-700" onclick="location.href = 'explore.html'">
+                        <div title="Explore"><img id="exploreimg" src="assets/explore1.svg" alt=""></div>
+                        <div id="explore" class="text-center pt-0.5">Explore</div>
+                    </button>
+                    <button id="librarybox" class=" hover:bg-gray-700" onclick="location.href = 'library.html'">
+                        <div title="Library"><img src="assets/library1.svg" alt=""></div>
+                        <div id="library" class="text-center pt-0.5">Library</div>
+                    </button>
+                    <button id="likedsongsbox" class=" hover:bg-gray-700" onclick="location.href = 'mylikes.html'">
+                        <div title="Liked songs"><img id="likedsongsimg" src="assets/likedsong1.svg" alt=""></div>
+                        <div id="likedsongs" class="text-center pt-0.5">My Likes</div>
+                    </button>
+                </div>
+                
+                <hr id="hrnav" class="mx-5">
+                <div id="newplaylist" class=" h-[50px] flex rounded-[10px] hover:bg-gray-700 w-48 ml-3">
+                    <div class="p-3"><img src="assets/plus.svg" alt=""></div>
+                    <div class="text-white p-3">New Playlist</div>
+                </div>
+                <div id="addartists" class=" h-[50px] flex rounded-[10px] hover:bg-gray-700 w-48 ml-3">
+                    <div class="p-3"><img src="assets/plus.svg" alt=""></div>
+                    <div class="text-white p-3">Add Artists</div>
+                </div>
+                <button id="profilebox" class="flex mb-auto rounded-[10px] hover:bg-gray-700 h-12 w-48 ml-3.5" onclick="location.href = 'profile.html'">
+                    <div class="flex pl-2 items-center space-x-5">
+                        <div>
+                            <img src="assets/profile1.svg" alt="">
+                        </div>
+                        <div id="profile" class="text-center pt-0.5">Profile</div>
+                    </div>
+                </button>
+            </div>
+        </div>
+        <div id="rightside" class="ml-64">
+            <div class="flex absolute mt-4">
+
+                <div id="searchbox" class="flex-col w-[450px] h-10 poppins-regular bg-[#68686638] rounded-lg ml-4">
+                    <div class="flex">
+                        <div class="pt-2 px-2 ">
+                            <img src="assets/Search.svg" alt="">
+                        </div>
+                        <div>
+                            <input id="searchcontent" type="text" id="" placeholder="Search songs, albums, artists"
+                            class=" bg-transparent text-white w-[350px] h-[40px] p-1 outline-none" autocomplete="off">
+                        </div>
+                        <div id="clearcross" class="pl-5 pt-3 hidden">
+                            <button onclick="clearinput()"><img src="assets/cross.svg" alt=""></button>
+                        </div>
+                    </div>
+                    <hr id="searchhr" class="hidden">
+                    <div id="searchsuggestions" class="hidden *:bg-[#40714494] text-white rounded-b-lg">
+                        <div class="flex my-1">
+                            <div class="p-1 w-[50px] h-[40px]">
+                                <img  id="pic1" src="assets/songimg1.svg" alt="">
+                            </div>
+                            <div id="songname1" class="py-2 w-[370px] h-[40px] text-nowrap overflow-x-hidden overflow-clip" onmouseenter="this.scrollLeft+=this.textContent.length">
+                                songname
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="flex my-1">
+                            <div class="p-1 w-[50px] h-[40px]">
+                                <img id="pic2" src="assets/songimg1.svg" alt="">
+                            </div>
+                            <div id="songname2" class="py-2 w-[370px] h-[40px] text-nowrap overflow-x-hidden overflow-clip" onmouseenter="this.scrollLeft+=this.textContent.length">
+                                songname
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="flex my-1">
+                            <div class="p-1 w-[50px] h-[40px]">
+                                <img id="pic3" src="assets/songimg1.svg" alt="">
+                            </div>
+                            <div id="songname3" class="py-2 w-[370px] h-[40px] text-nowrap overflow-x-hidden overflow-clip" onmouseenter="this.scrollLeft+=this.textContent.length">
+                                songname
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="flex my-1">
+                            <div class="p-1 w-[50px] h-[40px]">
+                                <img id="pic4" src="assets/songimg1.svg" alt="">
+                            </div>
+                            <div id="songname4" class="py-2 w-[370px] h-[40px] text-nowrap overflow-x-hidden overflow-clip" onmouseenter="this.scrollLeft+=this.textContent.length">
+                                songname
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="flex my-1">
+                            <div class="p-1 w-[50px] h-[40px]">
+                                <img id="pic5" src="assets/songimg1.svg" alt="">
+                            </div>
+                            <div id="songname5" class="py-2 w-[370px] h-[40px] text-nowrap overflow-x-hidden overflow-clip" onmouseenter="this.scrollLeft+=this.textContent.length">
+                                songname
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="flex my-1">
+                            <div class="p-1 w-[50px] h-[40px]">
+                                <img id="pic5" src="assets/songimg1.svg" alt="">
+                            </div>
+                            <div id="songname5" class="py-2 w-[370px] h-[40px] text-nowrap overflow-x-hidden overflow-clip" onmouseenter="this.scrollLeft+=this.textContent.length">
+                                songname
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="flex my-1">
+                            <div class="p-1 w-[50px] h-[40px]">
+                                <img id="pic5" src="assets/songimg1.svg" alt="">
+                            </div>
+                            <div id="songname5" class="py-2 w-[370px] h-[40px] text-nowrap overflow-x-hidden overflow-clip" onmouseenter="this.scrollLeft+=this.textContent.length">
+                                songname
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="ribbonbox" class="grid grid-flow-col auto-cols-max poppins-regular mt-20">
+                
+            </div>
+            <div class="flex-col poppins-regular mt-10 pl-4 ">
+                <div class="text-white flex w-full text-[30px]">
+                    <div>Heading 1</div>
+                    <div id="scrollnavbtn" class="flex pl-[800px]">
+                        <button onclick="horizontalscroll(true,'parentscrolldiv')">
+                            <div class="m-1"><img src="assets/larrow.svg" alt=""></div>
+                        </button>
+                        <button onclick="horizontalscroll(false,'parentscrolldiv')">
+                            <div class="m-1"><img src="assets/rarrow.svg" alt=""></div>
+                        </button>
+                    </div>
+                </div>
+                <div id="parentscrolldiv"
+                    class="scrollbar overflow-hidden hover:overflow-x-scroll h-64  w-[1040px] pt-4 grid grid-flow-col auto-colls-max gap-4 scroll-smooth">
+            
+                </div>
+                
+            </div>
+        </div>
+        <div id="player" class="bottom-0 fixed h-[75px] w-full bg-[#F5F5DC]">
+            <div class="flex space-x-10 m-3">
+                <div class="flex space-x-5 border">
+                    <div class="border">
+                        <img src="assets/songthumbnail2.svg" alt="">
+                    </div>
+                    <div class="border">
+                        <div class="h-[30px] w-[375px] font-bold border">
+                            Song Name
+                        </div>
+                        <div class="h-[25px] w-[375px] font-semibold border">
+                            Artist Name
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="h-[30px] flex space-x-10 border pl-[100px]">
+                        <button>
+                            <div class="pt-[5px]">
+                                <img src="assets/shuffle.svg" alt="">
+                            </div>    
+                        </button>
+                        <button>
+                            <div class="pt-[5px]">
+                                <img src="assets/playprev.svg" alt="">
+                            </div>   
+                        </button>
+                        <button onclick="playpause()">
+                            <div>
+                                <img id="playpause" src="assets/play.svg" alt="">
+                            </div>    
+                        </button>
+                        <button>
+                            <div class="pt-[5px]">
+                                <img src="assets/playnext.svg" alt="">
+                            </div>    
+                        </button>
+                        <button onclick="changerepeat()">
+                            <div class="pt-[5px]">
+                                <img id="repeatingbtn" src="assets/repeatoff.svg" alt="">
+                            </div>    
+                        </button>    
+                    </div>
+                    <div class="h-[25px] flex space-x-5 border">
+                        <div id="song_progress" class="border font-bold">
+                            0:00
+                        </div>
+                        <div>
+                            <audio id="song" preload="auto">
+                                <source src="media/Naav - Chadhti Lehrein Laang Na Paye [6RLRUNoTHRY].webm" type="audio/mp4">
+                            </audio>
+                            <input id="playerprogress" type="range" min="0" max="100" class="slider w-[400px]" value="0">
+                        </div>
+                        <div id="song_duration" class="border font-bold">
+                            f:ff
+                        </div>
+                    </div>
+                </div>
+                <div class="pl-[200px]">
+                    <div class="border flex space-x-5 h-[55px] items-center">
+                        <button onclick="lyricsbtn()">
+                            <div>
+                                <img id="lyricsbtn" src="assets/lyrics.svg" alt="">
+                            </div>
+                        </button>
+                        <button>
+                            <div>
+                                <img src="assets/playerlikesong.svg" alt="">
+                            </div>
+                        </button>
+                        <div class="flex space-x-3">
+                            <button id = "volumebutton" onclick="volbtn()">
+                                <div class="w-[30px]">
+                                    <img id="volbtn" title="mute" src="assets/volmax.svg" alt="">
+                                </div>
+                            </button>
+                            <div>
+                                <input id="volumeslider" type="range" min="0" max="100" class="slider w-[100px]" value="100">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <script src="main.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+
+</html>
