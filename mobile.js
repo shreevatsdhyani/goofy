@@ -1,5 +1,5 @@
 let expanded = false;
-let search_state = false;
+
 function lnav() {
     const navelements = ["leftnav","home", "explore", "library", "likedsongs", "addartists", "newplaylist",  "profile"];
     if (expanded) {
@@ -69,6 +69,7 @@ function crossappear() {
         document.getElementById("searchhr").classList.add("hidden");
         document.getElementById("searchsuggestions").classList.add("hidden");
         document.getElementById("searchsuggestions").classList.replace("bg-gray-800", "*:bg-[#40714494]");
+        closesearch();
     }
     // setTimeout(search(document.getElementById("searchcontent").value, 5),500);
 }
@@ -87,23 +88,31 @@ function searchboxappear()
     document.getElementById("searchbox").classList.replace("w-[70%]","w-[90%]");
     document.getElementById("searchbox").classList.add("ml-2.5");
     document.getElementById("searchcontent").focus();
-    search_state = true;
-    
 
     
 }
+
 function closesearch() {
-    if(search_state)
-        {
-            document.getElementById("logo").classList.remove("hidden");
-            document.getElementById("ham").classList.remove("hidden");
-            document.getElementById("searchbtn").classList.remove("hidden");
-            document.getElementById("searchbox").classList.add("hidden");
-            document.getElementById("searchbox").classList.replace("w-[90%]","w-[70%]");
-            document.getElementById("searchbox").classList.remove("ml-2.5");
-           search_state=false;
+    document.getElementById("logo").classList.remove("hidden");
+    document.getElementById("ham").classList.remove("hidden");
+    document.getElementById("searchbtn").classList.remove("hidden");
+    document.getElementById("searchbox").classList.add("hidden");
+    document.getElementById("searchbox").classList.replace("w-[90%]","w-[70%]");
+    document.getElementById("searchbox").classList.remove("ml-2.5");
            
+}
+
+function clickmanage(event) {
+    if(!document.getElementById("searchcontent").contains(event.target)&& !document.getElementById("searchbtn").contains(event.target) &&  !document.getElementById("searchpic").contains(event.target) )
+        {
+        
+            closesearch();
+            
         }
+    if (!document.getElementById("leftnav").classList.contains("hidden") && !document.getElementById("leftnav").contains(event.target) && !document.getElementById("ham").contains(event.target)) {
+        lnav();
+        
+    }    
 }
 function createribbon() {
     const genres = ["Relax", "Romance", "Energize", "Party", "Workout", "Sad", "Focus", "Sleep"];
@@ -149,4 +158,4 @@ createribbon();
 heading1material();
 
 document.getElementById("searchcontent").addEventListener("input", crossappear);
-document.body.addEventListener("click",closesearch,true);
+document.body.addEventListener("click",clickmanage);
