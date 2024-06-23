@@ -1,9 +1,11 @@
 let expanded = false;
+let search_state = false;
 function lnav() {
     const navelements = ["leftnav","home", "explore", "library", "likedsongs", "addartists", "newplaylist",  "profile"];
     if (expanded) {
         document.getElementById("allelements").classList.remove("blur-sm");
         document.getElementById("searchbox").classList.remove("blur-sm");
+        document.getElementById("logo").classList.remove("blur-sm");
         document.getElementById("leftnav").classList.replace("w-[50%]", "w-[17%]");
         document.getElementById("leftnav").classList.remove("bg-[#0e0e0a]");
         // document.getElementById("parentscrolldiv").classList.replace("w-[1040px]", "w-[1216px]");
@@ -26,6 +28,7 @@ function lnav() {
     else {
         document.getElementById("allelements").classList.add("blur-sm");
         document.getElementById("searchbox").classList.add("blur-sm");
+        document.getElementById("logo").classList.add("blur-sm");
         document.getElementById("leftnav").classList.replace("w-[17%]", "w-[50%]");
         document.getElementById("leftnav").classList.add("bg-[#0e0e0a]");
         // document.getElementById("parentscrolldiv").classList.replace("w-[1216px]", "w-[1040px]");
@@ -67,7 +70,7 @@ function crossappear() {
         document.getElementById("searchsuggestions").classList.add("hidden");
         document.getElementById("searchsuggestions").classList.replace("bg-gray-800", "*:bg-[#40714494]");
     }
-    setTimeout(search(document.getElementById("searchcontent").value, 5),500);
+    // setTimeout(search(document.getElementById("searchcontent").value, 5),500);
 }
 
 function clearinput() {
@@ -75,6 +78,33 @@ function clearinput() {
     crossappear();
 }
 
+function searchboxappear()
+{
+    document.getElementById("logo").classList.add("hidden");
+    document.getElementById("ham").classList.add("hidden");
+    document.getElementById("searchbtn").classList.add("hidden");
+    document.getElementById("searchbox").classList.remove("hidden");
+    document.getElementById("searchbox").classList.replace("w-[70%]","w-[90%]");
+    document.getElementById("searchbox").classList.add("ml-2.5");
+    document.getElementById("searchcontent").focus();
+    search_state = true;
+    
+
+    
+}
+function closesearch() {
+    if(search_state)
+        {
+            document.getElementById("logo").classList.remove("hidden");
+            document.getElementById("ham").classList.remove("hidden");
+            document.getElementById("searchbtn").classList.remove("hidden");
+            document.getElementById("searchbox").classList.add("hidden");
+            document.getElementById("searchbox").classList.replace("w-[90%]","w-[70%]");
+            document.getElementById("searchbox").classList.remove("ml-2.5");
+           search_state=false;
+           
+        }
+}
 function createribbon() {
     const genres = ["Relax", "Romance", "Energize", "Party", "Workout", "Sad", "Focus", "Sleep"];
     const ribbox = document.getElementById("ribbonbox");
@@ -88,4 +118,35 @@ function createribbon() {
     });
 }
 
+function heading1material() {
+    const songscroll = document.getElementById("parentscrolldiv");
+    const elementstr = `<div>
+    <div class="h-40 w-40">
+        <img src="assets/songthumbnail.svg" alt="">
+    </div>
+    <div class="text-white w-40 pt-1">
+        Song Name
+    </div>
+    <div class="text-white w-40">
+        Artist Name
+    </div>
+</div>`
+    const parser = new DOMParser();
+    const newelements = parser.parseFromString(elementstr, "text/html").body.firstChild;
+    for (let i = 0; i < 8; i++) {
+        songscroll.appendChild(newelements.cloneNode(true));
+    }
+}
+function horizontalscroll(left,eleid) {
+    if (left) {
+        document.getElementById(eleid).scrollLeft -= 200;
+    } else {
+        document.getElementById(eleid).scrollLeft += 200;
+    }
+
+}
 createribbon();
+heading1material();
+
+document.getElementById("searchcontent").addEventListener("input", crossappear);
+document.body.addEventListener("click",closesearch,true);
