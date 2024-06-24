@@ -92,10 +92,15 @@ createribbon();
 
 document.addEventListener('DOMContentLoaded', function () {
     const modalToggle = document.querySelector('[data-modal-toggle="crud-modal"]');
+    const modalClose = document.querySelector('[data-modal-close="crud-modal"]');
     const modal = document.getElementById('crud-modal');
 
     modalToggle.addEventListener('click', function () {
-        modal.classList.toggle('hidden');
+      modal.classList.toggle('hidden');
     });
-});
+
+    modalClose.addEventListener('click', function () {
+      modal.classList.toggle('hidden');
+    });
+  });
 
