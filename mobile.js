@@ -1,12 +1,27 @@
 let expanded = false;
 
 function lnav() {
-    const navelements = ["leftnav","home", "explore", "library", "likedsongs", "addartists", "newplaylist",  "profile"];
+    document.getElementById("leftnav").classList.toggle("hidden");
+    const navelements = ["home", "explore", "library", "likedsongs","profile"];
+    for (const i of navelements) {
+
+        document.getElementById(i).classList.toggle("sm:hidden");
+
+    }
     if (expanded) {
-        document.getElementById("allelements").classList.remove("blur-sm");
-        document.getElementById("searchbox").classList.remove("blur-sm");
-        document.getElementById("logo").classList.remove("blur-sm");
+        if (window.innerWidth >= 768) {
+            document.getElementById("allelements").classList.remove("md:ml-[280px]");
+        }
+        else
+        {
+
+            document.getElementById("allelements").classList.remove("blur-sm");
+            document.getElementById("searchbox").classList.remove("blur-sm");
+            document.getElementById("logo").classList.remove("blur-sm");
+            document.getElementById("searchbtn").classList.remove("blur-sm");
+        }
         document.getElementById("leftnav").classList.replace("w-[50%]", "w-[17%]");
+        document.getElementById("leftnav").classList.replace("w-[240px]", "sm:w-[72px]");
         document.getElementById("leftnav").classList.remove("bg-[#0e0e0a]");
         // document.getElementById("parentscrolldiv").classList.replace("w-[1040px]", "w-[1216px]");
         document.getElementById("hel").classList.replace("*:w-[90%]", "*:w-[80%]");
@@ -16,22 +31,29 @@ function lnav() {
         document.getElementById("profilebox").classList.replace("w-[90%]", "w-[80%]");
         document.getElementById("profilebox").classList.replace("pl-2", "pl-[10px]");
         document.getElementById("profilebox").classList.replace("ml-3", "ml-2");
-        // document.getElementById("profileimg").classList.replace("ml-3.5", "ml-2");
-        // document.getElementById("scrollnavbtn").classList.replace("pl-[800px]", "pl-[968px]");
-        // document.getElementById("rightside").classList.replace("ml-64", "ml-[98px]");
+        document.getElementById("addartists").classList.replace("flex", "hidden");
+        document.getElementById("newplaylist").classList.replace("flex", "hidden");
 
-        for (const i of navelements) {
-            document.getElementById(i).classList.add("hidden");
-        }
+       
         expanded = false;
     }
     else {
-        document.getElementById("allelements").classList.add("blur-sm");
-        document.getElementById("searchbox").classList.add("blur-sm");
-        document.getElementById("logo").classList.add("blur-sm");
+        console.log(window.innerWidth);
+        if (window.innerWidth >= 768) {
+            document.getElementById("allelements").classList.add("md:ml-[280px]");
+        }
+        else
+        {
+
+            document.getElementById("allelements").classList.add("blur-sm");
+            document.getElementById("searchbox").classList.add("blur-sm");
+            document.getElementById("logo").classList.add("blur-sm");
+            document.getElementById("searchbtn").classList.add("blur-sm");
+        }
+
         document.getElementById("leftnav").classList.replace("w-[17%]", "w-[50%]");
+        document.getElementById("leftnav").classList.replace("sm:w-[72px]", "w-[240px]");
         document.getElementById("leftnav").classList.add("bg-[#0e0e0a]");
-        // document.getElementById("parentscrolldiv").classList.replace("w-[1216px]", "w-[1040px]");
         document.getElementById("hel").classList.replace("*:w-[80%]", "*:w-[90%]");
         document.getElementById("hel").classList.replace("*:pl-[14px]", "*:pl-2");
         document.getElementById("hel").classList.replace("*:ml-2", "*:ml-3");
@@ -39,14 +61,10 @@ function lnav() {
         document.getElementById("profilebox").classList.replace("w-[80%]", "w-[90%]");
         document.getElementById("profilebox").classList.replace("pl-[10px]", "pl-2");
         document.getElementById("profilebox").classList.replace("ml-2", "ml-3");
-        // document.getElementById("scrollnavbtn").classList.replace("pl-[968px]", "pl-[800px]");
-        // document.getElementById("rightside").classList.replace("ml-[98px]", "ml-64");
+        document.getElementById("addartists").classList.replace("hidden", "flex");
+        document.getElementById("newplaylist").classList.replace("hidden","flex" );
 
-        for (const i of navelements) {
-
-            document.getElementById(i).classList.remove("hidden");
-
-        }
+        
         expanded = true;
     }
 }
@@ -81,6 +99,7 @@ function clearinput() {
 
 function searchboxappear()
 {
+    document.getElementById("topbar").classList.remove("bg-gray-900");
     document.getElementById("logo").classList.add("hidden");
     document.getElementById("ham").classList.add("hidden");
     document.getElementById("searchbtn").classList.add("hidden");
@@ -92,7 +111,9 @@ function searchboxappear()
     
 }
 
+
 function closesearch() {
+    document.getElementById("topbar").classList.add("bg-gray-900");
     document.getElementById("logo").classList.remove("hidden");
     document.getElementById("ham").classList.remove("hidden");
     document.getElementById("searchbtn").classList.remove("hidden");
@@ -159,3 +180,14 @@ heading1material();
 
 document.getElementById("searchcontent").addEventListener("input", crossappear);
 document.body.addEventListener("click",clickmanage);
+
+window.addEventListener("resize",()=>{
+    if (window.innerWidth == 768 && !expanded)
+        {
+            lnav();
+        }
+    else if(window.innerWidth < 768 && expanded)
+        {
+            lnav();
+        }    
+})
