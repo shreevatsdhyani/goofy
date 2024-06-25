@@ -32,5 +32,14 @@ function createribbon() {
     });
 }
 
+function horizontalscroll(left,eleid) {
+    if (left) {
+        document.getElementById(eleid).scrollLeft -= 200;
+    } else {
+        document.getElementById(eleid).scrollLeft += 200;
+    }
+
+}
 createribbon();
 heading1material();
+

@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Faster+One&family=Inter:wght@100..900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <!--blur-sm-->
@@ -13,56 +17,66 @@
     <div
         class="flex flex-col w-full bg-gradient-to-br from-gray-900 from-5% via-gray-800 via-10% to-lime-300 to-80% h-[3000px]">
         <div id="leftnav"
-            class="hidden pt-24 w-[50%] max-w-[240px] h-full fixed z-10 bg-gray-900  border-r-[1px] border-gray-500">
-            <div class="flex-col space-y-5 poppins-regular text-white">
+            class="hidden sm:block w-[50%] max-w-[240px] sm:w-[72px] h-full fixed z-20 bg-gray-900  border-r-[1px] border-gray-500">
+            <div id="hamopen" class="flex hover:bg-[#68686638] h-10 w-10 justify-center rounded-2xl mt-4 ml-3">
+                <button class="sm:hidden" onclick="lnav()">
+                    <img src="assets/hamcross.svg" alt="">
+                </button>
+                <button id="ham2" class="hidden sm:block" onclick="lnav()">
+                    <img src="assets/hamburger.svg" alt="">
+                </button>
+            </div>
+            <div class="flex-col pt-8 space-y-5 poppins-regular text-white">
 
-                <div id="hel" class=" *:flex *:space-x-7 *:rounded-md *:items-center *:h-12 *:w-[90%] *:ml-3 *:pl-2">
+                <div id="hel"
+                    class=" *:flex *:space-x-7 *:rounded-md *:items-center *:h-12 *:w-[80%] *:ml-[0.4rem] *:pl-[0.85rem]">
                     <button id="homebox" class="hover:bg-gray-700" onclick="location.href = 'dash.html'">
                         <div title="Home"><img src="assets/home2.svg" alt=""></div>
-                        <div id="home" class="text-center pt-0.5 ">Home</div>
+                        <div id="home" class="text-center pt-0.5 sm:hidden">Home</div>
                     </button>
                     <button id="explorebox" class="hover:bg-gray-700" onclick="location.href = 'explore.html'">
                         <div title="Explore"><img id="exploreimg" src="assets/explore1.svg" alt=""></div>
-                        <div id="explore" class="text-center pt-0.5">Explore</div>
+                        <div id="explore" class="text-center pt-0.5 sm:hidden">Explore</div>
                     </button>
                     <button id="librarybox" class=" hover:bg-gray-700" onclick="location.href = 'library.html'">
                         <div title="Library"><img src="assets/library1.svg" alt=""></div>
-                        <div id="library" class="text-center pt-0.5">Library</div>
+                        <div id="library" class="text-center pt-0.5 sm:hidden">Library</div>
                     </button>
                     <button id="likedsongsbox" class=" hover:bg-gray-700" onclick="location.href = 'mylikes.html'">
                         <div title="Liked songs"><img id="likedsongsimg" src="assets/likedsong1.svg" alt=""></div>
-                        <div id="likedsongs" class="text-center pt-0.5">My Likes</div>
+                        <div id="likedsongs" class="text-center pt-0.5 sm:hidden">My Likes</div>
                     </button>
                 </div>
 
-                <hr id="hrnav" class="mx-5">
-                <div id="newplaylist" class=" h-[50px] flex rounded-[10px] hover:bg-gray-700 w-[90%] ml-3">
+                <hr id="hrnav" class="mx-2">
+                <div id="newplaylist" class="hidden h-[50px] rounded-[10px] hover:bg-gray-700 w-[90%] ml-3">
                     <div class="p-3"><img src="assets/plus.svg" alt=""></div>
-                    <div class="text-white p-3">New Playlist</div>
+                    <div class="text-white p-3 ">New Playlist</div>
                 </div>
-                <div id="addartists" class=" h-[50px] flex rounded-[10px] hover:bg-gray-700 w-[90%] ml-3">
+                <div id="addartists" class="hidden h-[50px] rounded-[10px] hover:bg-gray-700 w-[90%] ml-3">
                     <div class="p-3"><img src="assets/plus.svg" alt=""></div>
-                    <div class="text-white p-3">Add Artists</div>
+                    <div class="text-white p-3 ">Add Artists</div>
                 </div>
                 <button id="profilebox"
-                    class="h-[50px] flex rounded-[10px] hover:bg-gray-700 w-[90%] ml-3 pl-2 space-x-7 items-center"
+                    class="h-[50px] flex rounded-[10px] hover:bg-gray-700 w-[80%] ml-2 pl-[0.7rem] space-x-7 items-center"
                     onclick="location.href = 'profile.html'">
                     <div id="profileimg">
                         <img src="assets/profile1.svg" alt="">
                     </div>
-                    <div id="profile" class="text-center pt-1">Profile</div>
+                    <div id="profile" class="text-center pt-1 sm:hidden">Profile</div>
                 </button>
             </div>
 
         </div>
-        <div id="topbar" class="flex ml-3 mt-5 fixed z-20 ">
-            <div class="flex hover:bg-[#68686638] h-10 w-10 justify-center rounded-2xl mt-1">
+        <div id="topbar" class="flex justify-between p-2 fixed z-10 w-full bg-gray-900 bg-opacity-70 ">
+            <div id="ham" class="flex hover:bg-[#68686638] h-10 w-10 justify-center rounded-2xl mt-1">
                 <button onclick="lnav()">
                     <img src="assets/hamburger.svg" alt="">
                 </button>
             </div>
-            <div id="searchbox" class="flex-col fixed w-[70%] max-w-[450px] h-12 poppins-regular bg-[#68686638] rounded-lg ml-20">
-                <div class="flex w-full">
+            <div id="searchbox"
+                class="hidden flex-col fixed w-[70%] max-w-[450px] h-12 poppins-regular bg-[#68686638] rounded-lg sm:ml-[80px]">
+                <div id="searchpic" class="flex w-full">
                     <div class="pt-3 px-2 ">
                         <img src="assets/Search.svg" alt="">
                     </div>
@@ -70,7 +84,7 @@
                         <input id="searchcontent" type="text" id="" placeholder="Search songs, albums, artists"
                             class=" bg-transparent text-white h-[40px] w-full p-1 outline-none" autocomplete="off">
                     </div>
-                    <div id="clearcross" class="pl-5 pt-3 hidden">
+                    <div id="clearcross" class="pr-3 pt-3 hidden">
                         <button onclick="clearinput()"><img src="assets/cross.svg" alt=""></button>
                     </div>
                 </div>
@@ -147,71 +161,98 @@
                     </div>
                 </div>
             </div>
+            <div id="logo" class="text-white faster-one-small -mt-1">
+                GOOFY
+            </div>
+            <div id="searchbtn" class="p-3" onclick="searchboxappear()">
+                <button>
+                    <img src="assets/Search.svg" alt="">
+                </button>
+            </div>
+
         </div>
-        <iddd="allelements" class="pt-8">
+
+        <div id="allelements" class="pt-8 flex flex-col ml-2 sm:ml-[100px]">
             <div id="ribbonbox"
                 class="grid grid-flow-col auto-cols-max poppins-regular mt-20 scrollbar overflow-hidden scroll-smooth w-[90%] max-w-[500px] ml-[6%]">
-
             </div>
-           <div>
-            <button data-modal-target="crud-modal" data-modal-toggle="crud-modal" class="ml-[6%] mt-[6%]" type="button">
-                <div><img src="assets/songthumbnail.svg" alt=""></div>
-            </button>
-            
-            <!-- Main modal -->
-            <div id="crud-modal" tabindex="-1" aria-hidden="true" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+            <div>
+                <button data-modal-target="crud-modal" data-modal-toggle="crud-modal" class="ml-[6%] mt-[6%]"
+                    type="button">
+                    <div><img src="assets/songthumbnail.svg" alt=""></div>
+                </button>
 
-                <div class="relative p-4 w-full max-w-md max-h-full">
-                    <!-- Modal content -->
-                    <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
-                        <!-- Modal header -->
-                        <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
-                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-                                New Playlist
-                            </h3>
-                            <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="crud-modal">
-                                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
-                                </svg>
-                                <span class="sr-only">Close modal</span>
-                            </button>
-                        </div>
-                        <!-- Modal body -->
-                        <form class="p-4 md:p-5">
-                            <div class="grid gap-4 mb-4 grid-cols-2">
-                                <div class="col-span-2">
-                                    <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Title</label>
-                                    <input type="text" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Type playlist title" required="">
-                                </div>
-                                <div class="col-span-2 sm:col-span-1">
-                                    <label for="category" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Genre</label>
-                                    <select id="category" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
-                                        <option value="TV">Feel good</option>
-                                        <option value="TV">Party</option>
-                                        <option value="PC">Happy</option>
-                                        <option value="GA">Sad</option>
-                                        <option value="PH">Study</option>
-                                    </select>
-                                </div>
-                                <div class="col-span-2">
-                                    <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</label>
-                                    <textarea id="description" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write playlist description here"></textarea>                    
-                                </div>
+                <!-- Main modal -->
+                <div id="crud-modal" tabindex="-1" aria-hidden="true"
+                    class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+
+                    <div class="relative p-4 w-full max-w-md max-h-full">
+                        <!-- Modal content -->
+                        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                            <!-- Modal header -->
+                            <div
+                                class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                                    New Playlist
+                                </h3>
+                                <button type="button"
+                                    class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                                    data-modal-toggle="crud-modal">
+                                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                        fill="none" viewBox="0 0 14 14">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                    </svg>
+                                    <span class="sr-only">Close modal</span>
+                                </button>
                             </div>
-                            <button type="submit" class="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                                Create
-                            </button>
-                            <button type="button" data-modal-close="crud-modal" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">
-                                Cancel
-                            </button>
+                            <!-- Modal body -->
+                            <form class="p-4 md:p-5">
+                                <div class="grid gap-4 mb-4 grid-cols-2">
+                                    <div class="col-span-2">
+                                        <label for="name"
+                                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Title</label>
+                                        <input type="text" name="name" id="name"
+                                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                            placeholder="Type playlist title" required="">
+                                    </div>
+                                    <div class="col-span-2 sm:col-span-1">
+                                        <label for="category"
+                                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Genre</label>
+                                        <select id="category"
+                                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
+                                            <option value="TV">Feel good</option>
+                                            <option value="TV">Party</option>
+                                            <option value="PC">Happy</option>
+                                            <option value="GA">Sad</option>
+                                            <option value="PH">Study</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-span-2">
+                                        <label for="description"
+                                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</label>
+                                        <textarea id="description" rows="4"
+                                            class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                            placeholder="Write playlist description here"></textarea>
+                                    </div>
+                                </div>
+                                <button type="submit"
+                                    class="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                    Create
+                                </button>
+                                <button type="button" data-modal-close="crud-modal"
+                                    class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">
+                                    Cancel
+                                </button>
 
-                        </form>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 </body>
-    <script src="library.js"></script>
-    <script src="main.js"></script>
+<script src="library.js"></script>
+<script src="mobile.js"></script>
+
 </html>
