@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Faster+One&family=Inter:wght@100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<!--blur-sm-->
+
+<body>
+    <div class="flex flex-col w-full bg-black">
+        <div id="leftnav"
+            class="hidden sm:block w-[50%] max-w-[240px] sm:w-[72px] h-full fixed z-20 bg-black  border-r-[2px] border-white">
+            <div id="hamopen" class="flex hover:bg-[#68686638] h-10 w-10 justify-center rounded-2xl mt-4 ml-3">
+                <button class="sm:hidden" onclick="lnav()">
+                    <img src="newassets/icons/logo60.svg" alt="">
+                </button>
+                <button id="ham2" class="hidden sm:block" onclick="lnav()">
+                    <img src="newassets/icons/hamburger1.svg" alt="">
+                </button>
+            </div>
+            <div class="flex-col pt-8 space-y-5 poppins-regular text-white">
+
+                <div id="hel"
+                    class="*:mb-2 *:flex *:space-x-7 *:rounded-md *:items-center *:h-12 *:w-[80%] *:ml-[0.4rem] *:pl-[0.85rem]">
+                    <button id="homebox" class="hover:bg-gray-700" onclick="location.href = 'dash.html'">
+                        <div title="Home"><img src="newassets/icons/home1.svg" alt=""></div>
+                        <div id="home" class="text-center pt-0.5 sm:hidden">Home</div>
+                    </button>
+                    <button id="explorebox" class="hover:bg-gray-700" onclick="location.href = 'explore.html'">
+                        <div title="Explore"><img id="exploreimg" src="newassets/icons/explore2.svg" alt=""></div>
+                        <div id="explore" class="text-center pt-0.5 sm:hidden">Explore</div>
+                    </button>
+                    <button id="librarybox" class=" hover:bg-gray-700" onclick="location.href = 'library.html'">
+                        <div title="Library"><img src="newassets/icons/library2.svg" alt=""></div>
+                        <div id="library" class="text-center pt-0.5 sm:hidden">Library</div>
+                    </button>
+                    <button id="likedsongsbox" class=" hover:bg-gray-700" onclick="location.href = 'mylikes.html'">
+                        <div title="My Likes"><img id="likedsongsimg" src="newassets/icons/mylikes2.svg" alt="">
+                        </div>
+                        <div id="likedsongs" class="text-center pt-0.5 sm:hidden">My Likes</div>
+                    </button>
+                </div>
+                </div>
+
+                <hr id="hrnav" class="mx-1 border-1">
+                <button id="profilebox"
+                    class="mt-2 h-[50px] flex rounded-[10px] hover:bg-gray-700 w-[80%] ml-2 pl-[0.7rem] space-x-7 items-center"
+                    onclick="location.href = 'profile.html'">
+                    <div id="profileimg">
+                        <img src="newassets/icons/profile2.svg" alt="">
+                    </div>
+                    <div id="profile" class="text-center pt-1 sm:hidden">Profile</div>
+                </button>
+            </div>
+
+            <div id="topbar" class="flex justify-between p-2 fixed z-10 w-full bg-gray-900 bg-opacity-70 ">
+                <div id="ham" class="flex hover:bg-[#68686638] h-10 w-10 justify-center rounded-2xl mt-1">
+                    <button onclick="lnav()">
+                        <img src="assets/hamburger.svg" alt="">
+                    </button>
+                </div>
+                <div id="searchbox"
+                    class="hidden flex-col fixed w-[70%] max-w-[450px] h-12 poppins-regular bg-[#68686638] rounded-lg sm:ml-[80px]">
+                    <div id="searchpic" class="flex w-full">
+                        <div class="pt-3 px-2 ">
+                            <img src="assets/Search.svg" alt="">
+                        </div>
+                        <div class="p-1 w-full">
+                            <input id="searchcontent" type="text" id="" placeholder="Search songs, albums, artists"
+                                class=" bg-transparent text-white h-[40px] w-full p-1 outline-none" autocomplete="off">
+                        </div>
+                        <div id="clearcross" class="pr-3 pt-3 hidden">
+                            <button onclick="clearinput()"><img src="assets/cross.svg" alt=""></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="mobile.js"></script>
+    <script src="home.js"></script>
+</body>
+</html>
