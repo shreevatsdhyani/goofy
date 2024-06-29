@@ -80,7 +80,7 @@ function createribbon() {
     const parser = new DOMParser();
     Object.entries(genres).forEach(([ele,k]) => {
         ribbox.appendChild(parser.parseFromString(`<div>
-        <button class="bg-${k} mr-2 text-black text-lg font-semibold border-white border-2 rounded-lg">
+        <button class="bg-${k} mr-2 text-black text-lg font-semibold border-white border-[3px] rounded-lg">
             <div class="px-5 py-1 text-xl text-shadow-lg ">${ele}</div>
         </button>
     </div>`, "text/html").body.firstChild);

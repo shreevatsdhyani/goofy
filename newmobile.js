@@ -11,13 +11,13 @@ function lnav() {
     if (expanded) {
         if (window.innerWidth >= 768) {
             document.getElementById("allelements").classList.remove("md:ml-[280px]");
-            document.getElementById("searchbox").classList.replace("sm:ml-[280px]","sm:ml-[80px]");
         }
         else
         {
 
             document.getElementById("allelements").classList.remove("blur-sm");
             document.getElementById("searchbox").classList.remove("blur-sm");
+            document.getElementById("searchbox").classList.remove("sm:ml-[240px]");
             document.getElementById("logo").classList.remove("blur-sm");
             document.getElementById("searchbtn").classList.remove("blur-sm");
         }
@@ -32,7 +32,8 @@ function lnav() {
         document.getElementById("profilebox").classList.replace("w-[90%]", "w-[80%]");
         document.getElementById("profilebox").classList.replace("pl-2", "pl-[10px]");
         document.getElementById("profilebox").classList.replace("ml-3", "ml-2");
-
+        document.getElementById("addartists").classList.replace("flex", "hidden");
+        document.getElementById("newplaylist").classList.replace("flex", "hidden");
 
        
         expanded = false;
@@ -41,13 +42,13 @@ function lnav() {
         console.log(window.innerWidth);
         if (window.innerWidth >= 768) {
             document.getElementById("allelements").classList.add("md:ml-[280px]");
-            document.getElementById("searchbox").classList.replace("sm:ml-[80px]","sm:ml-[280px]");
         }
         else
         {
 
             document.getElementById("allelements").classList.add("blur-sm");
             document.getElementById("searchbox").classList.add("blur-sm");
+            document.getElementById("searchbox").classList.add("sm:ml-[240px]");
             document.getElementById("logo").classList.add("blur-sm");
             document.getElementById("searchbtn").classList.add("blur-sm");
         }
@@ -62,7 +63,8 @@ function lnav() {
         document.getElementById("profilebox").classList.replace("w-[80%]", "w-[90%]");
         document.getElementById("profilebox").classList.replace("pl-[10px]", "pl-2");
         document.getElementById("profilebox").classList.replace("ml-2", "ml-3");
-
+        document.getElementById("addartists").classList.replace("hidden", "flex");
+        document.getElementById("newplaylist").classList.replace("hidden","flex" );
 
         
         expanded = true;
@@ -72,6 +74,8 @@ function lnav() {
 
 function crossappear() {
     if (document.getElementById("searchcontent").value != "") {
+        document.getElementById("searchbox").classList.replace("rounded-2xl","rounded-t-2xl");
+        document.getElementById("searchbox").classList.replace("border-2","border-t-2");
         document.getElementById("clearcross").classList.remove("hidden");
         document.getElementById("searchbox").classList.replace("h-10", "h-[230px]");
         document.getElementById("searchbox").classList.replace("bg-[#68686638]", "bg-gray-800");
@@ -81,6 +85,8 @@ function crossappear() {
 
 
     } else {
+        document.getElementById("searchbox").classList.replace("rounded-t-2xl","rounded-2xl");
+        document.getElementById("searchbox").classList.replace("border-t-2","border-2");
         document.getElementById("clearcross").classList.add("hidden");
         document.getElementById("searchbox").classList.replace("h-[230px]", "h-10");
         document.getElementById("searchbox").classList.replace("bg-gray-800", "bg-[#68686638]");
@@ -99,7 +105,6 @@ function clearinput() {
 
 function searchboxappear()
 {
-    document.getElementById("topbar").classList.remove("bg-black");
     document.getElementById("logo").classList.add("hidden");
     document.getElementById("ham").classList.add("hidden");
     document.getElementById("searchbtn").classList.add("hidden");
@@ -113,7 +118,6 @@ function searchboxappear()
 
 
 function closesearch() {
-    document.getElementById("topbar").classList.add("bg-black");
     document.getElementById("logo").classList.remove("hidden");
     document.getElementById("ham").classList.remove("hidden");
     document.getElementById("searchbtn").classList.remove("hidden");
@@ -138,7 +142,7 @@ function clickmanage(event) {
 
 
 document.getElementById("searchcontent").addEventListener("input", crossappear);
-// document.body.addEventListener("click",clickmanage);
+document.body.addEventListener("click",clickmanage);
 
 window.addEventListener("resize",()=>{
     if (window.innerWidth == 768 && !expanded)
