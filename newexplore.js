@@ -1,5 +1,5 @@
 function moodandgenres() {
-    const moods = {"Romantic":"bg-[#7D2C2C]","Melancholic":"bg-[#FAFF00]","Happy":"bg-[#38771A]","Energetic":"bg-[#4E289D]","Peaceful":"bg-[#28739D]","Festive":"bg-[#932560]","Workout":"bg-[#7D2C2C]","Meditation":"bg-[#FAFF00]","Travel":"bg-[#38771A]","Chill":"bg-[#4E289D]","Motivational":"bg-[#38771A]","Party":"bg-[#4E289D]","Soulful":"bg-[#28739D]","Retro":"bg-[#932560]","Urban":"bg-[#7D2C2C]","Nostalgic":"bg-[#FAFF00]","Unwind":"bg-[#28739D]","Love":"bg-[#7D2C2C]","Dance":"bg-[#4E289D]","Rainy Day":"bg-[#932560]","Study":"bg-[#FAFF00]"};
+    const moods = {"Romantic":"bg-[#7D2C2C]","Melancholic":"bg-[#A39C00]","Happy":"bg-[#38771A]","Energetic":"bg-[#4E289D]","Peaceful":"bg-[#28739D]","Festive":"bg-[#932560]","Workout":"bg-[#7D2C2C]","Meditation":"bg-[#A39C00]","Travel":"bg-[#38771A]","Chill":"bg-[#4E289D]","Motivational":"bg-[#38771A]","Party":"bg-[#4E289D]","Soulful":"bg-[#28739D]","Retro":"bg-[#932560]","Urban":"bg-[#7D2C2C]","Nostalgic":"bg-[#A39C00]","Unwind":"bg-[#28739D]","Love":"bg-[#7D2C2C]","Dance":"bg-[#4E289D]","Rainy Day":"bg-[#932560]","Study":"bg-[#A39C00]"};
     const mandg = document.getElementById("mandg");
     const parser = new DOMParser();
     Object.entries(moods).forEach(([ele,k]) =>{

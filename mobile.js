@@ -17,6 +17,7 @@ function lnav() {
 
             document.getElementById("allelements").classList.remove("blur-sm");
             document.getElementById("searchbox").classList.remove("blur-sm");
+            document.getElementById("searchbox").classList.remove("sm:ml-[240px]");
             document.getElementById("logo").classList.remove("blur-sm");
             document.getElementById("searchbtn").classList.remove("blur-sm");
         }
@@ -47,6 +48,7 @@ function lnav() {
 
             document.getElementById("allelements").classList.add("blur-sm");
             document.getElementById("searchbox").classList.add("blur-sm");
+            document.getElementById("searchbox").classList.add("sm:ml-[240px]");
             document.getElementById("logo").classList.add("blur-sm");
             document.getElementById("searchbtn").classList.add("blur-sm");
         }
@@ -72,6 +74,8 @@ function lnav() {
 
 function crossappear() {
     if (document.getElementById("searchcontent").value != "") {
+        document.getElementById("searchbox").classList.replace("rounded-2xl","rounded-t-2xl");
+        document.getElementById("searchbox").classList.replace("border-2","border-t-2");
         document.getElementById("clearcross").classList.remove("hidden");
         document.getElementById("searchbox").classList.replace("h-10", "h-[230px]");
         document.getElementById("searchbox").classList.replace("bg-[#68686638]", "bg-gray-800");
@@ -81,6 +85,8 @@ function crossappear() {
 
 
     } else {
+        document.getElementById("searchbox").classList.replace("rounded-t-2xl","rounded-2xl");
+        document.getElementById("searchbox").classList.replace("border-t-2","border-2");
         document.getElementById("clearcross").classList.add("hidden");
         document.getElementById("searchbox").classList.replace("h-[230px]", "h-10");
         document.getElementById("searchbox").classList.replace("bg-gray-800", "bg-[#68686638]");
@@ -99,7 +105,6 @@ function clearinput() {
 
 function searchboxappear()
 {
-    document.getElementById("topbar").classList.remove("bg-gray-900");
     document.getElementById("logo").classList.add("hidden");
     document.getElementById("ham").classList.add("hidden");
     document.getElementById("searchbtn").classList.add("hidden");
@@ -113,7 +118,6 @@ function searchboxappear()
 
 
 function closesearch() {
-    document.getElementById("topbar").classList.add("bg-gray-900");
     document.getElementById("logo").classList.remove("hidden");
     document.getElementById("ham").classList.remove("hidden");
     document.getElementById("searchbtn").classList.remove("hidden");

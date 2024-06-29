@@ -53,9 +53,6 @@
         font-style: normal;
     }
 
-    .ribbonbuttons {
-        @apply m-4 h-10 bg-gray-700 rounded-lg text-center text-lime-300 border-lime-200 border-2 shadow-md shadow-lime-300 hover:scale-105;
-    }
 
     .scrollbar::-webkit-scrollbar {
         width: 20px;
@@ -109,7 +106,7 @@
         appearance: none;
         width: 10px;
         height: 10px;
-        background-color: #bef264;
+        background-color: #ffb300;
         /* Change thumb color in WebKit browsers */
         border-radius: 50%;
         box-shadow: -10007px 0 0 10000px #bef264;
@@ -136,5 +133,9 @@
         /* Change thumb color in IE/Edge */
         border-radius: 50%;
         box-shadow: -407px 0 0 400px rgb(55, 65, 81);
+     }
+
+     .gradnav{
+        background: linear-gradient(180deg, #0B2711 90%, black 100%);
     }
 }
