@@ -1,53 +1,15 @@
-function moodandgenres() {
-    const moods = {"Romantic":"bg-[#7D2C2C]","Melancholic":"bg-[#A39C00]","Happy":"bg-[#38771A]","Energetic":"bg-[#4E289D]","Peaceful":"bg-[#28739D]","Festive":"bg-[#932560]","Workout":"bg-[#7D2C2C]","Meditation":"bg-[#A39C00]","Travel":"bg-[#38771A]","Chill":"bg-[#4E289D]","Motivational":"bg-[#38771A]","Party":"bg-[#4E289D]","Soulful":"bg-[#28739D]","Retro":"bg-[#932560]","Urban":"bg-[#7D2C2C]","Nostalgic":"bg-[#A39C00]","Unwind":"bg-[#28739D]","Love":"bg-[#7D2C2C]","Dance":"bg-[#4E289D]","Rainy Day":"bg-[#932560]","Study":"bg-[#A39C00]"};
-    const mandg = document.getElementById("mandg");
+function createribbon() {
+    const genres = {"New Releases":"bg-[#FF5A5A]", "Trending":"bg-[#FF75C5]", "Mood & Genres":"bg-[#8FFF7D]", "Top Artists":"bg-[#76DEFF]"};
+    const ribbox = document.getElementById("ribbonbox");
     const parser = new DOMParser();
-    Object.entries(moods).forEach(([ele,k]) =>{
-        mandg.appendChild(parser.parseFromString(`<div class="${k}">
-        <button class="mandg ">
-            <div >${ele}</div>
+    Object.entries(genres).forEach(([ele,k]) => {
+        ribbox.appendChild(parser.parseFromString(`<div>
+        <button class="${k} mr-2 text-black text-lg font-semibold border-white border-[3px] rounded-lg hover:shadow-lg hover:shadow-white hover:scale-110">
+            <div class="px-5 py-1 text-xl">${ele}</div>
         </button>
-    </div>`,"text/html").body.firstChild);
+    </div>`, "text/html").body.firstChild);
     });
 }
-
-function heading1material() {
-    const songscroll = document.getElementById("parentscrolldiv");
-    const elementstr = `<div>
-    <div>
-        <img class="border-4" src="newassets/songdp.svg" alt="">
-    </div>
-    <div class="text-white w-40 pt-1">
-        Song Name
-    </div>
-    <div class="text-white w-40">
-        Artist Name
-    </div>
-</div>`
-    const parser = new DOMParser();
-    const newelements = parser.parseFromString(elementstr, "text/html").body.firstChild;
-    for (let i = 0; i < 8; i++) {
-        songscroll.appendChild(newelements.cloneNode(true));
-    }
-}
-
-function heading2material() {
-    const songscroll = document.getElementById("artistscrolldiv");
-    const elementstr = `<div>
-    <div class="h-40 w-40">
-        <img class="border-4" src="assets/singer.svg" alt="">
-    </div>
-    <div class="text-white w-40 justify-center">
-        Artist Name
-    </div>
-</div>`
-    const parser = new DOMParser();
-    const newelements = parser.parseFromString(elementstr, "text/html").body.firstChild;
-    for (let i = 0; i < 8; i++) {
-        songscroll.appendChild(newelements.cloneNode(true));
-    }
-}
-
 
 function horizontalscroll(left,eleid) {
     if (left) {
@@ -58,6 +20,48 @@ function horizontalscroll(left,eleid) {
 
 }
 
+function heading1material() {
+    const songscroll = document.getElementById("parentscrolldiv1");
+    const elementstr = `<div>
+    <div class="h-40 w-40 border-white border-2">
+        <img src="assets/songthumbnail.svg" alt="">
+    </div>
+    <div class="text-white w-40 pt-1">
+        Song Name
+    </div>
+    <div class="text-white w-40">
+        Artist Name
+    </div>
+</div>`
+    const parser = new DOMParser();
+    const newelements = parser.parseFromString(elementstr, "text/html").body.firstChild;
+    for (let i = 0; i < 10; i++) {
+        songscroll.appendChild(newelements.cloneNode(true));
+    }
+}
+function heading2material() {
+    const songscroll = document.getElementById("parentscrolldiv2");
+    const elementstr = `<div>
+    <div class="h-40 w-40 border-white border-2">
+        <img src="assets/songthumbnail.svg" alt="">
+    </div>
+    <div class="text-white w-40 pt-1">
+        Song Name
+    </div>
+    <div class="text-white w-40">
+        Artist Name
+    </div>
+</div>`
+    const parser = new DOMParser();
+    const newelements = parser.parseFromString(elementstr, "text/html").body.firstChild;
+    for (let i = 0; i < 10; i++) {
+        songscroll.appendChild(newelements.cloneNode(true));
+    }
+}
+
+
+
+
 document.getElementById("explorebox").addEventListener("mouseenter", () => {
     document.getElementById("exploreimg").classList.add("animate-spin");
 });
@@ -65,7 +69,6 @@ document.getElementById("explorebox").addEventListener("mouseleave", () => {
     document.getElementById("exploreimg").classList.remove("animate-spin");
 });
 
+createribbon();
 heading1material();
-moodandgenres();
 heading2material();
-
