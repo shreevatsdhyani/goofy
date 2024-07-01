@@ -88,7 +88,7 @@ function heading4material() {
 </div>`
     const parser = new DOMParser();
     const newelements = parser.parseFromString(elementstr, "text/html").body.firstChild;
-    for (let i = 0; i < 12; i++) {
+    for (let i = 0; i < 9; i++) {
         songscroll.appendChild(newelements.cloneNode(true));
     }
 }
