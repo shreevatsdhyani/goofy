@@ -85,3 +85,17 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+  function createribbon() {
+    const genres = {"Song":"[#7D2C2C]", "Albumns":"[#FAFF00]", "Artists":"[#38771A]", "Playlists":"[#28739D]"};
+    const ribbox = document.getElementById("ribbonbox");
+    const parser = new DOMParser();
+    Object.entries(genres).forEach(([ele,k]) => {
+        ribbox.appendChild(parser.parseFromString(`<div>
+        <button class="bg-${k} mr-2 text-black text-lg font-semibold border-white border-[3px] rounded-lg">
+            <div class="px-5 py-1 text-xl text-shadow-lg ">${ele}</div>
+        </button>
+    </div>`, "text/html").body.firstChild);
+    });
+}
+
+createribbon();

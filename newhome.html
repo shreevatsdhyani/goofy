@@ -72,9 +72,9 @@
             </button>
         </div>
         <div id="searchbox"
-            class="hidden mt-2 sm:block flex-col fixed w-[70%] max-w-[500px] h-12 poppins-regular bg-black border-white border-t-2 border-l-2 border-r-2 border-b-2 rounded-2xl sm:ml-[80px]">
+            class="hidden mt-2 sm:block flex-col fixed w-[70%] max-w-[500px] h-12 poppins-regular border-double bg-black border-white border-t-2 border-l-2 border-r-2 border-b-2 rounded-2xl sm:ml-[80px]">
             <div id="searchpic" class="pt-1 pl-1 flex w-full">
-                <div class=" ">
+                <div class="border-white">
                     <img src="newassets/icons/Search.svg" alt="">
                 </div>
                 <div class="px-1 w-full">
@@ -170,22 +170,22 @@
 
     <div id="allelements" class="pt-8 flex flex-col ml-2 sm:ml-[100px]">
         <div id="ribbonbox"
-            class="flex poppins-regular mt-20 scroll-smooth w-[90%] hover:">
+            class="flex poppins-regular mt-20 scroll-smooth w-[90%] space-x-2">
         </div>
         <div class="flex-col poppins-regular mt-10 ">
             <div class="text-white flex w-[98%] text-[30px] justify-between">
                 <div>Heading 1</div>
                 <div id="scrollnavbtn" class="flex">
-                    <button onclick="horizontalscroll(true,'parentscrolldiv1')">
+                    <button class="hover:scale-110" onclick="horizontalscroll(true,'parentscrolldiv1')">
                         <div class="m-1"><img src="newassets/larrow.svg" alt=""></div>
                     </button>
-                    <button onclick="horizontalscroll(false,'parentscrolldiv1')">
+                    <button class="hover:scale-110" onclick="horizontalscroll(false,'parentscrolldiv1')">
                         <div class="m-1"><img src="newassets/rarrow.svg" alt=""></div>
                     </button>
                 </div>
             </div>
             <div id="parentscrolldiv1"
-                class="scrollbar overflow-hidden overflow-x-scroll h-64  w-[98%] pt-4 grid grid-flow-col auto-cols-auto  scroll-smooth space-x-5">
+                class="scrollbar overflow-hidden hover:overflow-x-scroll h-64  w-[98%] pt-4 grid grid-flow-col auto-cols-auto  scroll-smooth space-x-5">
         
             </div>
             
@@ -194,16 +194,16 @@
             <div class="text-white flex w-[98%] text-[30px] justify-between">
                 <div>Heading 2</div>
                 <div id="scrollnavbtn" class="flex">
-                    <button onclick="horizontalscroll(true,'parentscrolldiv2')">
+                    <button class="hover:scale-110" onclick="horizontalscroll(true,'parentscrolldiv2')">
                         <div class="m-1"><img src="newassets/larrow.svg" alt=""></div>
                     </button>
-                    <button onclick="horizontalscroll(false,'parentscrolldiv2')">
+                    <button class="hover:scale-110" onclick="horizontalscroll(false,'parentscrolldiv2')">
                         <div class="m-1"><img src="newassets/rarrow.svg" alt=""></div>
                     </button>
                 </div>
             </div>
             <div id="parentscrolldiv2"
-                class="scrollbar overflow-hidden overflow-x-scroll h-64  w-[98%] pt-4 grid grid-flow-col auto-cols-auto  scroll-smooth space-x-5">
+                class="scrollbar overflow-hidden hover:overflow-x-scroll h-64  w-[98%] pt-4 grid grid-flow-col auto-cols-auto  scroll-smooth space-x-5">
         
             </div>
             
@@ -212,16 +212,16 @@
             <div class="text-white flex w-[98%] text-[30px] justify-between">
                 <div>Heading 3</div>
                 <div id="scrollnavbtn" class="flex">
-                    <button onclick="horizontalscroll(true,'parentscrolldiv3')">
+                    <button class="hover:scale-110" onclick="horizontalscroll(true,'parentscrolldiv3')">
                         <div class="m-1"><img src="newassets/larrow.svg" alt=""></div>
                     </button>
-                    <button onclick="horizontalscroll(false,'parentscrolldiv3')">
+                    <button class="hover:scale-110" onclick="horizontalscroll(false,'parentscrolldiv3')">
                         <div class="m-1"><img src="newassets/rarrow.svg" alt=""></div>
                     </button>
                 </div>
             </div>
             <div id="parentscrolldiv3"
-                class="scrollbar overflow-hidden overflow-x-scroll h-64  w-[98%] pt-4 grid grid-flow-col auto-cols-auto  scroll-smooth space-x-5">
+                class="scrollbar overflow-hidden hover:overflow-x-scroll h-64  w-[98%] pt-4 grid grid-flow-col auto-cols-auto  scroll-smooth space-x-5">
         
             </div>
             
@@ -306,23 +306,106 @@
             <div class="text-white flex w-[98%] text-[30px] justify-between">
                 <div>Heading 5</div>
                 <div id="scrollnavbtn" class="flex">
-                    <button onclick="horizontalscroll(true,'parentscrolldiv4')">
+                    <button class="hover:scale-110" onclick="horizontalscroll(true,'parentscrolldiv4')">
                         <div class="m-1"><img src="newassets/larrow.svg" alt=""></div>
                     </button>
-                    <button onclick="horizontalscroll(false,'parentscrolldiv4')">
+                    <button class="hover:scale-110" onclick="horizontalscroll(false,'parentscrolldiv4')">
                         <div class="m-1"><img src="newassets/rarrow.svg" alt=""></div>
                     </button>
                 </div>
             </div>
             <div id="parentscrolldiv4"
-                class="scrollbar overflow-hidden overflow-x-scroll h-64  w-[98%] pt-4 grid grid-flow-col auto-cols-auto  scroll-smooth space-x-5">
+                class="scrollbar overflow-hidden hover:overflow-x-scroll h-64  w-[98%] pt-4 grid grid-flow-col auto-cols-auto  scroll-smooth space-x-5">
         
             </div>
             
         </div>
 
     </div>
-
+    <div id="player" class="z-20 bottom-0 fixed h-[75px] w-full bg-[#161617] border-white border-2">
+        <div class="flex space-x-10 m-3 text-white">
+            <div class="flex space-x-5">
+                <div class="border">
+                    <img src="assets/songthumbnail2.svg" alt="">
+                </div>
+                <div class="">
+                    <div class="h-[30px] w-[375px] font-bold">
+                        Song Name
+                    </div>
+                    <div class="h-[25px] w-[375px] font-semibold">
+                        Artist Name
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="h-[30px] flex space-x-10 pl-[100px]">
+                    <button>
+                        <div class="pt-[5px]">
+                            <img src="newassets/player/shuffle.svg" alt="">
+                        </div>    
+                    </button>
+                    <button>
+                        <div class="pt-[5px]">
+                            <img src="newassets/player/playprev.svg" alt="">
+                        </div>   
+                    </button>
+                    <button onclick="playpause()">
+                        <div>
+                            <img id="playpause" src="newassets/player/play.svg" alt="">
+                        </div>    
+                    </button>
+                    <button>
+                        <div class="pt-[5px]">
+                            <img src="newassets/player/playnext.svg" alt="">
+                        </div>    
+                    </button>
+                    <button onclick="changerepeat()">
+                        <div class="pt-[5px]">
+                            <img id="repeatingbtn" src="newassets/player/repeatoff.svg" alt="">
+                        </div>    
+                    </button>    
+                </div>
+                <div class="h-[25px] flex space-x-5">
+                    <div id="song_progress" class="font-bold">
+                        0:00
+                    </div>
+                    <div>
+                        <audio id="song" preload="auto">
+                            <source src="media/Naav - Chadhti Lehrein Laang Na Paye [6RLRUNoTHRY].webm" type="audio/mp4">
+                        </audio>
+                        <input id="playerprogress" type="range" min="0" max="100" class="slider w-[400px]" value="0">
+                    </div>
+                    <div id="song_duration" class="font-bold">
+                        f:ff
+                    </div>
+                </div>
+            </div>
+            <div class="pl-[200px]">
+                <div class="flex space-x-5 h-[55px] items-center">
+                    <button onclick="lyricsbtn()">
+                        <div>
+                            <img id="lyricsbtn" src="newassets/player/lyrics.svg" alt="">
+                        </div>
+                    </button>
+                    <button>
+                        <div>
+                            <img src="newassets/player/playerlikesong.svg" alt="">
+                        </div>
+                    </button>
+                    <div class="flex space-x-3">
+                        <button id = "volumebutton" onclick="volbtn()">
+                            <div class="w-[30px]">
+                                <img id="volbtn" title="mute" src="newassets/player/volmax.svg" alt="">
+                            </div>
+                        </button>
+                        <div>
+                            <input id="volumeslider" type="range" min="0" max="100" class="slider w-[100px]" value="100">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="newmobile.js"></script>
     <script src="newhome.js"></script>

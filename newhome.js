@@ -75,13 +75,13 @@ function heading4material() {
     }
 }
 function createribbon() {
-    const genres = {"Relax":"bg-[#597d2c]", "Energize":"bg-[#CFB55C]", "Romance":"bg-[#38771A]", "Sad":"bg-[#28739D]", "Sleep":"bg-[#4E289D]", "Podcasts":"bg-[#932560]"};
+    const genres = {"Relax":"bg-[#8FFF7D]", "Energize":"bg-[#FFC061]", "Romance":"bg-[#FF5A5A]", "Sad":"bg-[#A57BFF]", "Sleep":"bg-[#76DEFF]", "Podcasts":"bg-[#FF75C5]"};
     const ribbox = document.getElementById("ribbonbox");
     const parser = new DOMParser();
     Object.entries(genres).forEach(([ele,k]) => {
         ribbox.appendChild(parser.parseFromString(`<div>
-        <button class="${k} mr-2 text-black text-lg font-semibold border-white border-[3px] rounded-lg">
-            <div class="px-5 py-1 text-xl text-shadow-lg ">${ele}</div>
+        <button class="${k} mr-2 text-black text-lg font-semibold border-white border-[3px] rounded-lg hover:shadow-lg hover:shadow-white hover:scale-110">
+            <div class="px-5 py-1 text-xl">${ele}</div>
         </button>
     </div>`, "text/html").body.firstChild);
     });
