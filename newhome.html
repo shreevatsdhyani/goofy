@@ -19,8 +19,8 @@
             class="hidden sm:block w-[50%] max-w-[240px] sm:w-[72px] h-full fixed z-20 bg-black  border-r-[2px] border-white">
             <div class="gradnav">
                 <div id="hamopen" class="flex  h-10 w-10 justify-center rounded-2xl pt-8  ml-3">
-                    <button class="pt-5 sm:hidden" onclick="lnav()">
-                        <img src="newassets/icons/logo60.svg" alt="">
+                    <button class="sm:hidden" onclick="lnav()">
+                        <img src="newassets/icons/cross.svg" alt="">
                     </button>
                     <button id="ham2" class="hidden sm:block" onclick="lnav()">
                         <img src="newassets/icons/hamburger1.svg" alt="">
@@ -51,7 +51,7 @@
                     </div>
 
                     <hr id="hrnav" class="mx-1 border-1">
-                    
+
                     <button id="profilebox"
                         class="mt-2 h-[50px] flex rounded-[10px] hover:bg-green-700 w-[80%] ml-2 pl-[0.7rem] space-x-7 items-center"
                         onclick="location.href = 'profile.html'">
@@ -158,19 +158,21 @@
                 </div>
             </div>
         </div>
-        <!-- <div id="searchbtn" class="p-3" onclick="searchboxappear()">
+        <div id="logo">
+            <img src="newassets/icons/logo60.svg" alt="">
+        </div>
+        <div id="searchbtn" class="p-3 sm:hidden" onclick="searchboxappear()">
             <button>
                 <img src="assets/Search.svg" alt="">
             </button>
-        </div> -->
+        </div>
 
-        
+
 
     </div>
 
-    <div id="allelements" class="pt-8 flex flex-col ml-2 sm:ml-[100px]">
-        <div id="ribbonbox"
-            class="flex poppins-regular mt-20 scroll-smooth w-[90%] space-x-2">
+    <div id="allelements" class="pt-8 flex flex-col ml-2 sm:ml-[100px] ">
+        <div id="ribbonbox" class="flex poppins-regular mt-20 scroll-smooth  w-[98%] space-x-2">
         </div>
         <div class="flex-col poppins-regular mt-10 ">
             <div class="text-white flex w-[98%] text-[30px] justify-between">
@@ -185,10 +187,10 @@
                 </div>
             </div>
             <div id="parentscrolldiv1"
-                class="scrollbar overflow-hidden hover:overflow-x-scroll h-64  w-[98%] pt-4 grid grid-flow-col auto-cols-auto  scroll-smooth space-x-5">
-        
+                class=" overflow-x-auto sm:scrollbar  sm:hover:overflow-x-scroll h-64  w-[98%] pt-4 grid grid-flow-col auto-cols-auto  scroll-smooth space-x-5">
+
             </div>
-            
+
         </div>
         <div class="flex-col poppins-regular mt-10 ">
             <div class="text-white flex w-[98%] text-[30px] justify-between">
@@ -203,10 +205,10 @@
                 </div>
             </div>
             <div id="parentscrolldiv2"
-                class="scrollbar overflow-hidden hover:overflow-x-scroll h-64  w-[98%] pt-4 grid grid-flow-col auto-cols-auto  scroll-smooth space-x-5">
-        
+                class="sm:scrollbar overflow-x-auto  sm:hover:overflow-x-scroll h-64  w-[98%] pt-4 grid grid-flow-col auto-cols-auto  scroll-smooth space-x-5">
+
             </div>
-            
+
         </div>
         <div class="flex-col poppins-regular mt-10 ">
             <div class="text-white flex w-[98%] text-[30px] justify-between">
@@ -221,84 +223,88 @@
                 </div>
             </div>
             <div id="parentscrolldiv3"
-                class="scrollbar overflow-hidden hover:overflow-x-scroll h-64  w-[98%] pt-4 grid grid-flow-col auto-cols-auto  scroll-smooth space-x-5">
-        
+                class="sm:scrollbar overflow-x-auto  sm:hover:overflow-x-scroll h-64  w-[98%] pt-4 grid grid-flow-col auto-cols-auto  scroll-smooth space-x-5">
+
             </div>
-            
+
         </div>
 
         <div class="flex-col poppins-regular mt-10 space-y-3 ">
             <div class="text-white w-[98%] text-[30px] justify-between">Heading 4</div>
-            <div class="text-white grid grid-flow-col w-[98%] text-[20px] pt-4">
-                <div class="flex space-x-5">
-                    <div class="border-white border-2"><img src="newassets/songsmalldp.svg"></div>
-                    <div>
-                        <div>Song Name</div>
-                        <div>Artists Name</div>
+
+            <div class="w-[98%] overflow-x-scroll">
+
+                <div class="text-white grid grid-flow-col overflow-x-scroll scrollbar text-[20px] pt-4">
+                    <div class="flex space-x-5">
+                        <div class="border-white border-2"><img src="newassets/songsmalldp.svg"></div>
+                        <div>
+                            <div>Song Name</div>
+                            <div>Artists Name</div>
+                        </div>
+                    </div>
+                    <div class="flex space-x-5">
+                        <div class="border-white border-2"><img src="newassets/songsmalldp.svg"></div>
+                        <div>
+                            <div>Song Name</div>
+                            <div>Artists Name</div>
+                        </div>
+                    </div>
+                    <div class="flex space-x-5">
+                        <div class="border-white border-2"><img src="newassets/songsmalldp.svg"></div>
+                        <div>
+                            <div>Song Name</div>
+                            <div>Artists Name</div>
+                        </div>
                     </div>
                 </div>
-                <div class="flex space-x-5">
-                    <div class="border-white border-2"><img src="newassets/songsmalldp.svg"></div>
-                    <div>
-                        <div>Song Name</div>
-                        <div>Artists Name</div>
+                <div class="text-white grid grid-flow-col overflow-x-scroll scrollbar  text-[20px]">
+                    <div class="flex space-x-5">
+                        <div class="border-white border-2"><img src="newassets/songsmalldp.svg"></div>
+                        <div>
+                            <div>Song Name</div>
+                            <div>Artists Name</div>
+                        </div>
+                    </div>
+                    <div class="flex space-x-5">
+                        <div class="border-white border-2"><img src="newassets/songsmalldp.svg"></div>
+                        <div>
+                            <div>Song Name</div>
+                            <div>Artists Name</div>
+                        </div>
+                    </div>
+                    <div class="flex space-x-5">
+                        <div class="border-white border-2"><img src="newassets/songsmalldp.svg"></div>
+                        <div>
+                            <div>Song Name</div>
+                            <div>Artists Name</div>
+                        </div>
                     </div>
                 </div>
-                <div class="flex space-x-5">
-                    <div class="border-white border-2"><img src="newassets/songsmalldp.svg"></div>
-                    <div>
-                        <div>Song Name</div>
-                        <div>Artists Name</div>
+                <div class="text-white grid grid-flow-col overflow-x-scroll scrollbar text-[20px]">
+                    <div class="flex space-x-5">
+                        <div class="border-white border-2"><img src="newassets/songsmalldp.svg"></div>
+                        <div>
+                            <div>Song Name</div>
+                            <div>Artists Name</div>
+                        </div>
+                    </div>
+                    <div class="flex space-x-5">
+                        <div class="border-white border-2"><img src="newassets/songsmalldp.svg"></div>
+                        <div>
+                            <div>Song Name</div>
+                            <div>Artists Name</div>
+                        </div>
+                    </div>
+                    <div class="flex space-x-5">
+                        <div class="border-white border-2"><img src="newassets/songsmalldp.svg"></div>
+                        <div>
+                            <div>Song Name</div>
+                            <div>Artists Name</div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="text-white grid grid-flow-col w-[98%] text-[20px]">
-                <div class="flex space-x-5">
-                    <div class="border-white border-2"><img src="newassets/songsmalldp.svg"></div>
-                    <div>
-                        <div>Song Name</div>
-                        <div>Artists Name</div>
-                    </div>
-                </div>
-                <div class="flex space-x-5">
-                    <div class="border-white border-2"><img src="newassets/songsmalldp.svg"></div>
-                    <div>
-                        <div>Song Name</div>
-                        <div>Artists Name</div>
-                    </div>
-                </div>
-                <div class="flex space-x-5">
-                    <div class="border-white border-2"><img src="newassets/songsmalldp.svg"></div>
-                    <div>
-                        <div>Song Name</div>
-                        <div>Artists Name</div>
-                    </div>
-                </div>
-            </div>
-            <div class="text-white grid grid-flow-col w-[98%] text-[20px]">
-                <div class="flex space-x-5">
-                    <div class="border-white border-2"><img src="newassets/songsmalldp.svg"></div>
-                    <div>
-                        <div>Song Name</div>
-                        <div>Artists Name</div>
-                    </div>
-                </div>
-                <div class="flex space-x-5">
-                    <div class="border-white border-2"><img src="newassets/songsmalldp.svg"></div>
-                    <div>
-                        <div>Song Name</div>
-                        <div>Artists Name</div>
-                    </div>
-                </div>
-                <div class="flex space-x-5">
-                    <div class="border-white border-2"><img src="newassets/songsmalldp.svg"></div>
-                    <div>
-                        <div>Song Name</div>
-                        <div>Artists Name</div>
-                    </div>
-                </div>
-            </div>
-            
+
         </div>
 
 
@@ -315,14 +321,14 @@
                 </div>
             </div>
             <div id="parentscrolldiv4"
-                class="scrollbar overflow-hidden hover:overflow-x-scroll h-64  w-[98%] pt-4 grid grid-flow-col auto-cols-auto  scroll-smooth space-x-5">
-        
+                class="sm:scrollbar overflow-x-auto  sm:hover:overflow-x-scroll h-64  w-[98%] pt-4 grid grid-flow-col auto-cols-auto  scroll-smooth space-x-5">
+
             </div>
-            
+
         </div>
 
     </div>
-    <div id="player" class="z-20 bottom-0 fixed h-[75px] w-full bg-[#161617] border-white border-2">
+    <div id="player" class="hidden sm:block  z-20 bottom-0 fixed h-[75px] w-full bg-[#161617] border-white border-2">
         <div class="flex space-x-10 m-3 text-white">
             <div class="flex space-x-5">
                 <div class="border">
@@ -342,28 +348,28 @@
                     <button>
                         <div class="pt-[5px]">
                             <img src="newassets/player/shuffle.svg" alt="">
-                        </div>    
+                        </div>
                     </button>
                     <button>
                         <div class="pt-[5px]">
                             <img src="newassets/player/playprev.svg" alt="">
-                        </div>   
+                        </div>
                     </button>
                     <button onclick="playpause()">
                         <div>
                             <img id="playpause" src="newassets/player/play.svg" alt="">
-                        </div>    
+                        </div>
                     </button>
                     <button>
                         <div class="pt-[5px]">
                             <img src="newassets/player/playnext.svg" alt="">
-                        </div>    
+                        </div>
                     </button>
                     <button onclick="changerepeat()">
                         <div class="pt-[5px]">
                             <img id="repeatingbtn" src="newassets/player/repeatoff.svg" alt="">
-                        </div>    
-                    </button>    
+                        </div>
+                    </button>
                 </div>
                 <div class="h-[25px] flex space-x-5">
                     <div id="song_progress" class="font-bold">
@@ -371,7 +377,8 @@
                     </div>
                     <div>
                         <audio id="song" preload="auto">
-                            <source src="media/Naav - Chadhti Lehrein Laang Na Paye [6RLRUNoTHRY].webm" type="audio/mp4">
+                            <source src="media/Naav - Chadhti Lehrein Laang Na Paye [6RLRUNoTHRY].webm"
+                                type="audio/mp4">
                         </audio>
                         <input id="playerprogress" type="range" min="0" max="100" class="slider w-[400px]" value="0">
                     </div>
@@ -393,13 +400,14 @@
                         </div>
                     </button>
                     <div class="flex space-x-3">
-                        <button id = "volumebutton" onclick="volbtn()">
+                        <button id="volumebutton" onclick="volbtn()">
                             <div class="w-[30px]">
                                 <img id="volbtn" title="mute" src="newassets/player/volmax.svg" alt="">
                             </div>
                         </button>
                         <div>
-                            <input id="volumeslider" type="range" min="0" max="100" class="slider w-[100px]" value="100">
+                            <input id="volumeslider" type="range" min="0" max="100" class="slider w-[100px]"
+                                value="100">
                         </div>
                     </div>
                 </div>

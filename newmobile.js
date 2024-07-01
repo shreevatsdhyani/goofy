@@ -11,6 +11,7 @@ function lnav() {
     if (expanded) {
         if (window.innerWidth >= 768) {
             document.getElementById("allelements").classList.remove("md:ml-[280px]");
+            document.getElementById("searchbox").classList.remove("md:ml-[280px]");
         }
         else
         {
@@ -32,8 +33,7 @@ function lnav() {
         document.getElementById("profilebox").classList.replace("w-[90%]", "w-[80%]");
         document.getElementById("profilebox").classList.replace("pl-2", "pl-[10px]");
         document.getElementById("profilebox").classList.replace("ml-3", "ml-2");
-        document.getElementById("addartists").classList.replace("flex", "hidden");
-        document.getElementById("newplaylist").classList.replace("flex", "hidden");
+       
 
        
         expanded = false;
@@ -42,6 +42,7 @@ function lnav() {
         console.log(window.innerWidth);
         if (window.innerWidth >= 768) {
             document.getElementById("allelements").classList.add("md:ml-[280px]");
+            document.getElementById("searchbox").classList.add("md:ml-[280px]");
         }
         else
         {
@@ -63,8 +64,6 @@ function lnav() {
         document.getElementById("profilebox").classList.replace("w-[80%]", "w-[90%]");
         document.getElementById("profilebox").classList.replace("pl-[10px]", "pl-2");
         document.getElementById("profilebox").classList.replace("ml-2", "ml-3");
-        document.getElementById("addartists").classList.replace("hidden", "flex");
-        document.getElementById("newplaylist").classList.replace("hidden","flex" );
 
         
         expanded = true;
@@ -144,7 +143,16 @@ function clickmanage(event) {
 document.getElementById("searchcontent").addEventListener("input", crossappear);
 document.body.addEventListener("click",clickmanage);
 
-window.addEventListener("resize",()=>{
+
+function handleresize()
+{
+    const ribbonbox = document.getElementById('ribbonbox');
+    if (window.innerWidth>=911) {
+        ribbonbox.classList.remove('overflow-x-scroll');
+    }
+    if (window.innerWidth<911) {
+        ribbonbox.classList.add('overflow-x-scroll');
+    }
     if (window.innerWidth == 768 && !expanded)
         {
             lnav();
@@ -153,4 +161,8 @@ window.addEventListener("resize",()=>{
         {
             lnav();
         }    
-})
+}
+
+
+handleresize();
+window.addEventListener("resize",handleresize);

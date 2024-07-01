@@ -18,6 +18,7 @@
         font-style: normal;
         font-size: 64px;
     }
+
     .faster-one-small {
         font-family: "Faster One", system-ui;
         font-weight: 400;
@@ -110,7 +111,7 @@
         /* Change thumb color in WebKit browsers */
         border-radius: 50%;
         box-shadow: -10007px 0 0 10000px #bef264;
-        
+
     }
 
     .slider::-moz-range-thumb {
@@ -133,8 +134,9 @@
         /* Change thumb color in IE/Edge */
         border-radius: 50%;
         box-shadow: -407px 0 0 400px rgb(55, 65, 81);
-     }
+    }
 
-     .gradnav{
-        background: linear-gradient(179deg, #02280A 6.96%, #074515 22.24%, #093312 40.24%, #0A5119 55.45%, #052B0D 71.37%, #0C4619 87.31%, #000 99.62%);    }
+    .gradnav {
+        background: linear-gradient(179deg, #02280A 6.96%, #074515 22.24%, #093312 40.24%, #0A5119 55.45%, #052B0D 71.37%, #0C4619 87.31%, #000 99.62%);
+    }
 }
