@@ -153,6 +153,7 @@ function handleresize()
         document.getElementById('parentscrolldiv2').classList.remove('overflow-x-auto');
         document.getElementById('parentscrolldiv3').classList.remove('overflow-x-auto');
         document.getElementById('parentscrolldiv4').classList.remove('overflow-x-auto');
+        document.getElementById('h4').classList.remove('overflow-x-auto');
     }
     if (window.innerWidth<911) {
         ribbonbox.classList.add('overflow-x-scroll');
@@ -160,6 +161,7 @@ function handleresize()
         document.getElementById('parentscrolldiv2').classList.add('overflow-x-auto');
         document.getElementById('parentscrolldiv3').classList.add('overflow-x-auto');
         document.getElementById('parentscrolldiv4').classList.add('overflow-x-auto');
+        document.getElementById('h4').classList.add('overflow-x-auto');
     }
     if (window.innerWidth == 768 && !expanded)
         {
