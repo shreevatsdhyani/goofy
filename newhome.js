@@ -55,7 +55,7 @@ function heading3material() {
         songscroll.appendChild(newelements.cloneNode(true));
     }
 }
-function heading4material() {
+function heading5material() {
     const songscroll = document.getElementById("parentscrolldiv4");
     const elementstr = `<div>
     <div class="h-40 w-40 border-white border-2">
@@ -71,6 +71,24 @@ function heading4material() {
     const parser = new DOMParser();
     const newelements = parser.parseFromString(elementstr, "text/html").body.firstChild;
     for (let i = 0; i < 10; i++) {
+        songscroll.appendChild(newelements.cloneNode(true));
+    }
+}
+function heading4material() {
+    const songscroll = document.getElementById("h4");
+    const elementstr = `<div>
+    <div class="flex space-x-2">
+                            <div class="border-white border-2"><img src="newassets/songsmalldp.svg"
+                                    ></div>
+                            <div>
+                                <div>Song Name</div>
+                                <div>Artists Name</div>
+                            </div>
+                        </div>
+</div>`
+    const parser = new DOMParser();
+    const newelements = parser.parseFromString(elementstr, "text/html").body.firstChild;
+    for (let i = 0; i < 12; i++) {
         songscroll.appendChild(newelements.cloneNode(true));
     }
 }
@@ -100,4 +118,5 @@ heading1material();
 heading2material();
 heading3material();
 heading4material();
+heading5material();
 

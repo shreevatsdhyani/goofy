@@ -141,20 +141,6 @@
     }
 
     /* Ensure horizontal scroll on smaller screens */
-    @media (max-width: 623px) {
-        .overflow-x-scroll {
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-            /* Enables smooth scrolling on iOS */
-            white-space: nowrap;
-            /* Prevents wrapping of grid items */
-        }
-
-        .grid-cols-1,
-        .grid-cols-3 {
-            display: inline-block;
-            vertical-align: top;
-        }
-    }
+   
 
 }
