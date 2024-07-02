@@ -62,7 +62,7 @@ function heading2material() {
 
 function moodandgenres() {
     const moods = {
-        "Romantic": "bg-[#FF75C5]",
+        "Romantic": "bg-[#76DEFF]",
         "Melancholic": "bg-[#FF75C5]",
         "Happy": "bg-[#FF75C5]",
         "Energetic": "bg-[#FF75C5]",
@@ -86,16 +86,25 @@ function moodandgenres() {
         "Contemporary": "bg-[#FF75C5]",
         "Experimental": "bg-[#FF75C5]",
         "Unwind": "bg-[#FF75C5]",
-        "Love": "bg-[#FF75C5]",
-        "Dance": "bg-[#FF75C5]",
-        "Lounge": "bg-[#FF75C5]",
-        "Study": "bg-[#FF75C5]"
+        "Meditation": "bg-[#FF75C5]",
+        "Travel": "bg-[#FF75C5]",
+        "Chill": "bg-[#FF75C5]",
+        "Motivational": "bg-[#FF75C5]",
+        "Party": "bg-[#FF75C5]",
+        "Soulful": "bg-[#FF75C5]",
+        "Retro": "bg-[#FF75C5]",
+        "Urban": "bg-[#FF75C5]",
+        "Rural": "bg-[#FF75C5]",
+        "Nostalgic": "bg-[#FF75C5]",
+        "Contemporary": "bg-[#FF75C5]",
+        "Experimental": "bg-[#FF75C5]",
+        "Unwind": "bg-[#FF75C5]"
     };
     const mandg = document.getElementById("mandg");
     const parser = new DOMParser();
     Object.entries(moods).forEach(([ele,k]) =>{
         mandg.appendChild(parser.parseFromString(`<div>
-        <button class="${k} mr-2 text-black text-lg font-semibold border-white border-[3px] rounded-lg hover:shadow-lg hover:shadow-white hover:scale-110">
+        <button class="${k} mr-2 text-black text-lg font-semibold border-white border-[3px] rounded-lg hover:shadow-lg hover:shadow-white hover:scale-110 justify-stretch min-w-full">
             <div class="px-5 py-1 text-xl">${ele}</div>
         </button>
     </div>`,"text/html").body.firstChild);
