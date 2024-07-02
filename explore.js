@@ -48,6 +48,23 @@ function heading2material() {
     }
 }
 
+function heading4material() {
+    const songscroll = document.getElementById("artistscrolldiv");
+    const elementstr = `<div>
+    <div class="h-40 w-40">
+        <img src="newassets/artistdp.svg" alt="">
+    </div>
+    <div class="text-white w-40 justify-center">
+        Artist Name
+    </div>
+</div>`
+    const parser = new DOMParser();
+    const newelements = parser.parseFromString(elementstr, "text/html").body.firstChild;
+    for (let i = 0; i < 10; i++) {
+        songscroll.appendChild(newelements.cloneNode(true));
+    }
+}
+
 document.getElementById("explorebox").addEventListener("mouseenter", () => {
     document.getElementById("exploreimg").classList.add("animate-spin");
 });

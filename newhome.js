@@ -88,7 +88,7 @@ function heading4material() {
 </div>`
     const parser = new DOMParser();
     const newelements = parser.parseFromString(elementstr, "text/html").body.firstChild;
-    for (let i = 0; i < 12; i++) {
+    for (let i = 0; i < 9; i++) {
         songscroll.appendChild(newelements.cloneNode(true));
     }
 }
@@ -113,6 +113,42 @@ function horizontalscroll(left,eleid) {
     }
 
 }
+
+
+function handleresize()
+{
+    const ribbonbox = document.getElementById('ribbonbox');
+    if (window.innerWidth>=911) {
+        ribbonbox.classList.remove('overflow-x-scroll');
+        document.getElementById('parentscrolldiv1').classList.remove('overflow-x-auto');
+        document.getElementById('parentscrolldiv2').classList.remove('overflow-x-auto');
+        document.getElementById('parentscrolldiv3').classList.remove('overflow-x-auto');
+        document.getElementById('parentscrolldiv4').classList.remove('overflow-x-auto');
+        // document.getElementById('h4').classList.remove('overflow-x-auto');
+    }
+    if (window.innerWidth<911) {
+        ribbonbox.classList.add('overflow-x-scroll');
+        document.getElementById('parentscrolldiv1').classList.add('overflow-x-auto');
+        document.getElementById('parentscrolldiv2').classList.add('overflow-x-auto');
+        document.getElementById('parentscrolldiv3').classList.add('overflow-x-auto');
+        document.getElementById('parentscrolldiv4').classList.add('overflow-x-auto');
+        // document.getElementById('h4').classList.add('overflow-x-auto');
+    }
+    if (window.innerWidth == 768 && !expanded)
+        {
+            lnav();
+        }
+    else if(window.innerWidth < 768 && expanded)
+        {
+            lnav();
+        }    
+}
+
+
+handleresize();
+window.addEventListener("resize",handleresize);
+
+
 createribbon();
 heading1material();
 heading2material();
