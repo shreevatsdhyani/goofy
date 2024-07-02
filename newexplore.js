@@ -61,7 +61,36 @@ function heading2material() {
 
 
 function moodandgenres() {
-    const moods = ["Romantic","Melancholic","Happy","Energetic","Peaceful","Spiritual","Patriotic","Festive","Rainy Day","Wedding","Workout","Meditation","Travel","Chill","Motivational","Party","Soulful","Retro","Urban","Rural","Nostalgic","Contemporary","Experimental","Unwind","Love","Dance","Lounge","Study"];
+    const moods = {
+        "Romantic": "bg-[#FF75C5]",
+        "Melancholic": "bg-[#FF75C5]",
+        "Happy": "bg-[#FF75C5]",
+        "Energetic": "bg-[#FF75C5]",
+        "Peaceful": "bg-[#FF75C5]",
+        "Spiritual": "bg-[#FF75C5]",
+        "Patriotic": "bg-[#FF75C5]",
+        "Festive": "bg-[#FF75C5]",
+        "Rainy Day": "bg-[#FF75C5]",
+        "Wedding": "bg-[#FF75C5]",
+        "Workout": "bg-[#FF75C5]",
+        "Meditation": "bg-[#FF75C5]",
+        "Travel": "bg-[#FF75C5]",
+        "Chill": "bg-[#FF75C5]",
+        "Motivational": "bg-[#FF75C5]",
+        "Party": "bg-[#FF75C5]",
+        "Soulful": "bg-[#FF75C5]",
+        "Retro": "bg-[#FF75C5]",
+        "Urban": "bg-[#FF75C5]",
+        "Rural": "bg-[#FF75C5]",
+        "Nostalgic": "bg-[#FF75C5]",
+        "Contemporary": "bg-[#FF75C5]",
+        "Experimental": "bg-[#FF75C5]",
+        "Unwind": "bg-[#FF75C5]",
+        "Love": "bg-[#FF75C5]",
+        "Dance": "bg-[#FF75C5]",
+        "Lounge": "bg-[#FF75C5]",
+        "Study": "bg-[#FF75C5]"
+    };
     const mandg = document.getElementById("mandg");
     const parser = new DOMParser();
     moods.forEach(([ele,k]) =>{
