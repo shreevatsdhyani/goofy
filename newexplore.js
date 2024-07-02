@@ -64,10 +64,10 @@ function moodandgenres() {
     const moods = ["Romantic","Melancholic","Happy","Energetic","Peaceful","Spiritual","Patriotic","Festive","Rainy Day","Wedding","Workout","Meditation","Travel","Chill","Motivational","Party","Soulful","Retro","Urban","Rural","Nostalgic","Contemporary","Experimental","Unwind","Love","Dance","Lounge","Study"];
     const mandg = document.getElementById("mandg");
     const parser = new DOMParser();
-    moods.forEach(ele =>{
-        mandg.appendChild(parser.parseFromString(`<div class="hover:bg-[#111827]">
-        <button class="mandg">
-            <MG class="p-3">${ele}</MG>
+    moods.forEach(([ele,k]) =>{
+        mandg.appendChild(parser.parseFromString(`<div>
+        <button class="${k} mr-2 text-black text-lg font-semibold border-white border-[3px] rounded-lg hover:shadow-lg hover:shadow-white hover:scale-110">
+            <div class="px-5 py-1 text-xl">${ele}</div>
         </button>
     </div>`,"text/html").body.firstChild);
     });
