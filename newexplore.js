@@ -93,7 +93,7 @@ function moodandgenres() {
     };
     const mandg = document.getElementById("mandg");
     const parser = new DOMParser();
-    moods.forEach(([ele,k]) =>{
+    Object.entries(moods).forEach(([ele,k]) =>{
         mandg.appendChild(parser.parseFromString(`<div>
         <button class="${k} mr-2 text-black text-lg font-semibold border-white border-[3px] rounded-lg hover:shadow-lg hover:shadow-white hover:scale-110">
             <div class="px-5 py-1 text-xl">${ele}</div>
