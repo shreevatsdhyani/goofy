@@ -1,0 +1,7 @@
+*HOMEPAGE* (get_home)
+
+HEADING-1 : Hot Hits 
+
+HEADING-2 : Seasonal Melodies
+
+HEADING-3 :
