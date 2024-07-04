@@ -52,11 +52,9 @@ function heading2material() {
         <img src="newassets/songdp.svg" alt="">
     </div>
     <div class="text-white w-40 pt-1">
-        Song Name
+        Album Name
     </div>
-    <div class="text-white w-40">
-        Artist Name
-    </div>
+    
 </div>`
     const parser = new DOMParser();
     const newelements = parser.parseFromString(elementstr, "text/html").body.firstChild;
@@ -70,9 +68,6 @@ function heading3material() {
     <div>
     <div class="h-40 w-40 border-white border-2">
         <img src="newassets/songdp.svg" alt="">
-    </div>
-    <div class="text-white w-40 pt-1">
-        Song Name
     </div>
     <div class="text-white w-40">
         Artist Name
