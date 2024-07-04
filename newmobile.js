@@ -143,3 +143,12 @@ function clickmanage(event) {
 document.getElementById("searchcontent").addEventListener("input", crossappear);
 document.body.addEventListener("click",clickmanage);
 
+
+
+// antony
+document.getElementById("explorebox").addEventListener("mouseenter", () => {
+    document.getElementById("exploreimg").classList.add("animate-spin");
+});
+document.getElementById("explorebox").addEventListener("mouseleave", () => {
+    document.getElementById("exploreimg").classList.remove("animate-spin");
+});

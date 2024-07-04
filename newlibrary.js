@@ -99,14 +99,6 @@ function heading4material() {
 }
 
 
-document.getElementById("explorebox").addEventListener("mouseenter", () => {
-    document.getElementById("exploreimg").classList.add("animate-spin");
-});
-document.getElementById("explorebox").addEventListener("mouseleave", () => {
-    document.getElementById("exploreimg").classList.remove("animate-spin");
-});
-
-
 document.addEventListener('DOMContentLoaded', function () {
     const modalToggle = document.querySelector('[data-modal-toggle="crud-modal"]');
     const modalClose = document.querySelector('[data-modal-close="crud-modal"]');
