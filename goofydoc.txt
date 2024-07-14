@@ -1,0 +1,30 @@
+features-
+
+1)simple auth screens
+
+2) On boarding screen
+
+3) the dash and app is little bit messed up because of colors
+
+4 ) we have to use like 4 colors and primary color is blue and secondary color is light blue, somewhere we using blank0000 color or gray like shade
+
+
+
+5) we have to work on boarding screen, max 3 screens and o-auth must be screen, we will put like 2 screens at auth 
+
+
+"After that" 
+
+
+we have to focus on multiple sections like -
+Hollywood, Bollywood , mashups
+
+
+It should be light in color , "GYM" section's color will be reddish in color
+
+
+We will implement music playlist for gym freaks in 1st draft
+
+
+
+1) " Our target audience will be 14-22 yrs people after 1 month we will put ads on that so we can generate money to get employees paid"

@@ -94,8 +94,54 @@ function crossappear() {
         document.getElementById("searchsuggestions").classList.replace("bg-gray-800", "*:bg-[#40714494]");
         closesearch();
     }
-    // setTimeout(search(document.getElementById("searchcontent").value, 5),500);
+    setTimeout(search(document.getElementById("searchcontent").value, 7),500);
+    
 }
+
+
+// Define the search function in your JavaScript code
+function search(query) {
+    // Construct the URL with query parameters
+    const url = `http://127.0.0.1:5000/api/search?query=${encodeURIComponent(query)}`;
+    // Make a GET request using fetch
+    fetch(url)
+        .then(response => {
+            // Check if the response is OK (status code 200)
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            // Parse the JSON response
+            return response.json();
+        })
+        .then(data => {
+            console.log(data);
+            try {
+                document.getElementById("songname1").innerHTML = data["card"]["title"];
+                document.getElementById("pic1").src = data["card"]["thumbnail_url"];
+            } catch (TypeError) {
+                
+            }
+            
+            document.getElementById("songname2").innerHTML = data["songs"][0]["title"];
+            document.getElementById("songname3").innerHTML = data["songs"][1]["title"];
+            document.getElementById("songname4").innerHTML = data["songs"][2]["title"];
+            // document.getElementById("songname5").innerHTML = data["songs"][3]["title"];
+            document.getElementById("songname6").innerHTML = data["artists"][0]["author_name"];
+            // document.getElementById("songname7").innerHTML = data["artists"][1]["author_name"];
+            
+            document.getElementById("pic2").src = data["songs"][0]["thumbnail_url"];
+            document.getElementById("pic3").src = data["songs"][1]["thumbnail_url"];
+            document.getElementById("pic4").src = data["songs"][2]["thumbnail_url"];
+            // document.getElementById("pic5").src = data["songs"][3]["thumbnail_url"];
+            document.getElementById("pic6").src = data["artists"][0]["thumbnail_url"];
+            // document.getElementById("pic7").src = data["artists"][1]["thumbnail_url"];
+        })
+        .catch(error => {
+            // Handle any errors
+            console.error('Error fetching search results:', error);
+        });
+}
+
 
 function clearinput() {
     document.getElementById("searchcontent").value = "";
