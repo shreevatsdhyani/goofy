@@ -72,7 +72,7 @@
             </button>
         </div>
         <div id="searchbox"
-            class="hidden mt-2 sm:block flex-col fixed w-[70%] max-w-[500px] h-12 poppins-regular border-double bg-black border-white border-t-2 border-l-2 border-r-2 border-b-2 rounded-2xl sm:ml-[80px]">
+            class="hidden mt-2 sm:block flex-col fixed w-[70%] max-w-[500px] h-max poppins-regular  bg-black border-white border-2 rounded-2xl sm:ml-[80px]">
             <div id="searchpic" class="pt-1 pl-1 flex w-full">
                 <div class="border-white">
                     <img src="newassets/icons/Search.svg" alt="">
@@ -85,13 +85,14 @@
                     <button onclick="clearinput()"><img src="newassets/icons/cross.svg" alt=""></button>
                 </div>
             </div>
-            <hr id="searchhr" class="hidden">
-            <div id="searchsuggestions" class="hidden w-[498px] border-2 *:bg-black text-white text-lg rounded-b-lg">
+            <!-- <hr id="searchhr" class="hidden"> -->
+            <div id="searchsuggestions" class="hidden w-[100%]  *:bg-black text-white text-lg rounded-b-lg pb-0.5">
+                <hr>
                 <div class="flex">
                     <div class="p-1 w-[50px] h-[40px]">
                         <img id="pic1" src="assets/songimg1.svg" alt="">
                     </div>
-                    <div id="songname1" class="py-2 w-[370px] h-[40px] text-nowrap overflow-x-hidden overflow-clip"
+                    <div id="songname1" class="py-2 w-max h-[40px] text-nowrap overflow-x-hidden overflow-clip"
                         onmouseenter="this.scrollLeft+=this.textContent.length">
                         songname
                     </div>
@@ -101,7 +102,7 @@
                     <div class="p-1 w-[50px] h-[40px]">
                         <img id="pic2" src="assets/songimg1.svg" alt="">
                     </div>
-                    <div id="songname2" class="py-2 w-[370px] h-[40px] text-nowrap overflow-x-hidden overflow-clip"
+                    <div id="songname2" class="py-2 w-max h-[40px] text-nowrap overflow-x-hidden overflow-clip"
                         onmouseenter="this.scrollLeft+=this.textContent.length">
                         songname
                     </div>
@@ -111,7 +112,7 @@
                     <div class="p-1 w-[50px] h-[40px]">
                         <img id="pic3" src="assets/songimg1.svg" alt="">
                     </div>
-                    <div id="songname3" class="py-2 w-[370px] h-[40px] text-nowrap overflow-x-hidden overflow-clip"
+                    <div id="songname3" class="py-2 w-max h-[40px] text-nowrap overflow-x-hidden overflow-clip"
                         onmouseenter="this.scrollLeft+=this.textContent.length">
                         songname
                     </div>
@@ -121,7 +122,7 @@
                     <div class="p-1 w-[50px] h-[40px]">
                         <img id="pic4" src="assets/songimg1.svg" alt="">
                     </div>
-                    <div id="songname4" class="py-2 w-[370px] h-[40px] text-nowrap overflow-x-hidden overflow-clip"
+                    <div id="songname4" class="py-2 w-max h-[40px] text-nowrap overflow-x-hidden overflow-clip"
                         onmouseenter="this.scrollLeft+=this.textContent.length">
                         songname
                     </div>
@@ -131,7 +132,7 @@
                     <div class="p-1 w-[50px] h-[40px]">
                         <img id="pic5" src="assets/songimg1.svg" alt="">
                     </div>
-                    <div id="songname5" class="py-2 w-[370px] h-[40px] text-nowrap overflow-x-hidden overflow-clip"
+                    <div id="songname5" class="py-2 w-max h-[40px] text-nowrap overflow-x-hidden overflow-clip"
                         onmouseenter="this.scrollLeft+=this.textContent.length">
                         songname
                     </div>
@@ -141,7 +142,7 @@
                     <div class="p-1 w-[50px] h-[40px]">
                         <img id="pic6" src="assets/songimg1.svg" alt="">
                     </div>
-                    <div id="songname6" class="py-2 w-[370px] h-[40px] text-nowrap overflow-x-hidden overflow-clip"
+                    <div id="songname6" class="py-2 w-max h-[40px] text-nowrap overflow-x-hidden overflow-clip"
                         onmouseenter="this.scrollLeft+=this.textContent.length">
                         songname
                     </div>
@@ -151,7 +152,7 @@
                     <div class="p-1 w-[50px] h-[40px]">
                         <img id="pic7" src="assets/songimg1.svg" alt="">
                     </div>
-                    <div id="songname7" class="py-2 w-[370px] h-[40px] text-nowrap overflow-x-hidden overflow-clip"
+                    <div id="songname7" class="py-2 w-max h-[40px] text-nowrap overflow-x-hidden overflow-clip"
                         onmouseenter="this.scrollLeft+=this.textContent.length">
                         songname
                     </div>

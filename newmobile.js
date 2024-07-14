@@ -73,28 +73,34 @@ function lnav() {
 
 function crossappear() {
     if (document.getElementById("searchcontent").value != "") {
-        document.getElementById("searchbox").classList.replace("rounded-2xl","rounded-t-2xl");
-        document.getElementById("searchbox").classList.replace("border-2","border-t-2");
+        document.getElementById("searchbox").classList.remove("rounded-2xl");
+        document.getElementById("searchbox").classList.add("rounded-t-2xl");
+        document.getElementById("searchbox").classList.add("rounded-b-xl");
+        // document.getElementById("searchbox").classList.remove("border-b-2");
         document.getElementById("clearcross").classList.remove("hidden");
-        document.getElementById("searchbox").classList.replace("h-10", "h-[230px]");
+        // document.getElementById("searchbox").classList.replace("h-10", "h-[230px]");
+        // document.getElementById("searchbox").classList.replace("h-12", "h-54");
         document.getElementById("searchbox").classList.replace("bg-[#68686638]", "bg-gray-800");
-        document.getElementById("searchhr").classList.remove("hidden");
+        // document.getElementById("searchhr").classList.remove("hidden");
         document.getElementById("searchsuggestions").classList.remove("hidden");
-        document.getElementById("searchsuggestions").classList.replace("*:bg-[#40714494]", "bg-gray-800");
+       
 
 
     } else {
-        document.getElementById("searchbox").classList.replace("rounded-t-2xl","rounded-2xl");
-        document.getElementById("searchbox").classList.replace("border-t-2","border-2");
+        document.getElementById("searchbox").classList.add("rounded-2xl");
+        document.getElementById("searchbox").classList.remove("rounded-t-2xl");
+        document.getElementById("searchbox").classList.remove("rounded-b-xl");
+        // document.getElementById("searchbox").classList.add("border-b-2");
         document.getElementById("clearcross").classList.add("hidden");
-        document.getElementById("searchbox").classList.replace("h-[230px]", "h-10");
+        // document.getElementById("searchbox").classList.replace("h-[230px]", "h-10");
+        // document.getElementById("searchbox").classList.replace("h-20", "h-12");
         document.getElementById("searchbox").classList.replace("bg-gray-800", "bg-[#68686638]");
-        document.getElementById("searchhr").classList.add("hidden");
+        // document.getElementById("searchhr").classList.add("hidden");
         document.getElementById("searchsuggestions").classList.add("hidden");
-        document.getElementById("searchsuggestions").classList.replace("bg-gray-800", "*:bg-[#40714494]");
+ 
         closesearch();
     }
-    setTimeout(search(document.getElementById("searchcontent").value, 7),500);
+    // setTimeout(search(document.getElementById("searchcontent").value, 7),500);
     
 }
 
