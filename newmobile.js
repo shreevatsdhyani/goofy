@@ -1,6 +1,6 @@
 let expanded = false;
 
-
+let islike =false;
 let isplaying = false;
 let islyrics = false;
 let repeat = 0;
@@ -19,14 +19,14 @@ song.addEventListener("loadeddata",()=>
 function playpause() {
     const playbtn = document.getElementById("playpause");
     if (isplaying) {
-        playbtn.src = "assets/play.svg";
+        playbtn.src = "newassets/player/play.svg";
         playbtn.setAttribute("title", "Play");
         isplaying = false;
         song.pause();
         
     }
     else {
-        playbtn.src = "assets/pause.svg";
+        playbtn.src = "newassets/player/pause.svg";
         playbtn.setAttribute("title", "Pause");
         isplaying = true;
         song.play();
@@ -46,7 +46,7 @@ function volbtn() {
     }
     else {
         volume = volume_slider.value;
-        volbtn.src = "assets/volmute.svg";
+        volbtn.src = "newassets/player/volmute.svg";
         volbtn.setAttribute("title", "Mute");
         volume_slider.value = "0";
         volumeManage();
@@ -57,22 +57,35 @@ function volbtn() {
 function lyricsbtn() {
     const lyricsbtn = document.getElementById("lyricsbtn");
     if (islyrics) {
-        lyricsbtn.src = "assets/lyrics.svg";
+        lyricsbtn.src = "newassets/player/lyrics.svg";
         lyricsbtn.setAttribute("title", "Lyrics");
         islyrics = false;
     }
     else {
-        lyricsbtn.src = "assets/lyricsoff.svg";
+        lyricsbtn.src = "newassets/player/nolyrics.svg";
         lyricsbtn.setAttribute("title", "Lyrics off");
         islyrics = true;
     }
 }
+function likebtn() {
+    const likebtn = document.getElementById("likebtn");
+    if (islike) {
+        likebtn.src = "newassets/player/playerlikesong.svg";
+        likebtn.setAttribute("title", "Like Song");
+        islike = false;
+    }
+    else {
+        likebtn.src = "newassets/player/playerlikesongblue.svg";
+        likebtn.setAttribute("title", "Dislike Song");
+        islike = true;
+    }
+}
 function changerepeat() {
-    const repeatelements = ["assets/repeatoff.svg", "assets/repeatone.svg", "assets/repeat.svg"];
+    const repeatelements = ["newassets/player/repeatoff.svg", "newassets/player/repeatonce.svg", "newassets/player/repeatall.svg"];
     const repbtn = document.getElementById("repeatingbtn");
     if (repeat==0) {
         repbtn.setAttribute("src", repeatelements[1]);
-        repbtn.setAttribute("title", "Repeat one");
+        repbtn.setAttribute("title", "Repeat once");
         repeat = 1;
         // song.loop = true;
     }
@@ -95,19 +108,19 @@ function volumeManage() {
     const volbtn = document.getElementById("volbtn");
     const slidervalue = parseInt(volslider.value);
     if (slidervalue<=0) {
-        volbtn.src= "assets/volmute.svg";
+        volbtn.src= "newassets/player/volmute.svg";
         volbtn.setAttribute("title", "Unmute");
     }
     else if(slidervalue<=33 && slidervalue>0){
-        volbtn.src= "assets/volmin.svg";
+        volbtn.src= "newassets/player/volmin.svg";
     }
     else if(slidervalue>33 && slidervalue<66)
     {
-        volbtn.src= "assets/volmid.svg";
+        volbtn.src= "newassets/player/volmid.svg";
     }
     else
     {
-        volbtn.src= "assets/volmax.svg";
+        volbtn.src= "newassets/player/volmax.svg";
     }
     song.volume = slidervalue/100;
 }
