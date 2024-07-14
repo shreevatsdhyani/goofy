@@ -1,5 +1,203 @@
 let expanded = false;
 
+
+let isplaying = false;
+let islyrics = false;
+let repeat = 0;
+let volume = "100";
+// working player
+const playerprogress = document.getElementById("playerprogress");
+const song = document.getElementById("song");
+const controllingicon = document.getElementById("playpause");
+
+song.addEventListener("loadeddata",()=>
+{
+    playerprogress.max = Math.floor(song.duration);
+    document.getElementById("song_duration").innerText = `${Math.floor(song.duration/60)}:${Math.floor(song.duration%60)}`;
+});
+
+function playpause() {
+    const playbtn = document.getElementById("playpause");
+    if (isplaying) {
+        playbtn.src = "assets/play.svg";
+        playbtn.setAttribute("title", "Play");
+        isplaying = false;
+        song.pause();
+        
+    }
+    else {
+        playbtn.src = "assets/pause.svg";
+        playbtn.setAttribute("title", "Pause");
+        isplaying = true;
+        song.play();
+    }
+}
+
+
+
+
+function volbtn() {
+    const volume_slider = document.getElementById("volumeslider");
+    const volbtn = document.getElementById("volbtn");
+    
+    if (volume_slider.value=="0") {
+        volume_slider.value = volume;
+        volumeManage();
+    }
+    else {
+        volume = volume_slider.value;
+        volbtn.src = "assets/volmute.svg";
+        volbtn.setAttribute("title", "Mute");
+        volume_slider.value = "0";
+        volumeManage();
+    }
+    song.volume = parseInt(volume_slider.value/100);
+}
+
+function lyricsbtn() {
+    const lyricsbtn = document.getElementById("lyricsbtn");
+    if (islyrics) {
+        lyricsbtn.src = "assets/lyrics.svg";
+        lyricsbtn.setAttribute("title", "Lyrics");
+        islyrics = false;
+    }
+    else {
+        lyricsbtn.src = "assets/lyricsoff.svg";
+        lyricsbtn.setAttribute("title", "Lyrics off");
+        islyrics = true;
+    }
+}
+function changerepeat() {
+    const repeatelements = ["assets/repeatoff.svg", "assets/repeatone.svg", "assets/repeat.svg"];
+    const repbtn = document.getElementById("repeatingbtn");
+    if (repeat==0) {
+        repbtn.setAttribute("src", repeatelements[1]);
+        repbtn.setAttribute("title", "Repeat one");
+        repeat = 1;
+        // song.loop = true;
+    }
+    else if (repeat==1) {
+        repbtn.setAttribute("src", repeatelements[2]);
+        repbtn.setAttribute("title", "Repeat all");
+        repeat = 2;
+    }
+    else {
+        repbtn.setAttribute("src", repeatelements[0]);
+        repbtn.setAttribute("title", "Repeat off");
+        repeat =0;
+        // song.loop = false;
+    }
+
+}
+
+function volumeManage() {
+    const volslider = document.getElementById("volumeslider");
+    const volbtn = document.getElementById("volbtn");
+    const slidervalue = parseInt(volslider.value);
+    if (slidervalue<=0) {
+        volbtn.src= "assets/volmute.svg";
+        volbtn.setAttribute("title", "Unmute");
+    }
+    else if(slidervalue<=33 && slidervalue>0){
+        volbtn.src= "assets/volmin.svg";
+    }
+    else if(slidervalue>33 && slidervalue<66)
+    {
+        volbtn.src= "assets/volmid.svg";
+    }
+    else
+    {
+        volbtn.src= "assets/volmax.svg";
+    }
+    song.volume = slidervalue/100;
+}
+
+document.getElementById("volumeslider").addEventListener("input",volumeManage)
+
+function sliderTools() {
+    const min = Math.floor(song.currentTime/60);
+    const sec = Math.floor(song.currentTime%60) < 10 ? "0" + Math.floor(song.currentTime%60):Math.floor(song.currentTime%60);
+    playerprogress.value = song.currentTime;
+    
+    document.getElementById("song_progress").innerText = `${min}:${sec}`;
+    if (song.ended) {
+        const playbtn = document.getElementById("playpause");
+        playbtn.src = "assets/play.svg";
+        playbtn.setAttribute("title", "Play");
+        isplaying = false;
+        if (repeat==1 || repeat==2) {
+            // playpause();
+            song.currentTime=0;
+            playpause();
+
+        }
+    }
+}
+
+// setInterval(() => {
+    
+//     sliderTools();
+// }, 1000);
+if (song.readyState) {
+    setInterval(sliderTools,1000);
+}
+
+
+
+playerprogress.addEventListener("input",()=>
+{
+    song.currentTime = playerprogress.value;
+    document.getElementById("song_progress").innerText = song.currentTime;
+    const min = Math.floor(song.currentTime/60);
+    const sec = Math.floor(song.currentTime%60) < 10 ? "0" + Math.floor(song.currentTime%60):Math.floor(song.currentTime%60);
+    document.getElementById("song_progress").innerText = `${min}:${sec}`;
+    
+});
+
+document.addEventListener("keydown",function(event)
+{
+    if (event.key == " " && document.activeElement!=document.getElementById("searchcontent")) {
+        event.preventDefault();
+        playpause();
+    }
+    else if ((event.key == "m" || event.key=="M") && document.activeElement!=document.getElementById("searchcontent")) {
+        event.preventDefault();
+        volbtn();
+    }
+    else if (event.key == "ArrowRight" && document.activeElement!=document.getElementById("searchcontent")) {
+
+        event.preventDefault();
+        if (document.activeElement==document.getElementById("volumeslider") || document.activeElement==document.getElementById("volumebutton")) {
+            const volslider = document.getElementById("volumeslider");
+            volslider.value = parseInt(volslider.value) + 5;
+            volumeManage();
+            // volslider.value = (parseInt(volslider.value)+10).toString();
+        }
+        else
+        {
+            song.currentTime+=5;
+            sliderTools();
+        }
+        
+    }
+    else if (event.key == "ArrowLeft" && document.activeElement!=document.getElementById("searchcontent")) {
+        event.preventDefault();
+        if (document.activeElement==document.getElementById("volumeslider") || document.activeElement==document.getElementById("volumebutton")) {
+            const volslider = document.getElementById("volumeslider");
+            volslider.value = parseInt(volslider.value) - 5;
+            volumeManage();
+            // volslider.value = (parseInt(volslider.value)+10).toString();
+        }
+        else
+        {
+            song.currentTime-=5;
+            sliderTools();
+        }
+        
+    }
+    
+    
+});
 function lnav() {
     document.getElementById("leftnav").classList.toggle("hidden");
     const navelements = ["home", "explore", "library", "likedsongs","profile"];
