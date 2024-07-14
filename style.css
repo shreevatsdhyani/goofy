@@ -9,7 +9,7 @@
     html,
     body {
         /* @apply bg-gradient-to-br from-gray-900 from-10% via-gray-800 via-15% to-lime-300 to-80% h-[3000px]; */
-        background-color: black;
+        background-color: #121212;
     }
 
     .faster-one {
@@ -107,10 +107,10 @@
         appearance: none;
         width: 10px;
         height: 10px;
-        background-color: #ffb300;
+        background-color: #333333;
         /* Change thumb color in WebKit browsers */
         border-radius: 50%;
-        box-shadow: -10007px 0 0 10000px #bef264;
+        box-shadow: -10007px 0 0 10000px #5398C9;
 
     }
 
@@ -119,7 +119,7 @@
         appearance: none;
         width: 20px;
         height: 20px;
-        background-color: #118c4a;
+        background-color: #00adb5;
         /* Change thumb color in Firefox */
         border-radius: 50%;
         box-shadow: -407px 0 0 400px rgb(55, 65, 81);
@@ -130,14 +130,18 @@
         appearance: none;
         width: 20px;
         height: 20px;
-        background-color: #118c4a;
+        background-color: #00adb5;
         /* Change thumb color in IE/Edge */
         border-radius: 50%;
         box-shadow: -407px 0 0 400px rgb(55, 65, 81);
     }
 
     .gradnav {
-        background: linear-gradient(179deg, #02280A 6.96%, #074515 22.24%, #093312 40.24%, #0A5119 55.45%, #052B0D 71.37%, #0C4619 87.31%, #000 99.62%);
+        /* background: linear-gradient(179deg, #02280A 6.96%, #074515 22.24%, #093312 40.24%, #0A5119 55.45%, #052B0D 71.37%, #0C4619 87.31%, #000 99.62%); */
+        background:linear-gradient(180deg, #1E88E5 25%,#3a7ca5 50%,#121212 100%)
+    }
+    .gradnav1 {
+        
     }
 
     /* Ensure horizontal scroll on smaller screens */

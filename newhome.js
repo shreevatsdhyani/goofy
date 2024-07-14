@@ -23,10 +23,10 @@ function heading2material() {
     <div class="h-40 w-40 border-white border-2">
         <img src="newassets/songdp.svg" alt="">
     </div>
-    <div class="text-white w-40 pt-1">
+    <div class="text-[#E0E0E0] w-40 pt-1">
         Song Name
     </div>
-    <div class="text-white w-40">
+    <div class="text-[#E0E0E0] w-40">
         Artist Name
     </div>
 </div>`
@@ -93,7 +93,7 @@ function heading4material() {
     }
 }
 function createribbon() {
-    const genres = {"Relax":"bg-[#8FFF7D]", "Energize":"bg-[#FFC061]", "Romance":"bg-[#FF5A5A]", "Sad":"bg-[#A57BFF]", "Sleep":"bg-[#76DEFF]", "Podcasts":"bg-[#FF75C5]"};
+    const genres = {"Relax":"bg-gradient-to-r from-[#467b3d] via-[#b0f1a5] to-[#467b3d]", "Energize":"bg-gradient-to-r from-[#b4843b] via-[#f7e0bc] to-[#b4843b]", "Romance":"bg-gradient-to-r from-[#7a2828] via-[#d29393] to-[#7a2828]", "Sad":"bg-gradient-to-r from-[#8951FF] via-[#C8AEFF] to-[#8951FF]", "Sleep":"bg-gradient-to-r from-[#66DDEE] via-[#B3F5FF] to-[#66DDEE]", "Podcasts":"bg-gradient-to-r from-[#FF75C5] via-[#FFB6E0] to-[#FF75C5]"};
     const ribbox = document.getElementById("ribbonbox");
     const parser = new DOMParser();
     Object.entries(genres).forEach(([ele,k]) => {

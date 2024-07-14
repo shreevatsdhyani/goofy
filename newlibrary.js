@@ -1,5 +1,5 @@
 function createribbon() {
-    const genres = { "Songs": "bg-[#FF5A5A]", "Albumns": "bg-[#FF75C5]", "Artists": "bg-[#8FFF7D]", "Playlists": "bg-[#76DEFF]" };
+    const genres = { "Songs": "bg-gradient-to-r from-[#7a2828] via-[#d29393] to-[#7a2828]", "Albumns": "bg-gradient-to-r from-[#FF75C5] via-[#FFB6E0] to-[#FF75C5]", "Artists": "bg-gradient-to-r from-[#467b3d] via-[#b0f1a5] to-[#467b3d]", "Playlists": "bg-gradient-to-r from-[#66DDEE] via-[#B3F5FF] to-[#66DDEE]" };
     const ribbox = document.getElementById("ribbonbox");
     const parser = new DOMParser();
     Object.entries(genres).forEach(([ele, k]) => {

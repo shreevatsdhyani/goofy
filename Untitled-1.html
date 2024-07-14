@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Explore</title>
+    <title>Homepage</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Faster+One&family=Inter:wght@100..900&display=swap"
@@ -14,7 +14,7 @@
 <!--blur-sm-->
 
 <body>
-    <div class="flex flex-col w-full bg-[#121212]">
+    <div class="flex flex-col w-full">
         <div id="leftnav"
             class="hidden sm:block w-[50%] max-w-[240px] sm:w-[72px] h-full fixed z-20 bg-[#121212]  border-r-[2px] border-white">
             <div class="gradnav">
@@ -31,19 +31,19 @@
 
                     <div id="hel"
                         class="*:my-2 *:flex *:space-x-7 *:rounded-md *:items-center *:h-12 *:w-[80%] *:ml-[0.4rem] *:pl-[0.85rem]">
-                        <button id="homebox" class="hover:bg-green-700" onclick="location.href = 'newhome.html'">
-                            <div title="Home"><img src="newassets/icons/home2.svg" alt=""></div>
+                        <button id="homebox" class="hover:bg-[#5398C9]" onclick="location.href = 'newhome.html'">
+                            <div title="Home"><img src="newassets/icons/home1.svg" alt=""></div>
                             <div id="home" class="text-center pt-0.5 sm:hidden">Home</div>
                         </button>
-                        <button id="explorebox" class="hover:bg-green-700" onclick="location.href = 'newexplore.html'">
-                            <div title="Explore"><img id="exploreimg" src="newassets/icons/explore1.svg" alt=""></div>
+                        <button id="explorebox" class="hover:bg-[#5398C9]" onclick="location.href = 'newexplore.html'">
+                            <div title="Explore"><img id="exploreimg" src="newassets/icons/explore2.svg" alt=""></div>
                             <div id="explore" class="text-center pt-0.5 sm:hidden">Explore</div>
                         </button>
-                        <button id="librarybox" class=" hover:bg-green-700" onclick="location.href = 'newlibrary.html'">
+                        <button id="librarybox" class=" hover:bg-[#5398C9]" onclick="location.href = 'newlibrary.html'">
                             <div title="Library"><img src="newassets/icons/library2.svg" alt=""></div>
                             <div id="library" class="text-center pt-0.5 sm:hidden">Library</div>
                         </button>
-                        <button id="likedsongsbox" class=" hover:bg-green-700" onclick="location.href = 'newmylikes.html'">
+                        <button id="likedsongsbox" class=" hover:bg-[#5398C9]" onclick="location.href = 'newmylikes.html'">
                             <div title="My Likes"><img id="likedsongsimg" src="newassets/icons/mylikes2.svg" alt="">
                             </div>
                             <div id="likedsongs" class="text-center pt-0.5 sm:hidden">My Likes</div>
@@ -53,7 +53,7 @@
                     <hr id="hrnav" class="mx-1 border-1">
 
                     <button id="profilebox"
-                        class="mt-2 h-[50px] flex rounded-[10px] hover:bg-green-700 w-[80%] ml-2 pl-[0.7rem] space-x-7 items-center"
+                        class="mt-2 h-[50px] flex rounded-[10px] hover:bg-[#5398C9] w-[80%] ml-2 pl-[0.7rem] space-x-7 items-center"
                         onclick="location.href = 'profile.html'">
                         <div id="profileimg">
                             <img src="newassets/icons/profile2.svg" alt="">
@@ -65,14 +65,14 @@
             </div>
         </div>
     </div>
-    <div id="topbar" class="flex justify-between p-2 fixed z-10 w-full bg-[#121212] ">
+    <div id="topbar" class="flex justify-between p-2 fixed z-10 w-full gradnav ">
         <div id="ham" class="flex hover:bg-[#68686638] h-10 w-10 justify-center rounded-2xl mt-1">
             <button onclick="lnav()">
                 <img src="newassets/icons/hamburger1.svg" alt="">
             </button>
         </div>
         <div id="searchbox"
-            class="hidden mt-2 sm:block flex-col fixed w-[70%] max-w-[500px] h-12 poppins-regular border-double bg-[#1E1E1E] border-white border-t-2 border-l-2 border-r-2 border-b-2 rounded-2xl sm:ml-[80px]">
+            class="hidden mt-2 sm:block flex-col fixed w-[70%] max-w-[500px] h-max poppins-regular  bg-[#1E1E1E] border-white border-2 rounded-2xl sm:ml-[80px]">
             <div id="searchpic" class="pt-1 pl-1 flex w-full">
                 <div class="border-white">
                     <img src="newassets/icons/Search.svg" alt="">
@@ -85,13 +85,14 @@
                     <button onclick="clearinput()"><img src="newassets/icons/cross.svg" alt=""></button>
                 </div>
             </div>
-            <hr id="searchhr" class="hidden">
-            <div id="searchsuggestions" class="hidden w-[498px] border-2 *:bg-[#1E1E1E] text-white text-lg rounded-b-lg">
+            <!-- <hr id="searchhr" class="hidden"> -->
+            <div id="searchsuggestions" class="hidden w-[100%]  *:bg-[#1E1E1E] text-white text-lg rounded-b-lg pb-0.5">
+                <hr>
                 <div class="flex">
                     <div class="p-1 w-[50px] h-[40px]">
                         <img id="pic1" src="assets/songimg1.svg" alt="">
                     </div>
-                    <div id="songname1" class="py-2 w-[370px] h-[40px] text-nowrap overflow-x-hidden overflow-clip"
+                    <div id="songname1" class="py-2 w-max h-[40px] text-nowrap overflow-x-hidden overflow-clip"
                         onmouseenter="this.scrollLeft+=this.textContent.length">
                         songname
                     </div>
@@ -101,7 +102,7 @@
                     <div class="p-1 w-[50px] h-[40px]">
                         <img id="pic2" src="assets/songimg1.svg" alt="">
                     </div>
-                    <div id="songname2" class="py-2 w-[370px] h-[40px] text-nowrap overflow-x-hidden overflow-clip"
+                    <div id="songname2" class="py-2 w-max h-[40px] text-nowrap overflow-x-hidden overflow-clip"
                         onmouseenter="this.scrollLeft+=this.textContent.length">
                         songname
                     </div>
@@ -111,7 +112,7 @@
                     <div class="p-1 w-[50px] h-[40px]">
                         <img id="pic3" src="assets/songimg1.svg" alt="">
                     </div>
-                    <div id="songname3" class="py-2 w-[370px] h-[40px] text-nowrap overflow-x-hidden overflow-clip"
+                    <div id="songname3" class="py-2 w-max h-[40px] text-nowrap overflow-x-hidden overflow-clip"
                         onmouseenter="this.scrollLeft+=this.textContent.length">
                         songname
                     </div>
@@ -121,7 +122,7 @@
                     <div class="p-1 w-[50px] h-[40px]">
                         <img id="pic4" src="assets/songimg1.svg" alt="">
                     </div>
-                    <div id="songname4" class="py-2 w-[370px] h-[40px] text-nowrap overflow-x-hidden overflow-clip"
+                    <div id="songname4" class="py-2 w-max h-[40px] text-nowrap overflow-x-hidden overflow-clip"
                         onmouseenter="this.scrollLeft+=this.textContent.length">
                         songname
                     </div>
@@ -131,7 +132,7 @@
                     <div class="p-1 w-[50px] h-[40px]">
                         <img id="pic5" src="assets/songimg1.svg" alt="">
                     </div>
-                    <div id="songname5" class="py-2 w-[370px] h-[40px] text-nowrap overflow-x-hidden overflow-clip"
+                    <div id="songname5" class="py-2 w-max h-[40px] text-nowrap overflow-x-hidden overflow-clip"
                         onmouseenter="this.scrollLeft+=this.textContent.length">
                         songname
                     </div>
@@ -139,9 +140,9 @@
                 <hr>
                 <div class="flex">
                     <div class="p-1 w-[50px] h-[40px]">
-                        <img id="pic5" src="assets/songimg1.svg" alt="">
+                        <img id="pic6" src="assets/songimg1.svg" alt="">
                     </div>
-                    <div id="songname5" class="py-2 w-[370px] h-[40px] text-nowrap overflow-x-hidden overflow-clip"
+                    <div id="songname6" class="py-2 w-max h-[40px] text-nowrap overflow-x-hidden overflow-clip"
                         onmouseenter="this.scrollLeft+=this.textContent.length">
                         songname
                     </div>
@@ -149,9 +150,9 @@
                 <hr>
                 <div class="flex rounded-b-md">
                     <div class="p-1 w-[50px] h-[40px]">
-                        <img id="pic5" src="assets/songimg1.svg" alt="">
+                        <img id="pic7" src="assets/songimg1.svg" alt="">
                     </div>
-                    <div id="songname5" class="py-2 w-[370px] h-[40px] text-nowrap overflow-x-hidden overflow-clip"
+                    <div id="songname7" class="py-2 w-max h-[40px] text-nowrap overflow-x-hidden overflow-clip"
                         onmouseenter="this.scrollLeft+=this.textContent.length">
                         songname
                     </div>
@@ -167,13 +168,13 @@
             </button>
         </div>
 
+
+
     </div>
 
     <div id="allelements" class="pt-8 flex flex-col ml-2 sm:ml-[100px] ">
         <div id="ribbonbox" class="flex poppins-regular mt-20 scroll-smooth  w-[98%] space-x-2">
-
         </div>
-
         <div class="flex-col poppins-regular mt-10 ">
             <div class="text-white flex w-[98%] text-[30px] justify-between">
                 <div>Heading 1</div>
@@ -188,10 +189,11 @@
             </div>
             <div id="parentscrolldiv1"
                 class=" sm:scrollbar  sm:hover:overflow-x-scroll sm:overflow-hidden h-64  w-[98%] pt-4 grid grid-flow-col auto-cols-auto  scroll-smooth space-x-5">
-    
+
             </div>
-    
+
         </div>
+        <div class="flex-col poppins-regular mt-10 ">
             <div class="text-white flex w-[98%] text-[30px] justify-between">
                 <div>Heading 2</div>
                 <div id="scrollnavbtn" class="flex">
@@ -204,22 +206,133 @@
                 </div>
             </div>
             <div id="parentscrolldiv2"
-                class=" sm:scrollbar  sm:hover:overflow-x-scroll sm:overflow-hidden h-64  w-[98%] pt-4 grid grid-flow-col auto-cols-auto  scroll-smooth space-x-5">
-    
-            </div>
-            
-            <div class="flex-col poppins-regular mt-10">
-                <div class="text-white flex w-full text-[30px]">
-                    Mood & genres
-                </div>
-                <div id="mandg"
-                    class="mt-5 w-[98%] grid grid-cols-6 grid-rows-6 gap-5 text-white *:poppins-regular">
+                class="sm:scrollbar   sm:hover:overflow-x-scroll sm:overflow-hidden h-64  w-[98%] pt-4 grid grid-flow-col auto-cols-auto  scroll-smooth space-x-5">
 
-                </div>
             </div>
 
+        </div>
+        <div class="flex-col poppins-regular mt-10 ">
             <div class="text-white flex w-[98%] text-[30px] justify-between">
-                <div>Heading 4</div>
+                <div>Heading 3</div>
+                <div id="scrollnavbtn" class="flex">
+                    <button class="hover:scale-110" onclick="horizontalscroll(true,'parentscrolldiv3')">
+                        <div class="m-1"><img src="newassets/larrow.svg" alt=""></div>
+                    </button>
+                    <button class="hover:scale-110" onclick="horizontalscroll(false,'parentscrolldiv3')">
+                        <div class="m-1"><img src="newassets/rarrow.svg" alt=""></div>
+                    </button>
+                </div>
+            </div>
+            <div id="parentscrolldiv3"
+                class="sm:scrollbar sm:hover:overflow-x-scroll sm:overflow-hidden h-64  w-[98%] pt-4 grid grid-flow-col auto-cols-auto  scroll-smooth space-x-5">
+
+            </div>
+
+        </div>
+
+        <div class="flex-col poppins-regular mt-10 space-y-3 text-white">
+            <div class=" w-[98%] text-[30px] ">Heading 4</div>
+            <div id="h4" class="w-full  grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-y-2">
+                
+                
+            </div>
+
+            <!-- <div id="h4" class="w-full sm:scrollbar  sm:hover:overflow-x-scroll sm:overflow-hidden">
+                <div
+                    class="w-[98%] grid grid-flow-col grid-cols-1 md:grid-cols-3 gap-3 md:overflow-x-scroll md:overflow-hidden">
+
+                    <div class="text-white grid grid-flow-col grid-rows-3 text-[20px] pt-4 scrollbar">
+                        <div class="flex space-x-5">
+                            <div class="border-white border-2"><img src="newassets/songsmalldp.svg"
+                                    class="w-16 h-16 md:w-auto md:h-auto"></div>
+                            <div>
+                                <div>Song Name</div>
+                                <div>Artists Name</div>
+                            </div>
+                        </div>
+                        <div class="flex space-x-5">
+                            <div class="border-white border-2"><img src="newassets/songsmalldp.svg"
+                                    class="w-16 h-16 md:w-auto md:h-auto"></div>
+                            <div>
+                                <div>Song Name</div>
+                                <div>Artists Name</div>
+                            </div>
+                        </div>
+                        <div class="flex space-x-5">
+                            <div class="border-white border-2"><img src="newassets/songsmalldp.svg"
+                                    class="w-16 h-16 md:w-auto md:h-auto"></div>
+                            <div>
+                                <div>Song Name</div>
+                                <div>Artists Name</div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="text-white grid grid-flow-col grid-rows-3 text-[20px] pt-4">
+                        <div class="flex space-x-5">
+                            <div class="border-white border-2"><img src="newassets/songsmalldp.svg"
+                                    class="w-16 h-16 md:w-auto md:h-auto"></div>
+                            <div>
+                                <div>Song Name</div>
+                                <div>Artists Name</div>
+                            </div>
+                        </div>
+                        <div class="flex space-x-5">
+                            <div class="border-white border-2"><img src="newassets/songsmalldp.svg"
+                                    class="w-16 h-16 md:w-auto md:h-auto"></div>
+                            <div>
+                                <div>Song Name</div>
+                                <div>Artists Name</div>
+                            </div>
+                        </div>
+                        <div class="flex space-x-5">
+                            <div class="border-white border-2"><img src="newassets/songsmalldp.svg"
+                                    class="w-16 h-16 md:w-auto md:h-auto"></div>
+                            <div>
+                                <div>Song Name</div>
+                                <div>Artists Name</div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="text-white grid grid-flow-col grid-rows-3 text-[20px] pt-4">
+                        <div class="flex space-x-5">
+                            <div class="border-white border-2"><img src="newassets/songsmalldp.svg"
+                                    class="w-16 h-16 md:w-auto md:h-auto"></div>
+                            <div>
+                                <div>Song Name</div>
+                                <div>Artists Name</div>
+                            </div>
+                        </div>
+                        <div class="flex space-x-5">
+                            <div class="border-white border-2"><img src="newassets/songsmalldp.svg"
+                                    class="w-16 h-16 md:w-auto md:h-auto"></div>
+                            <div>
+                                <div>Song Name</div>
+                                <div>Artists Name</div>
+                            </div>
+                        </div>
+                        <div class="flex space-x-5">
+                            <div class="border-white border-2"><img src="newassets/songsmalldp.svg"
+                                    class="w-16 h-16 md:w-auto md:h-auto"></div>
+                            <div>
+                                <div>Song Name</div>
+                                <div>Artists Name</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div> -->
+        </div>
+
+
+
+        <div class="flex-col poppins-regular mt-10 ">
+            <div class="text-white flex w-[98%] text-[30px] justify-between">
+                <div>Heading 5</div>
                 <div id="scrollnavbtn" class="flex">
                     <button class="hover:scale-110" onclick="horizontalscroll(true,'parentscrolldiv4')">
                         <div class="m-1"><img src="newassets/larrow.svg" alt=""></div>
@@ -230,16 +343,14 @@
                 </div>
             </div>
             <div id="parentscrolldiv4"
-                class=" sm:scrollbar  sm:hover:overflow-x-scroll sm:overflow-hidden h-64  w-[98%] pt-4 grid grid-flow-col auto-cols-auto  scroll-smooth space-x-5">
-    
+                class="sm:scrollbar  sm:hover:overflow-x-scroll sm:overflow-hidden h-64  w-[98%] pt-4 grid grid-flow-col auto-cols-auto  scroll-smooth space-x-5">
+
             </div>
-    
+
         </div>
+
     </div>
-
-    
-
-    <div id="player" class="hidden sm:hidden  z-20 bottom-0 fixed h-[75px] w-full bg-[#161617] border-white border-2">
+    <div id="player" class=" sm:  z-20 bottom-0 fixed h-[75px] w-full bg-[#1E1E1E] ">
         <div class="flex space-x-10 m-3 text-white">
             <div class="flex space-x-5">
                 <div class="border">
@@ -327,7 +438,7 @@
     </div>
 
     <script src="newmobile.js"></script>
-    <script src="newexplore.js"></script>
+    <script src="newhome.js"></script>
 </body>
 
 </html>
