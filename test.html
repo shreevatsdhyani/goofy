@@ -16,8 +16,8 @@
 <body>
     <div class="flex flex-col w-full">
         <div id="leftnav"
-            class="hidden sm:block w-[50%] max-w-[240px] sm:w-[72px] h-full fixed z-20 bg-[#121212] border-white">
-            <div class="gradnav">
+            class="hidden sm:block w-[50%] max-w-[240px] sm:w-[72px] h-full fixed z-20 border-white border-r-2">
+            <div class="">
                 <div id="hamopen" class="flex  h-10 w-10 justify-center rounded-2xl pt-8  ml-3">
                     <button class="sm:hidden" onclick="lnav()">
                         <img src="newassets/icons/cross.svg" alt="">
@@ -55,7 +55,7 @@
 
                     <button id="profilebox"
                         class="mt-2 h-[50px] flex rounded-[10px] hover:bg-[#5398C9] w-[80%] ml-2 pl-[0.7rem] space-x-7 items-center"
-                        onclick="location.href = 'profile.html'">
+                        onclick="location.href = 'newprofile.html'">
                         <div id="profileimg">
                             <img src="newassets/icons/profile2.svg" alt="">
                         </div>
@@ -66,161 +66,213 @@
             </div>
         </div>
     </div>
-    <div id="topbar" class="gradnav1 flex justify-between p-2 fixed z-10 w-full bg-[#121212] bg-opacity-50">
-        <div id="ham" class="flex hover:bg-[#68686638] h-10 w-10 justify-center rounded-2xl mt-1">
-            <button onclick="lnav()">
-                <img src="newassets/icons/hamburger1.svg" alt="">
-            </button>
-        </div>
-        <div id="searchbox"
-            class="hidden mt-2 sm:block flex-col fixed w-[70%] max-w-[500px] h-max poppins-regular  bg-[#1E1E1E] border-white border-2 rounded-2xl sm:ml-[80px]">
-            <div id="searchpic" class="pt-1 pl-1 flex w-full">
-                <div class="border-white">
-                    <img src="newassets/icons/Search.svg" alt="">
-                </div>
-                <div class="px-1 w-full">
-                    <input id="searchcontent" type="text" id="" placeholder="Search songs, albumns, artists , podcasts"
-                        class="text-lg bg-transparent text-white h-[40px] w-full outline-none" autocomplete="off">
-                </div>
-                <div id="clearcross" class="pr-3 pt-2 hidden">
-                    <button onclick="clearinput()"><img src="newassets/icons/cross.svg" alt=""></button>
-                </div>
+
+    <div class="gradnav2">
+        <div id="topbar" class="flex justify-between p-2 fixed z-10 w-full backdrop-blur">
+            <div id="ham" class="flex hover:bg-[#68686638] h-10 w-10 justify-center rounded-2xl mt-1">
+                <button onclick="lnav()">
+                    <img src="newassets/icons/hamburger1.svg" alt="">
+                </button>
             </div>
-            <!-- <hr id="searchhr" class="hidden"> -->
-            <div id="searchsuggestions" class="hidden w-[100%]  *:bg-[#1E1E1E] text-white text-lg rounded-b-lg pb-0.5">
-                <hr>
-                <div class="flex">
-                    <div class="p-1 w-[50px] h-[40px]">
-                        <img id="pic1" src="assets/songimg1.svg" alt="">
+            <div id="searchbox"
+                class="hidden mt-2 sm:block flex-col fixed w-[70%] max-w-[500px] h-max poppins-regular  bg-[#1E1E1E] border-white border-2 rounded-2xl sm:ml-[80px]">
+                <div id="searchpic" class="pt-1 pl-1 flex w-full">
+                    <div class="border-white">
+                        <img src="newassets/icons/Search.svg" alt="">
                     </div>
-                    <div id="songname1" class="py-2 w-max h-[40px] text-nowrap overflow-x-hidden overflow-clip"
-                        onmouseenter="this.scrollLeft+=this.textContent.length">
-                        songname
+                    <div class="px-1 w-full">
+                        <input id="searchcontent" type="text" id=""
+                            placeholder="Search songs, albumns, artists , podcasts"
+                            class="text-lg bg-transparent text-white h-[40px] w-full outline-none" autocomplete="off">
                     </div>
-                </div>
-                <hr>
-                <div class="flex">
-                    <div class="p-1 w-[50px] h-[40px]">
-                        <img id="pic2" src="assets/songimg1.svg" alt="">
-                    </div>
-                    <div id="songname2" class="py-2 w-max h-[40px] text-nowrap overflow-x-hidden overflow-clip"
-                        onmouseenter="this.scrollLeft+=this.textContent.length">
-                        songname
+                    <div id="clearcross" class="pr-3 pt-2 hidden">
+                        <button onclick="clearinput()"><img src="newassets/icons/cross.svg" alt=""></button>
                     </div>
                 </div>
-                <hr>
-                <div class="flex">
-                    <div class="p-1 w-[50px] h-[40px]">
-                        <img id="pic3" src="assets/songimg1.svg" alt="">
+                <!-- <hr id="searchhr" class="hidden"> -->
+                <div id="searchsuggestions"
+                    class="hidden w-[100%]  *:bg-[#1E1E1E] text-white text-lg rounded-b-lg pb-0.5">
+                    <hr>
+                    <div class="flex">
+                        <div class="p-1 w-[50px] h-[40px]">
+                            <img id="pic1" src="assets/songimg1.svg" alt="">
+                        </div>
+                        <div id="songname1" class="py-2 w-max h-[40px] text-nowrap overflow-x-hidden overflow-clip"
+                            onmouseenter="this.scrollLeft+=this.textContent.length">
+                            songname
+                        </div>
                     </div>
-                    <div id="songname3" class="py-2 w-max h-[40px] text-nowrap overflow-x-hidden overflow-clip"
-                        onmouseenter="this.scrollLeft+=this.textContent.length">
-                        songname
+                    <hr>
+                    <div class="flex">
+                        <div class="p-1 w-[50px] h-[40px]">
+                            <img id="pic2" src="assets/songimg1.svg" alt="">
+                        </div>
+                        <div id="songname2" class="py-2 w-max h-[40px] text-nowrap overflow-x-hidden overflow-clip"
+                            onmouseenter="this.scrollLeft+=this.textContent.length">
+                            songname
+                        </div>
                     </div>
-                </div>
-                <hr>
-                <div class="flex">
-                    <div class="p-1 w-[50px] h-[40px]">
-                        <img id="pic4" src="assets/songimg1.svg" alt="">
+                    <hr>
+                    <div class="flex">
+                        <div class="p-1 w-[50px] h-[40px]">
+                            <img id="pic3" src="assets/songimg1.svg" alt="">
+                        </div>
+                        <div id="songname3" class="py-2 w-max h-[40px] text-nowrap overflow-x-hidden overflow-clip"
+                            onmouseenter="this.scrollLeft+=this.textContent.length">
+                            songname
+                        </div>
                     </div>
-                    <div id="songname4" class="py-2 w-max h-[40px] text-nowrap overflow-x-hidden overflow-clip"
-                        onmouseenter="this.scrollLeft+=this.textContent.length">
-                        songname
+                    <hr>
+                    <div class="flex">
+                        <div class="p-1 w-[50px] h-[40px]">
+                            <img id="pic4" src="assets/songimg1.svg" alt="">
+                        </div>
+                        <div id="songname4" class="py-2 w-max h-[40px] text-nowrap overflow-x-hidden overflow-clip"
+                            onmouseenter="this.scrollLeft+=this.textContent.length">
+                            songname
+                        </div>
                     </div>
-                </div>
-                <hr>
-                <div class="flex">
-                    <div class="p-1 w-[50px] h-[40px]">
-                        <img id="pic5" src="assets/songimg1.svg" alt="">
+                    <hr>
+                    <div class="flex">
+                        <div class="p-1 w-[50px] h-[40px]">
+                            <img id="pic5" src="assets/songimg1.svg" alt="">
+                        </div>
+                        <div id="songname5" class="py-2 w-max h-[40px] text-nowrap overflow-x-hidden overflow-clip"
+                            onmouseenter="this.scrollLeft+=this.textContent.length">
+                            songname
+                        </div>
                     </div>
-                    <div id="songname5" class="py-2 w-max h-[40px] text-nowrap overflow-x-hidden overflow-clip"
-                        onmouseenter="this.scrollLeft+=this.textContent.length">
-                        songname
+                    <hr>
+                    <div class="flex">
+                        <div class="p-1 w-[50px] h-[40px]">
+                            <img id="pic6" src="assets/songimg1.svg" alt="">
+                        </div>
+                        <div id="songname6" class="py-2 w-max h-[40px] text-nowrap overflow-x-hidden overflow-clip"
+                            onmouseenter="this.scrollLeft+=this.textContent.length">
+                            songname
+                        </div>
                     </div>
-                </div>
-                <hr>
-                <div class="flex">
-                    <div class="p-1 w-[50px] h-[40px]">
-                        <img id="pic6" src="assets/songimg1.svg" alt="">
-                    </div>
-                    <div id="songname6" class="py-2 w-max h-[40px] text-nowrap overflow-x-hidden overflow-clip"
-                        onmouseenter="this.scrollLeft+=this.textContent.length">
-                        songname
-                    </div>
-                </div>
-                <hr>
-                <div class="flex rounded-b-md">
-                    <div class="p-1 w-[50px] h-[40px]">
-                        <img id="pic7" src="assets/songimg1.svg" alt="">
-                    </div>
-                    <div id="songname7" class="py-2 w-max h-[40px] text-nowrap overflow-x-hidden overflow-clip"
-                        onmouseenter="this.scrollLeft+=this.textContent.length">
-                        songname
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="logo">
-            <img src="newassets/icons/logo60.svg" alt="">
-        </div>
-        <div id="searchbtn" class="p-3 sm:hidden" onclick="searchboxappear()">
-            <button>
-                <img src="assets/Search.svg" alt="">
-            </button>
-        </div>
-
-
-
-    </div>
-
-    <div id="allelements" class="mt-16 pt-8 flex flex-col ml-2 sm:ml-[100px] ">
-        <div class="ml-10">
-            <div class="flex space-x-10 items-center font-medium">
-                <div id="logo" class="bg-gray-600 rounded-full h-[180px] w-[180px] flex items-center justify-center">
-                    <img src="newassets/profile1.svg" alt="">
-                </div>
-                <div class="text-7xl">
-                    <div>
-                        Shreevats Dhyani
+                    <hr>
+                    <div class="flex rounded-b-md">
+                        <div class="p-1 w-[50px] h-[40px]">
+                            <img id="pic7" src="assets/songimg1.svg" alt="">
+                        </div>
+                        <div id="songname7" class="py-2 w-max h-[40px] text-nowrap overflow-x-hidden overflow-clip"
+                            onmouseenter="this.scrollLeft+=this.textContent.length">
+                            songname
+                        </div>
                     </div>
                 </div>
             </div>
+            <div id="logo">
+                <img src="newassets/icons/logo60.svg" alt="">
+            </div>
+            <div id="searchbtn" class="p-3 sm:hidden" onclick="searchboxappear()">
+                <button>
+                    <img src="assets/Search.svg" alt="">
+                </button>
+            </div>
+        </div>
 
+        <div id="allelements1" class="pt-8 flex flex-col ml-2 sm:ml-[100px] ">
+            <div id="ribbonbox" class="flex poppins-regular mt-20 scroll-smooth  w-[98%] space-x-2">
+            </div>
             <div class="flex-col poppins-regular mt-10 ">
-
-                <div class="text-white flex w-[98%] justify-between">
-                    <div class="flex space-x-5">
-                        <div class="text-[30px]">Your Playlists</div>
-                        <button class="text-[20px] font-bold pt-2 hover:text-gray-500 hover:scale-110">Show
-                            all</button>
-                    </div>
+                <div class="text-white flex w-[98%] text-[30px] justify-between">
+                    <div>Heading 1</div>
                     <div id="scrollnavbtn" class="flex">
-                        <button class="hover:scale-110" onclick="horizontalscroll(true,'parentscrolldiv4')">
+                        <button class="hover:scale-110" onclick="horizontalscroll(true,'parentscrolldiv1')">
                             <div class="m-1"><img src="newassets/larrow.svg" alt=""></div>
                         </button>
-                        <button class="hover:scale-110" onclick="horizontalscroll(false,'parentscrolldiv4')">
+                        <button class="hover:scale-110" onclick="horizontalscroll(false,'parentscrolldiv1')">
                             <div class="m-1"><img src="newassets/rarrow.svg" alt=""></div>
                         </button>
                     </div>
                 </div>
-
-                <div id="parentscrolldiv4"
-                    class="  w-[98%] pt-4 flex scroll-smooth gap-x-5">
+                <div id="parentscrolldiv1"
+                    class=" sm:scrollbar  sm:hover:overflow-x-scroll sm:overflow-hidden h-64  w-[98%] pt-4 grid grid-flow-col auto-cols-auto  scroll-smooth space-x-5">
+    
                 </div>
+    
+            </div>
+            
+        </div>
+    </div>
+
+
+    <div id="allelements2" class="pt-8 flex flex-col ml-2 sm:ml-[100px] ">
+        <div class="flex-col poppins-regular mt-10 ">
+            <div class="text-white flex w-[98%] text-[30px] justify-between">
+                <div>Heading 2</div>
+                <div id="scrollnavbtn" class="flex">
+                    <button class="hover:scale-110" onclick="horizontalscroll(true,'parentscrolldiv2')">
+                        <div class="m-1"><img src="newassets/larrow.svg" alt=""></div>
+                    </button>
+                    <button class="hover:scale-110" onclick="horizontalscroll(false,'parentscrolldiv2')">
+                        <div class="m-1"><img src="newassets/rarrow.svg" alt=""></div>
+                    </button>
+                </div>
+            </div>
+            <div id="parentscrolldiv2"
+                class="sm:scrollbar   sm:hover:overflow-x-scroll sm:overflow-hidden h-64  w-[98%] pt-4 grid grid-flow-col auto-cols-auto  scroll-smooth space-x-5">
+
             </div>
 
         </div>
-    
-    </div>
+        <div class="flex-col poppins-regular mt-10 ">
+            <div class="text-white flex w-[98%] text-[30px] justify-between">
+                <div>Heading 3</div>
+                <div id="scrollnavbtn" class="flex">
+                    <button class="hover:scale-110" onclick="horizontalscroll(true,'parentscrolldiv3')">
+                        <div class="m-1"><img src="newassets/larrow.svg" alt=""></div>
+                    </button>
+                    <button class="hover:scale-110" onclick="horizontalscroll(false,'parentscrolldiv3')">
+                        <div class="m-1"><img src="newassets/rarrow.svg" alt=""></div>
+                    </button>
+                </div>
+            </div>
+            <div id="parentscrolldiv3"
+                class="sm:scrollbar sm:hover:overflow-x-scroll sm:overflow-hidden h-64  w-[98%] pt-4 grid grid-flow-col auto-cols-auto  scroll-smooth space-x-5">
 
-    
-    </div>
+            </div>
 
-    <div id="player" class="gradnav1 sm:  z-20 bottom-0 fixed h-[75px] w-full bg-[#1E1E1E] ">
+        </div>
+
+        <div class="flex-col poppins-regular mt-10 space-y-3 text-white">
+            <div class=" w-[98%] text-[30px] ">Heading 4</div>
+            <div id="h4" class="w-full  grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-y-2">
+
+
+            </div>
+        </div>
+
+
+
+        <div class="flex-col poppins-regular mt-10 ">
+            <div class="text-white flex w-[98%] text-[30px] justify-between">
+                <div>Heading 5</div>
+                <div id="scrollnavbtn" class="flex">
+                    <button class="hover:scale-110" onclick="horizontalscroll(true,'parentscrolldiv4')">
+                        <div class="m-1"><img src="newassets/larrow.svg" alt=""></div>
+                    </button>
+                    <button class="hover:scale-110" onclick="horizontalscroll(false,'parentscrolldiv4')">
+                        <div class="m-1"><img src="newassets/rarrow.svg" alt=""></div>
+                    </button>
+                </div>
+            </div>
+            <div id="parentscrolldiv4"
+                class="sm:scrollbar  sm:hover:overflow-x-scroll sm:overflow-hidden h-64  w-[98%] pt-4 grid grid-flow-col auto-cols-auto  scroll-smooth space-x-5">
+
+            </div>
+
+        </div>
+
+    </div>
+    <div id="player" class=" hidden sm:hidden  z-20 bottom-0 fixed h-[75px] w-full bg-[#1E1E1E] ">
         <div class="flex space-x-10 m-3 text-white">
             <div class="flex space-x-5">
                 <div class="border">
-                    <img src="newassets/songsmalldp.svg" alt="">
+                    <img src="assets/songthumbnail2.svg" alt="">
                 </div>
                 <div class="">
                     <div class="h-[30px] w-[375px] font-bold">
@@ -304,6 +356,7 @@
     </div>
 
     <script src="newmobile.js"></script>
+    <script src="newhome.js"></script>
 </body>
 
 </html>

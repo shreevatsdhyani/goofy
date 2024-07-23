@@ -160,9 +160,25 @@
 
     }
 
-    /* Ensure horizontal scroll on smaller screens */
+    .gradnav2 {
+        background-color: hsla(120, 0%, 7%, 1);
+        background-image:
+            radial-gradient(at 100% 54%, hsla(108, 100%, 50%, 0.48) 0px, transparent 50%),
+            radial-gradient(at 0% 55%, hsla(266, 94%, 64%, 0.38) 0px, transparent 50%),
+            radial-gradient(at 50% 57%, hsla(24, 83%, 37%, 0.61) 0px, transparent 50%),
+            radial-gradient(at 29% 59%, hsla(189, 33%, 45%, 0.39) 0px, transparent 50%),
+            radial-gradient(at 45% 14%, hsla(105, 63%, 55%, 0.48) 0px, transparent 50%),
+            radial-gradient(at 7% 52%, hsla(289, 81%, 26%, 0.77) 0px, transparent 50%),
+            radial-gradient(at 87% 23%, hsla(346, 100%, 50%, 0.47) 0px, transparent 50%),
+            radial-gradient(at 51% 0%, hsla(32, 90%, 74%, 0.51) 0px, transparent 50%),
+            radial-gradient(at 100% 51%, hsla(349, 62%, 68%, 0.58) 0px, transparent 50%),
+            radial-gradient(at 0% 0%, hsla(222, 58%, 49%, 1) 0px, transparent 50%),
+            radial-gradient(at 68% 100%, hsla(241, 0%, 7%, 1) 0px, transparent 50%),
+            radial-gradient(at 35% 100%, hsla(343, 0%, 7%, 1) 0px, transparent 50%);
+    }
+        /* Ensure horizontal scroll on smaller screens */
 
 
 
 
-}
+    }
