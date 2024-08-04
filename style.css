@@ -176,9 +176,24 @@
             radial-gradient(at 68% 100%, hsla(241, 0%, 7%, 1) 0px, transparent 50%),
             radial-gradient(at 35% 100%, hsla(343, 0%, 7%, 1) 0px, transparent 50%);
     }
-        /* Ensure horizontal scroll on smaller screens */
 
+    /* Ensure horizontal scroll on smaller screens */
 
-
+    .basegrad {
+        background-color: hsla(0, 0%, 0%, 0.67);
+        background-image:
+            radial-gradient(at 0% 79%, hsla(220, 100%, 50%, 0.6) 0px, transparent 50%),
+            radial-gradient(at 25% 100%, hsla(283, 62%, 57%, 1) 0px, transparent 50%),
+            radial-gradient(at 47% 0%, hsla(220, 100%, 50%, 0.6) 0px, transparent 50%),
+            radial-gradient(at 100% 28%, hsla(283, 62%, 58%, 1) 0px, transparent 50%),
+            radial-gradient(at 92% 56%, hsla(289, 73%, 66%, 0.64) 0px, transparent 50%),
+            radial-gradient(at 59% 100%, hsla(289, 73%, 66%, 0.64) 0px, transparent 50%),
+            radial-gradient(at 0% 0%, hsla(220, 100%, 50%, 1) 0px, transparent 50%),
+            radial-gradient(at 33% 15%, hsla(201, 100%, 50%, 1) 0px, transparent 50%),
+            radial-gradient(at 100% 100%, hsla(327, 100%, 50%, 1) 0px, transparent 50%),
+            radial-gradient(at 7% 43%, hsla(201, 100%, 50%, 1) 0px, transparent 50%);
 
     }
+
+
+}

@@ -92,17 +92,20 @@ function heading4material() {
         songscroll.appendChild(newelements.cloneNode(true));
     }
 }
+// [#1D88E6]
 function createribbon() {
-    const genres = {"Relax":"bg-gradient-to-r from-[#467b3d] via-[#b0f1a5] to-[#467b3d]", "Energize":"bg-gradient-to-r from-[#b4843b] via-[#f7e0bc] to-[#b4843b]", "Romance":"bg-gradient-to-r from-[#7a2828] via-[#d29393] to-[#7a2828]", "Sad":"bg-gradient-to-r from-[#8951FF] via-[#C8AEFF] to-[#8951FF]", "Sleep":"bg-gradient-to-r from-[#66DDEE] via-[#B3F5FF] to-[#66DDEE]", "Podcasts":"bg-gradient-to-r from-[#FF75C5] via-[#FFB6E0] to-[#FF75C5]"};
+    // "bg-gradient-to-r from-[#467b3d] via-[#b0f1a5] to-[#467b3d]"
+    const genres = ["Relax", "Energize", "Romance", "Sad", "Sleep", "Podcasts"];
+    // const genres = ["Relax":"bg-[#1D88E6]", "Energize":"bg-gradient-to-r from-[#b4843b] via-[#f7e0bc] to-[#b4843b]", "Romance":"bg-gradient-to-r from-[#7a2828] via-[#d29393] to-[#7a2828]", "Sad":"bg-gradient-to-r from-[#8951FF] via-[#C8AEFF] to-[#8951FF]", "Sleep":"bg-gradient-to-r from-[#66DDEE] via-[#B3F5FF] to-[#66DDEE]", "Podcasts":"bg-gradient-to-r from-[#FF75C5] via-[#FFB6E0] to-[#FF75C5]"];
     const ribbox = document.getElementById("ribbonbox");
     const parser = new DOMParser();
-    Object.entries(genres).forEach(([ele,k]) => {
+    genres.forEach(ele => {
         ribbox.appendChild(parser.parseFromString(`<div>
-        <button class="${k} mr-2 text-black text-lg font-semibold border-white border-[3px] rounded-lg hover:shadow-lg hover:shadow-white hover:scale-110">
+        <button class=" mr-2 text-white text-lg bg-[#1e1e1e]  hover:bg-[#1d88e6] rounded-full hover:border-white border-2 border-[#1d88e6] hover:shadow-lg hover:shadow-white hover:scale-110">
             <div class="px-5 py-1 text-xl">${ele}</div>
         </button>
     </div>`, "text/html").body.firstChild);
-    });
+    });
 }
 
 function horizontalscroll(left,eleid) {
