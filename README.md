@@ -19,10 +19,9 @@ This repository contains the complete frontend UI setup for the Goofy Music app.
 
 ## Tech Stack
 
-* **React.js**: Frontend library for building the UI.
-* **TypeScript**: For better type safety and maintainability.
+* **HTML**
 * **Tailwind CSS**: Utility-first CSS framework for styling.
-* **Vite**: Lightning-fast development environment and build tool.
+
 
 ## Installation
 
